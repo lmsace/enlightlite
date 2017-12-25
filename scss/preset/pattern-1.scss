@@ -1,0 +1,1215 @@
+$color_sushi_approx: #7abb3b;
+$color_storm_dust_approx: #656565;
+$color_tuatara_approx: #353535;
+$white: #fff;
+$color_christi_approx: #54a307;
+$color_sushi_50_approx: rgba(122, 187, 59, .5);
+$color_cape_cod_approx: #424242;
+$color_tuatara_50_approx: rgba(53, 53, 53, .5);
+$color_sushi_90_approx: rgba(122, 187, 59, .9);
+$color_celeste_approx: #cfcfcf;
+$color_sushi_83_approx: rgba(122, 187, 59, .83);
+$color_sushi_94_approx: rgba(122, 187, 59, .94);
+$color_rangoon_green_approx: #1e1e1e;
+$color_dell_approx: #37640b;
+$color_gossip_approx: #dcfdbc;
+$color_reef_approx: #c1ec98;
+$color_conifer_approx: #95d15b;
+$color_sushi_60_approx: rgba(122, 187, 59, .6);
+$color_sushi_80_approx: rgba(122, 187, 59, .8);
+$footbgimgOverlay: true !default;
+
+
+
+a {
+    color: $color_sushi_approx;
+    &:hover {
+        color: $color_tuatara_approx;
+        text-decoration: none;
+    }
+    &:focus {
+        color: $color_tuatara_approx;
+        text-decoration: none;
+    }
+}
+.btn-primary {
+    background: $color_sushi_approx;
+    &:hover {
+        background: $color_tuatara_approx;
+    }
+    &:focus {
+        background: $color_tuatara_approx;
+    }
+    &:active {
+        background: $color_tuatara_approx;
+    }
+    &.active {
+        background: $color_tuatara_approx;
+    }
+    &.disabled {
+        background: $color_tuatara_approx;
+    }
+}
+button {
+    &.btn-primary {
+        &:active {
+            &:hover {
+                color: $white;
+                background: $color_tuatara_approx;
+            }
+            &:focus {
+                color: $white;
+                background: $color_tuatara_approx;
+            }
+        }
+        &.active {
+            &:hover {
+                color: $white;
+                background: $color_tuatara_approx;
+            }
+            &:focus {
+                color: $white;
+                background: $color_tuatara_approx;
+            }
+            &.focus {
+                color: $white;
+                background: $color_tuatara_approx;
+            }
+        }
+        &.focus:active {
+            color: $white;
+            background: $color_tuatara_approx;
+        }
+    }
+    .singlebutton form button.btn-secondary {
+        margin-bottom: 20px;
+    }
+}
+.btn-primary[disabled] {
+    background: $color_tuatara_approx;
+}
+.dropdown-submenu {
+    &:hover > a {
+        color: $color_sushi_approx;
+        border-color: $color_sushi_approx;
+        &:after {
+            border-left-color: $color_sushi_approx;
+        }
+    }
+    &:focus > a {
+        color: $color_sushi_approx;
+        border-color: $color_sushi_approx;
+    }
+}
+#site-header {
+    .header-top {
+        background: $color_tuatara_approx;
+        .navbar {
+            .nav {
+                > li > a {
+                    &:focus {
+                        background: $color_sushi_approx;
+                    }
+                    &:hover {
+                        background: $color_sushi_approx;
+                    }
+                }
+                > .active > a {
+                    background: $color_sushi_approx;
+                    &:hover {
+                        background: $color_sushi_approx;
+                    }
+                    &:focus {
+                        background: $color_sushi_approx;
+                    }
+                }
+                li.dropdown {
+                    &.open {
+                        > .dropdown-toggle {
+                            background: $color_sushi_approx;
+                        }
+                        &.active > .dropdown-toggle {
+                            background: $color_sushi_approx;
+                        }
+                    }
+                    &.active > .dropdown-toggle {
+                        background: $color_sushi_approx;
+                    }
+                }
+            }
+            .nav-collapse.active {
+                border-top-color: $color_sushi_50_approx;
+                .nav {
+                    .dropdown-submenu.open > a {
+                        background: $color_tuatara_approx;
+                    }
+                    .dropdown-menu .dropdown-submenu.open > a {
+                        background: $color_tuatara_approx;
+                    }
+                }
+            }
+            .btn-navbar .icon-bar {
+                background: $color_sushi_approx;
+            }
+        }
+        .dropdown-menu {
+            background-color: $color_christi_approx;
+            > li > a {
+                &:hover {
+                    background: $color_tuatara_approx;
+                }
+                &:focus {
+                    background: $color_tuatara_approx;
+                }
+            }
+        }
+        .dropdown-submenu {
+            &:hover > a {
+                background: $color_tuatara_approx;
+            }
+            &:focus > a {
+                background: $color_tuatara_approx;
+            }
+        }
+    }
+    .header-main {
+        background: $color_sushi_approx;
+        .navbar {
+            .nav {
+                > li > a {
+                    &:focus {
+                        background: $color_tuatara_approx;
+                    }
+                    &:hover {
+                        background: $color_tuatara_approx;
+                    }
+                    .caretup {
+                        color: $color_cape_cod_approx;
+                    }
+                }
+                > .active > a {
+                    background: $color_tuatara_approx;
+                    &:hover {
+                        background: $color_tuatara_approx;
+                    }
+                    &:focus {
+                        background: $color_tuatara_approx;
+                    }
+                }
+                li.dropdown {
+                    &.open {
+                        > .dropdown-toggle {
+                            background: $color_tuatara_approx;
+                        }
+                        &.active > .dropdown-toggle {
+                            background: $color_tuatara_approx;
+                        }
+                    }
+                    &.active > .dropdown-toggle {
+                        background: $color_tuatara_approx;
+                    }
+                }
+            }
+            .nav-collapse.active {
+                border-top-color: $color_tuatara_50_approx;
+                .nav {
+                    .dropdown-submenu.open > a {
+                        background: $color_sushi_approx;
+                    }
+                    .dropdown-menu .dropdown-submenu.open > a {
+                        background: $color_sushi_approx;
+                    }
+                }
+            }
+        }
+        .dropdown-menu {
+            background: $color_cape_cod_approx;
+            > li > a {
+                &:hover {
+                    background: $color_sushi_approx;
+                }
+                &:focus {
+                    background: $color_sushi_approx;
+                }
+            }
+        }
+        .dropdown-submenu {
+            &:hover > a {
+                background: $color_sushi_approx;
+            }
+            &:focus > a {
+                background: $color_sushi_approx;
+            }
+        }
+        .custom-dropdown-menu {
+            .cols-wrap {
+                background: $color_cape_cod_approx;
+            }
+            .cols {
+                > h6 {
+                    border-bottom-color: $white;
+                }
+                > ul > li {
+                    > a {
+                        &:hover {
+                            background: $color_sushi_approx;
+                        }
+                        &:focus {
+                            background: $color_sushi_approx;
+                        }
+                    }
+                    &.active > a {
+                        background: $color_sushi_approx;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 980px) {
+    #site-header {
+        .header-top .navbar .nav > .dropdown:hover > .dropdown-toggle {
+            background: $color_sushi_approx;
+        }
+        .header-main .navbar .nav > .dropdown:hover > .dropdown-toggle {
+            background: $color_tuatara_approx;
+            .caretup {
+                display: block;
+            }
+        }
+    }
+    .dir-ltr #site-header .header-top .navbar .nav > li + li:before {
+        color: $color_storm_dust_approx;
+    }
+    .dir-rtl #site-header .header-top .navbar .nav > li + li:after {
+        color: $color_storm_dust_approx;
+    }
+}
+
+$overlayCheck: $white;
+
+
+.new-courses-block {
+    background: $color_sushi_approx;
+    .thumb {
+        background: $color_christi_approx;
+        border-color: $color_christi_approx;
+    }
+    .info p {
+        color: $white;
+    }
+}
+.categories-block {
+    .slider-nav {
+        .nav-item {
+            color: $white;
+            background: $color_sushi_approx;
+        }
+        button.nav-item {
+            &:hover {
+                color: $white;
+                background: $color_tuatara_approx;
+            }
+        }
+    }
+    .thumb {
+        background: $white;
+        border-color: $color_celeste_approx;
+
+    }
+    .titlebar h2 {
+        color: $color_sushi_approx;
+    }
+    .wrapper:hover .thumb-overlay {
+        background: $color_sushi_80_approx;
+    }
+}
+#site-footer {
+    .footer-bottom {
+        background: $color_tuatara_approx;
+    }
+    .footer-main .bgtrans-overlay {
+        background: $color_sushi_94_approx;
+    }
+    .footer-links ul li a {
+        &:hover {
+            color: $color_rangoon_green_approx;
+        }
+        &:focus {
+            color: $color_rangoon_green_approx;
+        }
+    }
+    .social-media ul li {
+        border-color: $white;
+    }
+}
+input {
+    &.form-submit {
+        background: $color_sushi_approx;
+        border-color: $color_sushi_approx;
+        &:hover {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+        &:focus {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+        &:active {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+            background-color: $color_tuatara_approx;
+        }
+        &.active {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+            background-color: $color_tuatara_approx;
+        }
+        &.disabled {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+    }
+    &#id_submitbutton {
+        background: $color_sushi_approx;
+        border-color: $color_sushi_approx;
+        &:hover {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+        &:focus {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+        &:active {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+            background-color: $color_tuatara_approx;
+        }
+        &.active {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+            background-color: $color_tuatara_approx;
+        }
+        &.disabled {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+    }
+    &#id_submitbutton2 {
+        background: $color_sushi_approx;
+        border-color: $color_sushi_approx;
+        &:hover {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+        &:focus {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+        &:active {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+            background-color: $color_tuatara_approx;
+        }
+        &.active {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+            background-color: $color_tuatara_approx;
+        }
+        &.disabled {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+    }
+    &#id_saveanddisplay {
+        background: $color_sushi_approx;
+        border-color: $color_sushi_approx;
+        &:hover {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+        &:focus {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+        &:active {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+            background-color: $color_tuatara_approx;
+        }
+        &.active {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+            background-color: $color_tuatara_approx;
+        }
+        &.disabled {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+    }
+    &.form-submit[disabled] {
+        background: $color_tuatara_approx;
+        border-color: $color_tuatara_approx;
+    }
+    &#id_submitbutton[disabled] {
+        background: $color_tuatara_approx;
+        border-color: $color_tuatara_approx;
+    }
+    &#id_submitbutton2[disabled] {
+        background: $color_tuatara_approx;
+        border-color: $color_tuatara_approx;
+    }
+    &#id_saveanddisplay[disabled] {
+        background: $color_tuatara_approx;
+        border-color: $color_tuatara_approx;
+    }
+}
+table {
+    &.flexible {
+        thead th {
+            background: $color_sushi_approx;
+        }
+        tbody th {
+            color: $color_sushi_approx;
+        }
+    }
+    &.rolecap {
+        thead tr th {
+            background: $color_sushi_approx;
+        }
+        tr.header .header {
+            color: $color_sushi_approx;
+        }
+    }
+}
+.generaltable {
+    thead th {
+        background: $color_sushi_approx;
+    }
+    tbody th {
+        color: $color_sushi_approx;
+    }
+}
+.loginbox {
+    input[type="submit"] {
+        background: $color_sushi_approx;
+        border-color: $color_sushi_approx;
+        &:hover {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+        &:focus {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+        &:active {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+    }
+    .signuppanel .subcontent ol li a {
+        &:hover {
+            color: $color_sushi_approx;
+        }
+        &:focus {
+            color: $color_sushi_approx;
+        }
+    }
+}
+.coursebox {
+    > .info > .coursename a {
+        color: $color_sushi_approx;
+    }
+    .content .teachers li a {
+        color: $color_sushi_approx;
+    }
+}
+.forumpost {
+    .options {
+        .footer {
+            > a:hover {
+                color: $color_sushi_approx;
+            }
+            > a:focus {
+                color: $color_sushi_approx;
+            }
+        }
+        .commands > a {
+            &:hover {
+                color: $color_sushi_approx;
+            }
+            &:focus {
+                color: $color_sushi_approx;
+            }
+        }
+    }
+    .subject > a {
+        &:hover {
+            color: $color_sushi_approx;
+        }
+        &:focus {
+            color: $color_sushi_approx;
+        }
+    }
+}
+.blog_entry {
+    .commands a {
+        &:hover {
+            color: $color_sushi_approx;
+        }
+        &:focus {
+            color: $color_sushi_approx;
+        }
+    }
+    .tags .officialblogtags a {
+        &:hover {
+            color: $color_sushi_approx;
+        }
+        &:focus {
+            color: $color_sushi_approx;
+        }
+    }
+    .content > .mdl-left {
+        background: $color_gossip_approx;
+    }
+}
+.comment-link {
+    color: $color_dell_approx;
+}
+.comment-list {
+    color: $color_dell_approx;
+    li {
+        background: $color_reef_approx;
+        border-color: $color_conifer_approx;
+    }
+}
+.comment-area {
+    textarea {
+        border-color: $color_conifer_approx;
+    }
+    textarea[cols] {
+        border-color: $color_conifer_approx;
+    }
+    .fd > a {
+        background: $color_sushi_approx;
+        &:hover {
+            background: $color_tuatara_approx;
+        }
+        &:focus {
+            background: $color_tuatara_approx;
+        }
+    }
+}
+.block {
+    .header {
+        background: $color_sushi_approx;
+    }
+    .card-block .action-menu .dropdown .dropdown-menu a {
+        &:hover {
+            background: $color_sushi_approx;
+        }
+        &:focus {
+            background: $color_sushi_approx;
+        }
+    }
+}
+.dropdown-item {
+    &:hover {
+        background: $color_sushi_approx;
+    }
+    &:focus {
+        background: $color_sushi_approx;
+    }
+}
+.list-group-item-action {
+    color: $color_sushi_approx;
+}
+.navbar-light {
+    .navbar-brand {
+        background: $color_sushi_approx;
+    }
+    .navbar-nav {
+        .nav-link {
+            &:hover {
+                color: $color_sushi_approx;
+                color: $color_sushi_approx;
+            }
+            &:focus {
+                color: $color_sushi_approx;
+                color: $color_sushi_approx;
+            }
+            &.open {
+                color: $color_sushi_approx;
+                &:focus {
+                    color: $color_sushi_approx;
+                }
+                &:hover {
+                    color: $color_sushi_approx;
+                }
+            }
+            &.active {
+                color: $color_sushi_approx;
+                &:focus {
+                    color: $color_sushi_approx;
+                }
+                &:hover {
+                    color: $color_sushi_approx;
+                }
+            }
+        }
+        .open > .nav-link {
+            color: $color_sushi_approx;
+            &:focus {
+                color: $color_sushi_approx;
+            }
+            &:hover {
+                color: $color_sushi_approx;
+            }
+        }
+        .active > .nav-link {
+            color: $color_sushi_approx;
+            &:focus {
+                color: $color_sushi_approx;
+            }
+            &:hover {
+                color: $color_sushi_approx;
+            }
+        }
+    }
+}
+.page-link {
+    color: $color_sushi_approx;
+    &:hover {
+        color: $color_sushi_approx;
+    }
+    &:focus {
+        color: $color_sushi_approx;
+    }
+}
+.our-team {
+    h2 {
+        color: $color_sushi_approx;
+    }
+    .card-block {
+        .slider-nav button:hover {
+            color: $white;
+            background: $color_tuatara_approx;
+        }
+        .card-content .card-header h6 {
+            color: $color_sushi_approx;
+        }
+        .card-img .social-link {
+            background: $color_sushi_80_approx;
+            .icon-link {
+                border: 2px solid $color_tuatara_approx;
+                &:hover {
+                    background: $color_tuatara_approx;
+                }
+            }
+        }
+    }
+    .slider-nav button {
+        background: $color_sushi_approx;
+        &:hover {
+            background: $color_tuatara_approx;
+        }
+    }
+}
+.homepage-carousel {
+    .camera_fakehover {
+    .camera_prev {
+        background: rgba(122, 187, 59, 0.7);
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        > span {
+            background: none;
+        }
+        &:hover {
+            background: rgba(53, 53, 53, 0.7);
+        }
+    }
+    .camera_next {
+        background: rgba(122, 187, 59, 0.7);
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        > span {
+            background: none;
+        }
+        &:hover {
+            background: rgba(53, 53, 53, 0.7);
+        }
+    }
+    }
+    .slide-text {
+        a.btn {
+            background: $color_sushi_approx;
+            /* &:hover {
+                color: #fff;
+                background: rgba(0, 0, 0, .5);
+            } */
+        }
+        /* a.btn + a {
+            color: #353535;
+            background: $white;
+            border: 0;
+            &:hover {
+                color: #fff;
+                background: rgba(0, 0, 0, .5);
+            }
+        } */
+        &.text-fill-content {
+            h1 {
+                background: $white;
+            }
+        }
+        &.text-item-content {
+            background: none;
+            h1 {
+                color: $color_sushi_approx;
+                font-size: 60px;
+                font-weight: bold;
+            }
+        }
+        &.double-heading-content {
+            .heading-content {
+                border-left: 5px solid $color_sushi_approx;
+            }
+        }
+    }
+}
+.dropdown-menu > li > a {
+    &:hover {
+        color: $color_sushi_approx;
+        border-color: $color_sushi_approx;
+    }
+    &:focus {
+        color: $color_sushi_approx;
+        border-color: $color_sushi_approx;
+    }
+}
+.home-page-carousel .carousel-control {
+    background: $color_sushi_approx;
+    border-color: $color_christi_approx;
+}
+.frontpage-siteinfo h1 {
+    color: $color_sushi_approx;
+}
+.frontpage-testimonials .bgtrans-overlay {
+    background: $color_sushi_90_approx;
+}
+.jumbo-viewall .inner-wrap {
+    h2 {
+        color: $color_sushi_approx;
+    }
+    p {
+        color: $color_tuatara_approx;
+    }
+    .btn-jumbo {
+        background: $color_sushi_approx;
+    }
+    a {
+        &:hover {
+            background: $color_tuatara_approx;
+        }
+        &:focus {
+            background: $color_tuatara_approx;
+        }
+    }
+}
+.breadcrumb > li > a {
+    color: $color_sushi_approx;
+}
+.moodle-actionmenu.show[data-enhanced] .menu a:hover {
+    color: $color_sushi_approx;
+    border-color: $color_sushi_approx;
+}
+textarea:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="text"]:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="password"]:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="datetime"]:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="datetime-local"]:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="date"]:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="month"]:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="time"]:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="week"]:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="number"]:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="email"]:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="url"]:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="search"]:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="tel"]:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="color"]:focus {
+    border-color: $color_sushi_approx;
+}
+.uneditable-input:focus {
+    border-color: $color_sushi_approx;
+}
+select:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="file"]:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="radio"]:focus {
+    border-color: $color_sushi_approx;
+}
+input[type="checkbox"]:focus {
+    border-color: $color_sushi_approx;
+}
+.path-admin .buttons {
+    input[type="submit"] {
+        background: $color_sushi_approx;
+        border-color: $color_sushi_approx;
+        &:hover {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+        &:focus {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+        &:active {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+            background-color: $color_tuatara_approx;
+        }
+        &.active {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+            background-color: $color_tuatara_approx;
+        }
+        &.disabled {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+    }
+    input[type="submit"][disabled] {
+        background: $color_tuatara_approx;
+        border-color: $color_tuatara_approx;
+    }
+}
+td.submit {
+    input {
+        background: $color_sushi_approx;
+        border-color: $color_sushi_approx;
+        &:hover {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+        &:focus {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+        &:active {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+            background-color: $color_tuatara_approx;
+        }
+        &.active {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+            background-color: $color_tuatara_approx;
+        }
+        &.disabled {
+            background: $color_tuatara_approx;
+            border-color: $color_tuatara_approx;
+        }
+    }
+    input[disabled] {
+        background: $color_tuatara_approx;
+        border-color: $color_tuatara_approx;
+    }
+}
+.path-mod-forum .forumheaderlist thead .header {
+    background: $color_sushi_approx;
+}
+.addbloglink > a {
+    background: $color_sushi_approx;
+    &:hover {
+        background: $color_tuatara_approx;
+    }
+    &:focus {
+        background: $color_tuatara_approx;
+    }
+}
+.course_category_tree .category > .info {
+    background: $color_sushi_approx;
+}
+.course-content .topics h3 {
+    color: $color_sushi_approx;
+}
+.block_navigation .block_tree {
+    .active_tree_node {
+        background-color: $color_sushi_approx;
+    }
+    .tree_item:hover {
+        background-color: $color_sushi_approx;
+    }
+}
+.block_settings .block_tree {
+    .active_tree_node {
+        background-color: $color_sushi_approx;
+    }
+    .tree_item:hover {
+        background-color: $color_sushi_approx;
+    }
+}
+.custom-login-page .form-box {
+    box-shadow: 0 0 0 3px $color_sushi_60_approx;
+    .fbox-head {
+        background: $color_sushi_approx;
+    }
+    .fbox-body {
+        .form-fields input:focus {
+            border-color: $color_sushi_approx;
+        }
+        .form-action input[type="submit"] {
+            background: $color_sushi_approx;
+            &:hover {
+                background: $color_tuatara_approx;
+            }
+            &:focus {
+                background: $color_tuatara_approx;
+            }
+            &:active {
+                background: $color_tuatara_approx;
+            }
+        }
+    }
+}
+.custom-side-block .nav {
+    > li > a {
+        &:hover {
+            background: $color_sushi_approx;
+        }
+        &:focus {
+            background: $color_sushi_approx;
+        }
+    }
+    > .expanded > a {
+        background: $color_sushi_approx;
+    }
+}
+.custom-listing .box .box-content .stat-info span i {
+    color: $color_sushi_approx;
+}
+.custom-listing-01 .box .box-content .stat-info span i {
+    color: $color_sushi_approx;
+}
+.block-region .block .card-block .card-title {
+    background: $color_sushi_approx;
+}
+#header .header-top {
+    .dropdown .dropdown-menu a {
+        &:hover {
+            background: $color_sushi_approx;
+        }
+        &:focus {
+            background: $color_sushi_approx;
+        }
+    }
+    .popover-region-header-actions a {
+        color: $color_sushi_approx;
+    }
+}
+.site-info h2 {
+    color: $color_sushi_approx;
+}
+.card .card-block .menubar {
+    background: none;
+}
+.messaging-area-container .messaging-area .contacts-area .tabs .tab {
+    &.selected {
+        color: $color_sushi_approx;
+    }
+    &:hover {
+        color: $color_sushi_approx;
+    }
+}
+.page-item.active .page-link {
+    background: $color_sushi_approx;
+    border-color: $color_sushi_approx;
+    &:focus {
+        background: $color_sushi_approx;
+        border-color: $color_sushi_approx;
+    }
+    &:hover {
+        background: $color_sushi_approx;
+        border-color: $color_sushi_approx;
+    }
+}
+#site-news-forum h2 {
+    color: $color_sushi_approx;
+}
+
+#frontpage-course-list {
+    .available-courses {
+        background: $color_sushi_approx;
+    }
+}
+#frontpage-course-list h2 {
+    color: $color_sushi_approx;
+}
+
+#frontpage-category-combo h2 {
+    color: $color_sushi_approx;
+}
+#coursesearch input[type="submit"] {
+    background: $color_sushi_approx;
+    &:hover {
+        background-color: $color_tuatara_approx;
+    }
+    &:focus {
+        background-color: $color_tuatara_approx;
+    }
+}
+#backToTop:hover {
+    background-color: $color_sushi_approx;
+}
+.nz-example-content .dropdown-menu > li > a {
+    &:hover {
+        color: $white;
+        background: $color_sushi_approx;
+    }
+    &:focus {
+        color: $white;
+        background: $color_sushi_approx;
+    }
+}
+.comment-message .user > a {
+    &:hover {
+        background: $color_tuatara_approx;
+    }
+    &:focus {
+        background: $color_tuatara_approx;
+    }
+}
+.loadmore-btn button:active {
+    border-color: $color_tuatara_approx;
+}
+
+table.quizreviewsummary th.cell {
+    background-color: $color_sushi_approx;
+}
+.camera_thumbs_cont ul li.cameracurrent > img {
+    border-color: $color_sushi_approx;
+}
+#adminsettings .enlightlite-toggle-head h3 .toggle-icon {
+    i {
+        color: $color_sushi_approx;
+    }
+}
+.box .search-block {
+    h2 {
+        color: $color_sushi_approx;
+        &:before {
+            color: $color_sushi_approx;
+        }
+    }
+}
+#frontpage-course-list.frontpageblock-default {
+    background: none;
+    h2 {
+        color: $color_sushi_approx;
+        &:before {
+            color: $color_sushi_approx;
+        }
+    }
+    &.frontpage-mycourse-list {
+        background: none;
+        h2 {
+            color: $color_sushi_approx;
+            &:before {
+                color: $color_sushi_approx;
+            }
+        }
+    }
+}
+#frontpage-category-names {
+    background: $color_sushi_approx;
+    .frontpageblock-default {
+        background: none;
+        h2 {
+            color: $color_sushi_approx;
+            &:before {
+                color: $color_sushi_approx;
+            }
+        }
+    }
+    .course_category_tree .content .subcategories .category .info {
+        &:hover {
+            .categoryname {
+                .numberofcourse {
+                    color: $color_sushi_approx;
+                }
+                a {
+                    color: $color_sushi_approx;
+                }
+            }
+        }
+        .categoryname {
+            &:hover {
+                .numberofcourse {
+                    color: $color_sushi_approx;
+                }
+                a {
+                    color: $color_sushi_approx;
+                }
+            }
+        }
+    }
+}
+#header.theme-top-header {
+    background: $color_sushi_approx;
+}
+#site-header .header-main.theme-main-header {
+    border-bottom: 2px solid $color_sushi_approx;
+    .navbar-toggleable-md a {
+        color: $color_sushi_approx;
+        &:hover {
+            background: $color_sushi_approx;
+        }
+        &:focus {
+            background: $color_sushi_approx;
+        }
+    }
+    button:before {
+        color: $color_sushi_approx;
+    }
+}
+.dir-rtl .box .search-block h2:after {
+    color: $color_sushi_approx;
+}

@@ -1,0 +1,1157 @@
+$color_valencia_approx: #e14d43;
+$color_storm_dust_approx: #656565;
+$color_shark_approx: #2a2a2a;
+$white: #fff;
+$color_flush_mahogany_approx: #c83f35;
+$color_valencia_50_approx: rgba(225, 77, 67, .5);
+$color_mine_shaft_approx: #333333;
+$color_shark_50_approx: rgba(42, 42, 42, .5);
+$color_valencia_90_approx: rgba(225, 77, 67, .9);
+$black: #000;
+$color_celeste_approx: #cfcfcf;
+$color_valencia_83_approx: rgba(225, 77, 67, .83);
+$color_valencia_94_approx: rgba(225, 77, 67, .94);
+$color_rangoon_green_approx: #1e1e1e;
+$color_old_brick_approx: #98271e;
+$color_cosmos_approx: #ffdbd9;
+$color_shilo_approx: #ebb8b6;
+$color_froly_approx: #f98179;
+$color_valencia_60_approx: rgba(225, 77, 67, .6);
+$color_valencia_80_approx: rgba(225, 77, 67, .8);
+$color_chicago_approx: #575757;
+$color_silver_approx: #bfbfbf;
+$color_picton_blue_approx: #39b3e6;
+$footbgimgOverlay: true !default;
+
+a {
+    color: $color_valencia_approx;
+    &:hover {
+        color: $color_shark_approx;
+        text-decoration: none;
+    }
+    &:focus {
+        color: $color_shark_approx;
+        text-decoration: none;
+    }
+}
+.btn-primary {
+    background: $color_valencia_approx;
+    &:hover {
+        background: $color_shark_approx;
+    }
+    &:focus {
+        background: $color_shark_approx;
+    }
+    &:active {
+        background: $color_shark_approx;
+    }
+    &.active {
+        background: $color_shark_approx;
+    }
+    &.disabled {
+        background: $color_shark_approx;
+    }
+}
+.btn-primary[disabled] {
+    background: $color_shark_approx;
+}
+.dropdown-submenu {
+    &:hover > a {
+        color: $color_valencia_approx;
+        border-color: $color_valencia_approx;
+        &:after {
+            border-left-color: $color_valencia_approx;
+        }
+    }
+    &:focus > a {
+        color: $color_valencia_approx;
+        border-color: $color_valencia_approx;
+    }
+}
+#site-header {
+    .header-top {
+        background: $color_shark_approx;
+        .navbar {
+            .nav {
+                > li > a {
+                    &:focus {
+                        background: $color_valencia_approx;
+                    }
+                    &:hover {
+                        background: $color_valencia_approx;
+                    }
+                }
+                > .active > a {
+                    background: $color_valencia_approx;
+                    &:hover {
+                        background: $color_valencia_approx;
+                    }
+                    &:focus {
+                        background: $color_valencia_approx;
+                    }
+                }
+                li.dropdown {
+                    &.open {
+                        > .dropdown-toggle {
+                            background: $color_valencia_approx;
+                        }
+                        &.active > .dropdown-toggle {
+                            background: $color_valencia_approx;
+                        }
+                    }
+                    &.active > .dropdown-toggle {
+                        background: $color_valencia_approx;
+                    }
+                }
+            }
+            .nav-collapse.active {
+                border-top-color: $color_valencia_50_approx;
+                .nav {
+                    .dropdown-submenu.open > a {
+                        background: $color_shark_approx;
+                    }
+                    .dropdown-menu .dropdown-submenu.open > a {
+                        background: $color_shark_approx;
+                    }
+                }
+            }
+            .btn-navbar .icon-bar {
+                background: $color_valencia_approx;
+            }
+        }
+        .dropdown-menu {
+            background-color: $color_flush_mahogany_approx;
+            > li > a {
+                &:hover {
+                    background: $color_shark_approx;
+                }
+                &:focus {
+                    background: $color_shark_approx;
+                }
+            }
+        }
+        .dropdown-submenu {
+            &:hover > a {
+                background: $color_shark_approx;
+            }
+            &:focus > a {
+                background: $color_shark_approx;
+            }
+        }
+    }
+    .header-main {
+        background: $color_valencia_approx;
+        .navbar {
+            .nav {
+                > li > a {
+                    &:focus {
+                        background: $color_shark_approx;
+                    }
+                    &:hover {
+                        background: $color_shark_approx;
+                    }
+                    .caretup {
+                        color: $color_mine_shaft_approx;
+                    }
+                }
+                > .active > a {
+                    background: $color_shark_approx;
+                    &:hover {
+                        background: $color_shark_approx;
+                    }
+                    &:focus {
+                        background: $color_shark_approx;
+                    }
+                }
+                li.dropdown {
+                    &.open {
+                        > .dropdown-toggle {
+                            background: $color_shark_approx;
+                        }
+                        &.active > .dropdown-toggle {
+                            background: $color_shark_approx;
+                        }
+                    }
+                    &.active > .dropdown-toggle {
+                        background: $color_shark_approx;
+                    }
+                }
+            }
+            .nav-collapse.active {
+                border-top-color: $color_shark_50_approx;
+                .nav {
+                    .dropdown-submenu.open > a {
+                        background: $color_valencia_approx;
+                    }
+                    .dropdown-menu .dropdown-submenu.open > a {
+                        background: $color_valencia_approx;
+                    }
+                }
+            }
+        }
+        .dropdown-menu {
+            background: $color_mine_shaft_approx;
+            > li > a {
+                &:hover {
+                    background: $color_valencia_approx;
+                }
+                &:focus {
+                    background: $color_valencia_approx;
+                }
+            }
+        }
+        .dropdown-submenu {
+            &:hover > a {
+                background: $color_valencia_approx;
+            }
+            &:focus > a {
+                background: $color_valencia_approx;
+            }
+        }
+        .custom-dropdown-menu {
+            .cols-wrap {
+                background: $color_mine_shaft_approx;
+            }
+            .cols {
+                > h6 {
+                    border-bottom-color: $white;
+                }
+                > ul > li {
+                    > a {
+                        &:hover {
+                            background: $color_valencia_approx;
+                        }
+                        &:focus {
+                            background: $color_valencia_approx;
+                        }
+                    }
+                    &.active > a {
+                        background: $color_valencia_approx;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 980px) {
+    #site-header {
+        .header-top .navbar .nav > .dropdown:hover > .dropdown-toggle {
+            background: $color_valencia_approx;
+        }
+        .header-main .navbar .nav > .dropdown:hover > .dropdown-toggle {
+            background: $color_shark_approx;
+            .caretup {
+                display: block;
+            }
+        }
+    }
+    .dir-ltr #site-header .header-top .navbar .nav > li + li:before {
+        color: $color_storm_dust_approx;
+    }
+    .dir-rtl #site-header .header-top .navbar .nav > li + li:after {
+        color: $color_storm_dust_approx;
+    }
+}
+
+$overlayCheck: $white;
+
+
+.new-courses-block {
+    background: $color_valencia_approx;
+    .thumb {
+        background: $black;
+        border-color: $black;
+    }
+    .info p {
+        color: $white;
+    }
+}
+.categories-block {
+    .slider-nav {
+        .nav-item {
+            color: $white;
+            background: $color_valencia_approx;
+        }
+        button.nav-item {
+            &:hover {
+                color: $white;
+                background: $color_shark_approx;
+            }
+        }
+    }
+    .thumb {
+        background: $white;
+        border-color: $color_celeste_approx;
+    }
+    .titlebar h2 {
+        color: $color_valencia_approx;
+    }
+    .wrapper:hover .thumb-overlay {
+        background: $color_valencia_80_approx;
+    }
+}
+#site-footer {
+    .footer-bottom {
+        background: $color_shark_approx;
+    }
+    .footer-main .bgtrans-overlay {
+        background: $color_valencia_94_approx;
+    }
+    .footer-links ul li a {
+        &:hover {
+            color: $color_rangoon_green_approx;
+        }
+        &:focus {
+            color: $color_rangoon_green_approx;
+        }
+    }
+    .social-media ul li {
+        border-color: $white;
+    }
+}
+input {
+    &.form-submit {
+        background: $color_valencia_approx;
+        border-color: $color_valencia_approx;
+        &:hover {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+        &:focus {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+        &:active {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+            background-color: $color_shark_approx;
+        }
+        &.active {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+            background-color: $color_shark_approx;
+        }
+        &.disabled {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+    }
+    &#id_submitbutton {
+        background: $color_valencia_approx;
+        border-color: $color_valencia_approx;
+        &:hover {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+        &:focus {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+        &:active {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+            background-color: $color_shark_approx;
+        }
+        &.active {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+            background-color: $color_shark_approx;
+        }
+        &.disabled {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+    }
+    &#id_submitbutton2 {
+        background: $color_valencia_approx;
+        border-color: $color_valencia_approx;
+        &:hover {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+        &:focus {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+        &:active {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+            background-color: $color_shark_approx;
+        }
+        &.active {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+            background-color: $color_shark_approx;
+        }
+        &.disabled {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+    }
+    &#id_saveanddisplay {
+        background: $color_valencia_approx;
+        border-color: $color_valencia_approx;
+        &:hover {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+        &:focus {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+        &:active {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+            background-color: $color_shark_approx;
+        }
+        &.active {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+            background-color: $color_shark_approx;
+        }
+        &.disabled {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+    }
+    &.form-submit[disabled] {
+        background: $color_shark_approx;
+        border-color: $color_shark_approx;
+    }
+    &#id_submitbutton[disabled] {
+        background: $color_shark_approx;
+        border-color: $color_shark_approx;
+    }
+    &#id_submitbutton2[disabled] {
+        background: $color_shark_approx;
+        border-color: $color_shark_approx;
+    }
+    &#id_saveanddisplay[disabled] {
+        background: $color_shark_approx;
+        border-color: $color_shark_approx;
+    }
+    &.btn-primary[type="submit"]:active:focus {
+        color: $color_chicago_approx;
+        background: $color_silver_approx;
+    }
+}
+table {
+    &.flexible {
+        thead th {
+            background: $color_valencia_approx;
+        }
+        tbody th {
+            color: $color_valencia_approx;
+        }
+    }
+    &.rolecap {
+        thead tr th {
+            background: $color_valencia_approx;
+        }
+        tr.header .header {
+            color: $color_valencia_approx;
+        }
+    }
+}
+.generaltable {
+    thead th {
+        background: $color_valencia_approx;
+    }
+    tbody th {
+        color: $color_valencia_approx;
+    }
+}
+.loginbox {
+    input[type="submit"] {
+        background: $color_valencia_approx;
+        border-color: $color_valencia_approx;
+        &:hover {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+        &:focus {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+        &:active {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+    }
+    .signuppanel .subcontent ol li a {
+        &:hover {
+            color: $color_valencia_approx;
+        }
+        &:focus {
+            color: $color_valencia_approx;
+        }
+    }
+}
+.coursebox {
+    > .info > .coursename a {
+        color: $color_valencia_approx;
+    }
+    .content .teachers li a {
+        color: $color_valencia_approx;
+    }
+}
+.forumpost {
+    .options {
+        .footer {
+            > a:hover {
+                color: $color_valencia_approx;
+            }
+            > a:focus {
+                color: $color_valencia_approx;
+            }
+        }
+        .commands > a {
+            &:hover {
+                color: $color_valencia_approx;
+            }
+            &:focus {
+                color: $color_valencia_approx;
+            }
+        }
+    }
+    .subject > a {
+        &:hover {
+            color: $color_valencia_approx;
+        }
+        &:focus {
+            color: $color_valencia_approx;
+        }
+    }
+}
+.blog_entry {
+    .commands a {
+        &:hover {
+            color: $color_valencia_approx;
+        }
+        &:focus {
+            color: $color_valencia_approx;
+        }
+    }
+    .tags .officialblogtags a {
+        &:hover {
+            color: $color_valencia_approx;
+        }
+        &:focus {
+            color: $color_valencia_approx;
+        }
+    }
+    .content > .mdl-left {
+        background: $color_cosmos_approx;
+    }
+}
+.comment-link {
+    color: $color_old_brick_approx;
+}
+.comment-list {
+    color: $color_old_brick_approx;
+    li {
+        background: $color_shilo_approx;
+        border-color: $color_froly_approx;
+    }
+}
+.comment-area {
+    textarea {
+        border-color: $color_froly_approx;
+    }
+    textarea[cols] {
+        border-color: $color_froly_approx;
+    }
+    .fd > a {
+        background: $color_valencia_approx;
+        &:hover {
+            background: $color_shark_approx;
+        }
+        &:focus {
+            background: $color_shark_approx;
+        }
+    }
+}
+.navbar-light {
+    .navbar-brand {
+        background: $color_valencia_approx;
+    }
+    .navbar-nav .nav-link {
+        &:focus {
+            color: $color_valencia_approx;
+        }
+        &:hover {
+            color: $color_valencia_approx;
+        }
+    }
+}
+.dropdown-item {
+    &:hover {
+        background: $color_valencia_approx;
+    }
+    &:focus {
+        background: $color_valencia_approx;
+    }
+}
+.list-group-item-action {
+    color: $color_valencia_approx;
+}
+.page-link {
+    color: $color_valencia_approx;
+    &:hover {
+        color: $color_valencia_approx;
+    }
+    &:focus {
+        color: $color_valencia_approx;
+    }
+}
+.our-team {
+    h2 {
+        color: $color_valencia_approx;
+    }
+    .card-block {
+        .card-content .card-header h6 {
+            color: $color_valencia_approx;
+        }
+        .card-img .social-link {
+            background: $color_valencia_80_approx;
+            .icon-link {
+                border: 2px solid $color_shark_approx;
+                &:hover {
+                    background: $color_shark_approx;
+                }
+            }
+        }
+    }
+    .slider-nav button {
+        background: $color_valencia_approx;
+        &:hover {
+            color: $white;
+            background: $color_shark_approx;
+        }
+    }
+}
+
+.homepage-carousel {
+    .camera_fakehover {
+    .camera_prev {
+        background: rgba(225, 77, 67, 0.7);
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        > span {
+            background: none;
+        }
+        &:hover {
+            background: rgba(42, 42, 42, 0.7);
+        }
+    }
+    .camera_next {
+        background: rgba(225, 77, 67, 0.7);
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        > span {
+            background: none;
+        }
+        &:hover {
+            background: rgba(42, 42, 42, 0.7);
+        }
+    }
+    }
+    .slide-text {
+        a.btn {
+            background: $color_valencia_approx;
+
+        }
+
+        &.text-fill-content {
+            h1 {
+                background: $white;
+            }
+        }
+        &.text-item-content {
+            background: none;
+            h1 {
+                color: $color_valencia_approx;
+                font-size: 60px;
+                font-weight: bold;
+            }
+
+        }
+        &.double-heading-content {
+            .heading-content {
+                border-left: 5px solid $color_valencia_approx;
+            }
+        }
+    }
+}
+button.btn-primary {
+    &:active {
+        &:hover {
+            color: $white;
+            background: $color_shark_approx;
+        }
+        &:focus {
+            color: $white;
+            background: $color_shark_approx;
+        }
+    }
+    &.active {
+        &:hover {
+            color: $white;
+            background: $color_shark_approx;
+        }
+        &:focus {
+            color: $white;
+            background: $color_shark_approx;
+        }
+        &.focus {
+            color: $white;
+            background: $color_shark_approx;
+        }
+    }
+    &.focus:active {
+        color: $white;
+        background: $color_shark_approx;
+    }
+}
+.dropdown-menu > li > a {
+    &:hover {
+        color: $color_valencia_approx;
+        border-color: $color_valencia_approx;
+    }
+    &:focus {
+        color: $color_valencia_approx;
+        border-color: $color_valencia_approx;
+    }
+}
+.home-page-carousel .carousel-control {
+    background: $color_valencia_approx;
+    border-color: $color_shark_approx;
+}
+.frontpage-siteinfo h1 {
+    color: $color_valencia_approx;
+}
+.frontpage-testimonials .bgtrans-overlay {
+    background: $color_valencia_90_approx;
+}
+.jumbo-viewall .inner-wrap {
+    h2 {
+        color: $color_valencia_approx;
+    }
+    p {
+        color: $color_shark_approx;
+    }
+    .btn-jumbo {
+        background: $color_valencia_approx;
+    }
+    a {
+        &:hover {
+            background: $color_shark_approx;
+        }
+        &:focus {
+            background: $color_shark_approx;
+        }
+    }
+}
+.breadcrumb > li > a {
+    color: $color_valencia_approx;
+}
+.moodle-actionmenu.show[data-enhanced] .menu a:hover {
+    color: $color_valencia_approx;
+    border-color: $color_valencia_approx;
+}
+textarea:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="text"]:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="password"]:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="datetime"]:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="datetime-local"]:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="date"]:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="month"]:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="time"]:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="week"]:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="number"]:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="email"]:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="url"]:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="search"]:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="tel"]:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="color"]:focus {
+    border-color: $color_valencia_approx;
+}
+.uneditable-input:focus {
+    border-color: $color_valencia_approx;
+}
+select:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="file"]:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="radio"]:focus {
+    border-color: $color_valencia_approx;
+}
+input[type="checkbox"]:focus {
+    border-color: $color_valencia_approx;
+}
+.path-admin .buttons {
+    input[type="submit"] {
+        background: $color_valencia_approx;
+        border-color: $color_valencia_approx;
+        &:hover {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+        &:focus {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+        &:active {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+            background-color: $color_shark_approx;
+        }
+        &.active {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+            background-color: $color_shark_approx;
+        }
+        &.disabled {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+    }
+    input[type="submit"][disabled] {
+        background: $color_shark_approx;
+        border-color: $color_shark_approx;
+    }
+}
+td.submit {
+    input {
+        background: $color_valencia_approx;
+        border-color: $color_valencia_approx;
+        &:hover {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+        &:focus {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+        &:active {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+            background-color: $color_shark_approx;
+        }
+        &.active {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+            background-color: $color_shark_approx;
+        }
+        &.disabled {
+            background: $color_shark_approx;
+            border-color: $color_shark_approx;
+        }
+    }
+    input[disabled] {
+        background: $color_shark_approx;
+        border-color: $color_shark_approx;
+    }
+}
+.path-mod-forum .forumheaderlist thead .header {
+    background: $color_valencia_approx;
+}
+.addbloglink > a {
+    background: $color_valencia_approx;
+    &:hover {
+        background: $color_shark_approx;
+    }
+    &:focus {
+        background: $color_shark_approx;
+    }
+}
+.course_category_tree .category > .info {
+    background: $color_valencia_approx;
+}
+.course-content .topics h3 {
+    color: $color_valencia_approx;
+}
+.block .header {
+    background: $color_valencia_approx;
+}
+.block_navigation .block_tree {
+    .active_tree_node {
+        background-color: $color_valencia_approx;
+    }
+    .tree_item:hover {
+        background-color: $color_valencia_approx;
+    }
+}
+.block_settings .block_tree {
+    .active_tree_node {
+        background-color: $color_valencia_approx;
+    }
+    .tree_item:hover {
+        background-color: $color_valencia_approx;
+    }
+}
+.custom-login-page .form-box {
+    box-shadow: 0 0 0 3px $color_valencia_60_approx;
+    .fbox-head {
+        background: $color_valencia_approx;
+    }
+    .fbox-body {
+        .form-fields input:focus {
+            border-color: $color_valencia_approx;
+        }
+        .form-action input[type="submit"] {
+            background: $color_valencia_approx;
+            &:hover {
+                background: $color_shark_approx;
+            }
+            &:focus {
+                background: $color_shark_approx;
+            }
+            &:active {
+                background: $color_shark_approx;
+            }
+        }
+    }
+}
+.custom-side-block .nav {
+    > li > a {
+        &:hover {
+            background: $color_valencia_approx;
+        }
+        &:focus {
+            background: $color_valencia_approx;
+        }
+    }
+    > .expanded > a {
+        background: $color_valencia_approx;
+    }
+}
+.custom-listing .box .box-content .stat-info span i {
+    color: $color_valencia_approx;
+}
+.custom-listing-01 .box .box-content .stat-info span i {
+    color: $color_valencia_approx;
+}
+.site-info h2 {
+    color: $color_valencia_approx;
+}
+
+.my-courses .mycourses-block {
+    .available-content:hover .available-overlay {
+        background: $color_valencia_80_approx;
+    }
+}
+#header .header-top {
+    .dropdown .dropdown-menu a {
+        &:hover {
+            background: $color_valencia_approx;
+        }
+        &:focus {
+            background: $color_valencia_approx;
+        }
+    }
+    .popover-region-header-actions a {
+        color: $color_valencia_approx;
+    }
+}
+.block-region .block .card-block .card-title {
+    background: $color_valencia_approx;
+}
+.messaging-area-container .messaging-area .contacts-area .tabs .tab {
+    &.selected {
+        color: $color_valencia_approx;
+    }
+    &:hover {
+        color: $color_valencia_approx;
+    }
+}
+.page-item.active .page-link {
+    background: $color_valencia_approx;
+    border-color: $color_valencia_approx;
+    &:focus {
+        background: $color_valencia_approx;
+        border-color: $color_valencia_approx;
+    }
+    &:hover {
+        background: $color_valencia_approx;
+        border-color: $color_valencia_approx;
+    }
+}
+#site-news-forum h2 {
+    color: $color_valencia_approx;
+}
+#frontpage-course-list {
+    .available-courses {
+        background: $color_valencia_approx;
+    }
+}
+#frontpage-course-list h2 {
+    color: $color_valencia_approx;
+}
+
+#frontpage-category-combo h2 {
+    color: $color_valencia_approx;
+}
+#coursesearch input[type="submit"] {
+    background: $color_valencia_approx;
+    &:hover {
+        background-color: $color_shark_approx;
+    }
+    &:focus {
+        background-color: $color_shark_approx;
+    }
+}
+#backToTop:hover {
+    background-color: $color_valencia_approx;
+}
+.nz-example-content .dropdown-menu > li > a {
+    &:hover {
+        color: $white;
+        background: $color_valencia_approx;
+    }
+    &:focus {
+        color: $white;
+        background: $color_valencia_approx;
+    }
+}
+.comment-message .user > a {
+    &:hover {
+        background: $color_shark_approx;
+    }
+    &:focus {
+        background: $color_shark_approx;
+    }
+}
+.loadmore-btn button:hover {
+    background-color: $color_shark_approx;
+}
+.loadmore-btn button:active {
+    border-color: $color_shark_approx;
+}
+table.quizreviewsummary th.cell {
+    background-color: $color_shark_approx;
+}
+.camera_thumbs_cont ul li.cameracurrent > img {
+    border-color: $color_valencia_approx;
+}
+#adminsettings .enlightlite-toggle-head h3 .toggle-icon {
+    i {
+        color: $color_valencia_approx;
+    }
+}
+.box .search-block {
+    h2 {
+        color: $color_valencia_approx;
+        &:before {
+            color: $color_valencia_approx;
+        }
+    }
+}
+#frontpage-course-list.frontpageblock-default {
+    background: none;
+    h2 {
+        color: $color_valencia_approx;
+        &:before {
+            color: $color_valencia_approx;
+        }
+    }
+    &.frontpage-mycourse-list {
+        background: none;
+        h2 {
+            color: $color_valencia_approx;
+            &:before {
+                color: $color_valencia_approx;
+            }
+        }
+    }
+}
+#frontpage-category-names {
+    background: $color_valencia_approx;
+    .frontpageblock-default {
+        background: none;
+        h2 {
+            color: $color_valencia_approx;
+            &:before {
+                color: $color_valencia_approx;
+            }
+        }
+    }
+    .course_category_tree .content .subcategories .category .info {
+        &:hover {
+            .categoryname {
+                .numberofcourse {
+                    color: $color_valencia_approx;
+                }
+                a {
+                    color: $color_valencia_approx;
+                }
+            }
+        }
+        .categoryname {
+            &:hover {
+                .numberofcourse {
+                    color: $color_valencia_approx;
+                }
+                a {
+                    color: $color_valencia_approx;
+                }
+            }
+        }
+    }
+}
+#header.theme-top-header {
+    background: $color_valencia_approx;
+}
+#site-header .header-main.theme-main-header  {
+    border-bottom: 2px solid $color_valencia_approx;
+    .navbar-toggleable-md a {
+        color: $color_valencia_approx;
+        &:hover {
+            background: $color_valencia_approx;
+        }
+        &:focus {
+            background: $color_valencia_approx;
+        }
+    }
+    button:before {
+        color: $color_valencia_approx;
+    }
+}
+.dir-rtl .box .search-block h2:after {
+    color: $color_valencia_approx;
+}

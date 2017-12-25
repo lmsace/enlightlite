@@ -1,0 +1,1224 @@
+$color_mulled_wine_approx: #523f6d;
+$color_storm_dust_approx: #656565;
+$black: #000000;
+$white: #fff;
+$color_martinique_approx: #413256;
+$color_mulled_wine_50_approx: rgba(82, 63, 109, .5);
+$black_50: rgba(0, 0, 0, .5);
+$color_mulled_wine_90_approx: rgba(82, 63, 109, .9);
+$color_celeste_approx: #cfcfcf;
+$color_mulled_wine_83_approx: rgba(82, 63, 109, .83);
+$color_mulled_wine_94_approx: rgba(82, 63, 109, .94);
+$color_rangoon_green_approx: #1e1e1e;
+$color_steel_gray_approx: #271c37;
+$color_fog_approx: #dfcbfc;
+$color_prelude_approx: #c8b1e8;
+$color_deluge_approx: #836ba4;
+$color_mulled_wine_60_approx: rgba(82, 63, 109, .6);
+$color_mulled_wine_80_approx: rgba(82, 63, 109, .8);
+$color_chicago_approx: #575757;
+$color_silver_approx: #bfbfbf;
+$color_picton_blue_approx: #39b3e6;
+$color_shark_approx: #2a2a2a;
+$footbgimgOverlay: true !default;
+
+
+a {
+    color: $color_mulled_wine_approx;
+    &:hover {
+        color: $black;
+        text-decoration: none;
+    }
+    &:focus {
+        color: $black;
+        text-decoration: none;
+    }
+}
+.btn-primary {
+    background: $color_mulled_wine_approx;
+    &:hover {
+        background: $black;
+    }
+    &:focus {
+        background: $black;
+    }
+    &:active {
+        background: $black;
+    }
+    &.active {
+        background: $black;
+    }
+    &.disabled {
+        background: $black;
+    }
+}
+.btn-primary[disabled] {
+    background: $black;
+}
+.navbar-light {
+    .navbar-brand {
+        background: $color_mulled_wine_approx;
+    }
+    .navbar-nav {
+        .nav-link {
+            &.open {
+                color: $black;
+                &:focus {
+                    color: $black;
+                }
+                &:hover {
+                    color: $black;
+                }
+            }
+            &.active {
+                color: $black;
+                &:focus {
+                    color: $black;
+                }
+                &:hover {
+                    color: $black;
+                }
+            }
+            &:focus {
+                color: $black;
+            }
+            &:hover {
+                color: $black;
+            }
+        }
+        .open > .nav-link {
+            color: $black;
+            &:focus {
+                color: $black;
+            }
+            &:hover {
+                color: $black;
+            }
+        }
+        .active > .nav-link {
+            color: $black;
+            &:focus {
+                color: $black;
+            }
+            &:hover {
+                color: $black;
+            }
+        }
+    }
+}
+.dropdown-submenu {
+    &:hover > a {
+        color: $black;
+        border-color: $black;
+        &:after {
+            border-left-color: $black;
+        }
+    }
+    &:focus > a {
+        color: $black;
+        border-color: $black;
+    }
+}
+    /* .header-main {
+        background: $black;
+        .navbar {
+            .nav {
+                > li > a {
+                    &:focus {
+                        background: $color_mulled_wine_approx;
+                    }
+                    &:hover {
+                        background: $color_mulled_wine_approx;
+                    }
+                }
+                > .active > a {
+                    background: $color_mulled_wine_approx;
+                    &:hover {
+                        background: $color_mulled_wine_approx;
+                    }
+                    &:focus {
+                        background: $color_mulled_wine_approx;
+                    }
+                }
+                li.dropdown {
+                    &.open {
+                        > .dropdown-toggle {
+                            background: $color_mulled_wine_approx;
+                        }
+                        &.active > .dropdown-toggle {
+                            background: $color_mulled_wine_approx;
+                        }
+                    }
+                    &.active > .dropdown-toggle {
+                        background: $color_mulled_wine_approx;
+                    }
+                }
+            }
+            .nav-collapse.active {
+                border-top-color: $color_mulled_wine_50_approx;
+                .nav {
+                    .dropdown-submenu.open > a {
+                        background: $black;
+                    }
+                    .dropdown-menu .dropdown-submenu.open > a {
+                        background: $black;
+                    }
+                }
+            }
+            .btn-navbar .icon-bar {
+                background: $color_mulled_wine_approx;
+            }
+        }
+        .dropdown-menu {
+            background-color: $color_martinique_approx;
+            > li > a {
+                &:hover {
+                    background: $black;
+                }
+                &:focus {
+                    background: $black;
+                }
+            }
+        }
+        .dropdown-submenu {
+            &:hover > a {
+                background: $black;
+            }
+            &:focus > a {
+                background: $black;
+            }
+        }
+    }
+
+    .navbar {
+            .nav {
+                > li > a {
+                    &:focus {
+                        background: $black;
+                    }
+                    &:hover {
+                        background: $black;
+                    }
+                    .caretup {
+                        color: $color_martinique_approx;
+                    }
+                }
+                > .active > a {
+                    background: $black;
+                    &:hover {
+                        background: $black;
+                    }
+                    &:focus {
+                        background: $black;
+                    }
+                }
+                li.dropdown {
+                    &.open {
+                        > .dropdown-toggle {
+                            background: $black;
+                        }
+                        &.active > .dropdown-toggle {
+                            background: $black;
+                        }
+                    }
+                    &.active > .dropdown-toggle {
+                        background: $black;
+                    }
+                }
+            }
+            .nav-collapse.active {
+                border-top-color: $black_50;
+                .nav {
+                    .dropdown-submenu.open > a {
+                        background: $color_mulled_wine_approx;
+                    }
+                    .dropdown-menu .dropdown-submenu.open > a {
+                        background: $color_mulled_wine_approx;
+                    }
+                }
+            }
+        }
+         .dropdown-menu {
+            background: $color_martinique_approx;
+            > li > a {
+                &:hover {
+                    background: $color_mulled_wine_approx;
+                }
+                &:focus {
+                    background: $color_mulled_wine_approx;
+                }
+            }
+        }
+        .dropdown-submenu {
+            &:hover > a {
+                background: $color_mulled_wine_approx;
+            }
+            &:focus > a {
+                background: $color_mulled_wine_approx;
+            }
+        } */
+#site-header {
+    .header-main {
+        background: $color_mulled_wine_approx;
+        a.nav-link {
+            &:hover {
+                background: $black;
+            }
+            &:focus {
+                background: $black;
+            }
+        }
+        .dropdown-menu {
+            a {
+                background: $black;
+                &:hover {
+                    background: $color_mulled_wine_approx;
+                }
+                &:focus {
+                    background: $color_mulled_wine_approx;
+                }
+            }
+            .dropdown-item {
+                background: $black;
+                &:hover {
+                    background: $color_mulled_wine_approx;
+                }
+                &:focus {
+                    background: $color_mulled_wine_approx;
+                }
+            }
+        }
+        .course-link {
+            .custom-dropdown-menu {
+                .cols-wrap {
+                    background: $black;
+                }
+                .cols {
+                    > h6 {
+                        border-bottom-color: $color_mulled_wine_approx;
+                    }
+                    > ul > li {
+                        > a {
+                            &:hover {
+                                background: $color_mulled_wine_approx;
+                            }
+                            &:focus {
+                                background: $color_mulled_wine_approx;
+                            }
+                        }
+                        &.active > a {
+                            background: $black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 980px) {
+    #site-header {
+        /* .header-top .navbar .nav > .dropdown:hover > .dropdown-toggle {
+            background: $color_mulled_wine_approx;
+        } */
+        .header-main .navbar .nav > .dropdown:hover > .dropdown-toggle {
+            background: $black;
+            .caretup {
+                display: block;
+            }
+        }
+    }
+    /* .dir-ltr #site-header .header-top .navbar .nav > li + li:before {
+        color: $color_storm_dust_approx;
+    }
+    .dir-rtl #site-header .header-top .navbar .nav > li + li:after {
+        color: $color_storm_dust_approx;
+    } */
+}
+
+$overlayCheck: $white;
+
+
+.new-courses-block {
+    background: $color_mulled_wine_approx;
+    .thumb {
+        background: $black;
+        border-color: $black;
+    }
+    .info p {
+        color: $white;
+    }
+}
+.categories-block {
+    .slider-nav {
+        .nav-item {
+            color: $white;
+            background: $color_mulled_wine_approx;
+        }
+        button.nav-item {
+            &:hover {
+                color: $white;
+                background: $black;
+            }
+        }
+    }
+    .thumb {
+        background: $white;
+        border-color: $color_celeste_approx;
+    }
+    .titlebar h2 {
+        color: $color_mulled_wine_approx;
+    }
+    .wrapper:hover .thumb-overlay {
+        background: $color_mulled_wine_80_approx;
+    }
+}
+#site-footer {
+    .footer-bottom {
+        background: $black;
+    }
+    .footer-main .bgtrans-overlay {
+        background: $color_mulled_wine_94_approx;
+    }
+    .footer-links ul li a {
+        &:hover {
+            color: $color_rangoon_green_approx;
+        }
+        &:focus {
+            color: $color_rangoon_green_approx;
+        }
+    }
+    .social-media ul li {
+        border-color: $white;
+    }
+}
+input {
+    &.form-submit {
+        background: $color_mulled_wine_approx;
+        border-color: $color_mulled_wine_approx;
+        &:hover {
+            background: $black;
+            border-color: $black;
+        }
+        &:focus {
+            background: $black;
+            border-color: $black;
+        }
+        &:active {
+            background: $black;
+            border-color: $black;
+            background-color: $black;
+        }
+        &.active {
+            background: $black;
+            border-color: $black;
+            background-color: $black;
+        }
+        &.disabled {
+            background: $black;
+            border-color: $black;
+        }
+    }
+    &#id_submitbutton {
+        background: $color_mulled_wine_approx;
+        border-color: $color_mulled_wine_approx;
+        &:hover {
+            background: $black;
+            border-color: $black;
+        }
+        &:focus {
+            background: $black;
+            border-color: $black;
+        }
+        &:active {
+            background: $black;
+            border-color: $black;
+            background-color: $black;
+        }
+        &.active {
+            background: $black;
+            border-color: $black;
+            background-color: $black;
+        }
+        &.disabled {
+            background: $black;
+            border-color: $black;
+        }
+    }
+    &#id_submitbutton2 {
+        background: $color_mulled_wine_approx;
+        border-color: $color_mulled_wine_approx;
+        &:hover {
+            background: $black;
+            border-color: $black;
+        }
+        &:focus {
+            background: $black;
+            border-color: $black;
+        }
+        &:active {
+            background: $black;
+            border-color: $black;
+            background-color: $black;
+        }
+        &.active {
+            background: $black;
+            border-color: $black;
+            background-color: $black;
+        }
+        &.disabled {
+            background: $black;
+            border-color: $black;
+        }
+    }
+    &#id_saveanddisplay {
+        background: $color_mulled_wine_approx;
+        border-color: $color_mulled_wine_approx;
+        &:hover {
+            background: $black;
+            border-color: $black;
+        }
+        &:focus {
+            background: $black;
+            border-color: $black;
+        }
+        &:active {
+            background: $black;
+            border-color: $black;
+            background-color: $black;
+        }
+        &.active {
+            background: $black;
+            border-color: $black;
+            background-color: $black;
+        }
+        &.disabled {
+            background: $black;
+            border-color: $black;
+        }
+    }
+    &.form-submit[disabled] {
+        background: $black;
+        border-color: $black;
+    }
+    &#id_submitbutton[disabled] {
+        background: $black;
+        border-color: $black;
+    }
+    &#id_submitbutton2[disabled] {
+        background: $black;
+        border-color: $black;
+    }
+    &#id_saveanddisplay[disabled] {
+        background: $black;
+        border-color: $black;
+    }
+    &.btn-primary[type="submit"]:active:focus {
+        color: $color_chicago_approx;
+        background: $color_silver_approx;
+    }
+}
+table {
+    &.flexible {
+        thead th {
+            background: $color_mulled_wine_approx;
+        }
+        tbody th {
+            color: $color_mulled_wine_approx;
+        }
+    }
+    &.rolecap {
+        thead tr th {
+            background: $color_mulled_wine_approx;
+        }
+        tr.header .header {
+            color: $color_mulled_wine_approx;
+        }
+    }
+}
+.generaltable {
+    thead th {
+        background: $color_mulled_wine_approx;
+    }
+    tbody th {
+        color: $color_mulled_wine_approx;
+    }
+}
+.loginbox {
+    input[type="submit"] {
+        background: $color_mulled_wine_approx;
+        border-color: $color_mulled_wine_approx;
+        &:hover {
+            background: $black;
+            border-color: $black;
+        }
+        &:focus {
+            background: $black;
+            border-color: $black;
+        }
+        &:active {
+            background: $black;
+            border-color: $black;
+        }
+    }
+    .signuppanel .subcontent ol li a {
+        &:hover {
+            color: $color_mulled_wine_approx;
+        }
+        &:focus {
+            color: $color_mulled_wine_approx;
+        }
+    }
+}
+.coursebox {
+    > .info > .coursename a {
+        color: $color_mulled_wine_approx;
+    }
+    .content .teachers li a {
+        color: $color_mulled_wine_approx;
+    }
+}
+.forumpost {
+    .options {
+        .footer {
+            > a:hover {
+                color: $color_mulled_wine_approx;
+            }
+            > a:focus {
+                color: $color_mulled_wine_approx;
+            }
+        }
+        .commands > a {
+            &:hover {
+                color: $color_mulled_wine_approx;
+            }
+            &:focus {
+                color: $color_mulled_wine_approx;
+            }
+        }
+    }
+    .subject > a {
+        &:hover {
+            color: $color_mulled_wine_approx;
+        }
+        &:focus {
+            color: $color_mulled_wine_approx;
+        }
+    }
+}
+.blog_entry {
+    .commands a {
+        &:hover {
+            color: $color_mulled_wine_approx;
+        }
+        &:focus {
+            color: $color_mulled_wine_approx;
+        }
+    }
+    .tags .officialblogtags a {
+        &:hover {
+            color: $color_mulled_wine_approx;
+        }
+        &:focus {
+            color: $color_mulled_wine_approx;
+        }
+    }
+    .content > .mdl-left {
+        background: $color_fog_approx;
+    }
+}
+.comment-link {
+    color: $color_steel_gray_approx;
+}
+.comment-list {
+    color: $color_steel_gray_approx;
+    li {
+        background: $color_prelude_approx;
+        border-color: $color_deluge_approx;
+    }
+}
+.comment-area {
+    textarea {
+        border-color: $color_deluge_approx;
+    }
+    textarea[cols] {
+        border-color: $color_deluge_approx;
+    }
+    .fd > a {
+        background: $color_mulled_wine_approx;
+        &:hover {
+            background: $black;
+        }
+        &:focus {
+            background: $black;
+        }
+    }
+}
+.dropdown-item {
+    &:hover {
+        background: $color_mulled_wine_approx;
+    }
+    &:focus {
+        background: $color_mulled_wine_approx;
+    }
+}
+.list-group-item-action {
+    color: $color_mulled_wine_approx;
+}
+.page-link {
+    color: $color_mulled_wine_approx;
+}
+.our-team {
+    h2 {
+        color: $color_mulled_wine_approx;
+    }
+    .card-block {
+        .card-content .card-header h6 {
+            color: $color_mulled_wine_approx;
+        }
+        .card-img .social-link {
+            background: $color_mulled_wine_80_approx;
+            .icon-link {
+                border: 2px solid $black;
+                &:hover {
+                    background: $black;
+                }
+            }
+        }
+    }
+    .slider-nav button {
+        background: $color_mulled_wine_approx;
+        &:hover {
+            color: $white;
+            background: $black;
+        }
+    }
+}
+.homepage-carousel {
+    .camera_fakehover {
+    .camera_prev {
+        background: rgba(82, 63, 109, 0.7);
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        > span {
+            background: none;
+        }
+        &:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+    }
+    .camera_next {
+        background: rgba(82, 63, 109, 0.7);
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        > span {
+            background: none;
+        }
+        &:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+    }
+    }
+    .slide-text {
+        a.btn {
+            background: $color_mulled_wine_approx;
+        }
+
+        &.text-fill-content {
+            h1 {
+                background: $white;
+            }
+        }
+        &.text-item-content {
+            background: none;
+            h1 {
+                color: $color_mulled_wine_approx;
+            }
+
+        }
+        &.double-heading-content {
+            .heading-content {
+                border-left: 5px solid $color_mulled_wine_approx;
+            }
+        }
+    }
+}
+button.btn-primary {
+    &:active {
+        &:hover {
+            color: $white;
+            background: $black;
+        }
+        &:focus {
+            color: $white;
+            background: $black;
+        }
+    }
+    &.active {
+        &:hover {
+            color: $white;
+            background: $black;
+        }
+        &:focus {
+            color: $white;
+            background: $black;
+        }
+        &.focus {
+            color: $white;
+            background: $black;
+        }
+    }
+    &.focus:active {
+        color: $white;
+        background: $black;
+    }
+}
+.dropdown-menu > li > a {
+    &:hover {
+        color: $color_mulled_wine_approx;
+        border-color: $color_mulled_wine_approx;
+    }
+    &:focus {
+        color: $color_mulled_wine_approx;
+        border-color: $color_mulled_wine_approx;
+    }
+}
+.home-page-carousel .carousel-control {
+    background: $color_mulled_wine_approx;
+    border-color: $color_martinique_approx;
+}
+.frontpage-siteinfo h1 {
+    color: $color_mulled_wine_approx;
+}
+.frontpage-testimonials .bgtrans-overlay {
+    background: $color_mulled_wine_90_approx;
+}
+.jumbo-viewall .inner-wrap {
+    h2 {
+        color: $color_mulled_wine_approx;
+    }
+    p {
+        color: $black;
+    }
+    .btn-jumbo {
+        background: $color_mulled_wine_approx;
+    }
+    a {
+        &:hover {
+            background: $black;
+        }
+        &:focus {
+            background: $black;
+        }
+    }
+}
+.breadcrumb > li > a {
+    color: $color_chicago_approx;
+}
+.moodle-actionmenu.show[data-enhanced] .menu a:hover {
+    color: $color_mulled_wine_approx;
+    border-color: $color_mulled_wine_approx;
+}
+textarea:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="text"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="password"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="datetime"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="datetime-local"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="date"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="month"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="time"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="week"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="number"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="email"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="url"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="search"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="tel"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="color"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+.uneditable-input:focus {
+    border-color: $color_mulled_wine_approx;
+}
+select:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="file"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="radio"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+input[type="checkbox"]:focus {
+    border-color: $color_mulled_wine_approx;
+}
+.path-admin .buttons {
+    input[type="submit"] {
+        background: $color_mulled_wine_approx;
+        border-color: $color_mulled_wine_approx;
+        &:hover {
+            background: $black;
+            border-color: $black;
+        }
+        &:focus {
+            background: $black;
+            border-color: $black;
+        }
+        &:active {
+            background: $black;
+            border-color: $black;
+            background-color: $black;
+        }
+        &.active {
+            background: $black;
+            border-color: $black;
+            background-color: $black;
+        }
+        &.disabled {
+            background: $black;
+            border-color: $black;
+        }
+    }
+    input[type="submit"][disabled] {
+        background: $black;
+        border-color: $black;
+    }
+}
+td.submit {
+    input {
+        background: $color_mulled_wine_approx;
+        border-color: $color_mulled_wine_approx;
+        &:hover {
+            background: $black;
+            border-color: $black;
+        }
+        &:focus {
+            background: $black;
+            border-color: $black;
+        }
+        &:active {
+            background: $black;
+            border-color: $black;
+            background-color: $black;
+        }
+        &.active {
+            background: $black;
+            border-color: $black;
+            background-color: $black;
+        }
+        &.disabled {
+            background: $black;
+            border-color: $black;
+        }
+    }
+    input[disabled] {
+        background: $black;
+        border-color: $black;
+    }
+}
+.path-mod-forum .forumheaderlist thead .header {
+    background: $color_mulled_wine_approx;
+}
+.addbloglink > a {
+    background: $color_mulled_wine_approx;
+    &:hover {
+        background: $black;
+    }
+    &:focus {
+        background: $black;
+    }
+}
+.course_category_tree .category > .info {
+    background: $color_mulled_wine_approx;
+}
+.course-content .topics h3 {
+    color: $color_mulled_wine_approx;
+}
+.block .header {
+    background: $color_mulled_wine_approx;
+}
+.block_navigation .block_tree {
+    .active_tree_node {
+        background-color: $color_mulled_wine_approx;
+    }
+    .tree_item:hover {
+        background-color: $color_mulled_wine_approx;
+    }
+}
+.block_settings .block_tree {
+    .active_tree_node {
+        background-color: $color_mulled_wine_approx;
+    }
+    .tree_item:hover {
+        background-color: $color_mulled_wine_approx;
+    }
+}
+.custom-login-page .form-box {
+    box-shadow: 0 0 0 3px $color_mulled_wine_60_approx;
+    .fbox-head {
+        background: $color_mulled_wine_approx;
+    }
+    .fbox-body {
+        .form-fields input:focus {
+            border-color: $color_mulled_wine_approx;
+        }
+        .form-action input[type="submit"] {
+            background: $color_mulled_wine_approx;
+            &:hover {
+                background: $black;
+            }
+            &:focus {
+                background: $black;
+            }
+            &:active {
+                background: $black;
+            }
+        }
+    }
+}
+.custom-side-block .nav {
+    > li > a {
+        &:hover {
+            background: $color_mulled_wine_approx;
+        }
+        &:focus {
+            background: $color_mulled_wine_approx;
+        }
+    }
+    > .expanded > a {
+        background: $color_mulled_wine_approx;
+    }
+}
+.custom-listing .box .box-content .stat-info span i {
+    color: $color_mulled_wine_approx;
+}
+.custom-listing-01 .box .box-content .stat-info span i {
+    color: $color_mulled_wine_approx;
+}
+.site-info h2 {
+    color: $color_mulled_wine_approx;
+    b {
+        color: $black;
+    }
+}
+
+
+.my-courses .mycourses-block {
+    .available-content:hover .available-overlay {
+        background: $color_mulled_wine_80_approx;
+    }
+}
+#header {
+    background-color: $black;
+    .header-top {
+        .dropdown .dropdown-menu a {
+            background-color: #000;
+            &:hover {
+                background: $color_mulled_wine_approx;
+            }
+            &:focus {
+                background: $color_mulled_wine_approx;
+            }
+        }
+        .popover-region-header-actions a {
+            color: $color_chicago_approx;
+        }
+    }
+}
+.block-region .block .card-block .card-title {
+    background: $color_mulled_wine_approx;
+}
+.messaging-area-container .messaging-area .contacts-area .tabs .tab {
+    &.selected {
+        color: $color_chicago_approx;
+    }
+    &:hover {
+        color: $color_chicago_approx;
+    }
+}
+.page-item.active .page-link {
+    background: $color_mulled_wine_approx;
+    border-color: $color_mulled_wine_approx;
+    &:focus {
+        background: $color_mulled_wine_approx;
+        border-color: $color_mulled_wine_approx;
+    }
+    &:hover {
+        background: $color_mulled_wine_approx;
+        border-color: $color_mulled_wine_approx;
+    }
+}
+#site-news-forum h2 {
+    color: $color_mulled_wine_approx;
+}
+#frontpage-course-list {
+    .available-courses {
+        background: $color_mulled_wine_approx;
+    }
+}
+#frontpage-course-list h2 {
+    color: $color_mulled_wine_approx;
+}
+
+#frontpage-category-combo h2 {
+    color: $color_mulled_wine_approx;
+}
+#coursesearch input[type="submit"] {
+    background: $color_mulled_wine_approx;
+    &:hover {
+        background-color: $black;
+    }
+    &:focus {
+        background-color: $black;
+    }
+}
+#backToTop:hover {
+    background-color: $color_mulled_wine_approx;
+}
+.nz-example-content .dropdown-menu > li > a {
+    &:hover {
+        color: $white;
+        background: $color_mulled_wine_approx;
+    }
+    &:focus {
+        color: $white;
+        background: $color_mulled_wine_approx;
+    }
+}
+.comment-message .user > a {
+    &:hover {
+        background: $black;
+    }
+    &:focus {
+        background: $black;
+    }
+}
+.loadmore-btn button:hover {
+    background-color: $color_shark_approx;
+}
+.loadmore-btn button:active {
+    border-color: $color_shark_approx;
+}
+table.quizreviewsummary th.cell {
+    background-color: $color_mulled_wine_approx;
+}
+.camera_thumbs_cont ul li.cameracurrent > img {
+    border-color: $color_mulled_wine_approx;
+}
+#adminsettings .enlightlite-toggle-head h3 .toggle-icon {
+    i {
+        color: $color_mulled_wine_approx;
+    }
+}
+.box .search-block {
+    h2 {
+        color: $color_mulled_wine_approx;
+        &:before {
+            color: $color_mulled_wine_approx;
+        }
+    }
+}
+#frontpage-course-list.frontpageblock-default {
+    background: none;
+    h2 {
+        color: $color_mulled_wine_approx;
+        &:before {
+            color: $color_mulled_wine_approx;
+        }
+    }
+    &.frontpage-mycourse-list {
+        background: none;
+        h2 {
+            color: $color_mulled_wine_approx;
+            &:before {
+                color: $color_mulled_wine_approx;
+            }
+        }
+    }
+}
+#frontpage-category-names {
+    background: $color_mulled_wine_approx;
+    .frontpageblock-default {
+        background: none;
+        h2 {
+            color: $color_mulled_wine_approx;
+            &:before {
+                color: $color_mulled_wine_approx;
+            }
+        }
+    }
+    .course_category_tree .content .subcategories .category .info {
+        &:hover {
+            .categoryname {
+                .numberofcourse {
+                    color: $color_mulled_wine_approx;
+                }
+                a {
+                    color: $color_mulled_wine_approx;
+                }
+            }
+        }
+        .categoryname {
+            &:hover {
+                .numberofcourse {
+                    color: $color_mulled_wine_approx;
+                }
+                a {
+                    color: $color_mulled_wine_approx;
+                }
+            }
+        }
+    }
+}
+#header.theme-top-header {
+    background: $color_mulled_wine_approx;
+}
+#site-header .header-main.theme-main-header  {
+    border-bottom: 2px solid $color_mulled_wine_approx;
+    .navbar-toggleable-md a {
+        color: $color_mulled_wine_approx;
+        &:hover {
+            background: $color_mulled_wine_approx;
+        }
+        &:focus {
+            background: $color_mulled_wine_approx;
+        }
+    }
+    button:before {
+        color: $color_mulled_wine_approx;
+    }
+}
+.dir-rtl .box .search-block h2:after {
+    color: $color_mulled_wine_approx;
+}
