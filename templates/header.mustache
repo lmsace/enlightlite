@@ -34,31 +34,33 @@
 
     <div class="header-main {{#headerStyle}} theme-main-header {{/headerStyle}}">
 
-            <div class="container">
+        <div class="container">
 
-                <a href="{{{ config.wwwroot }}}/?redirect=0" class="navbar-brand {{# logourl }}has-logo{{/ logourl }}
-                    {{^ logourl }}
-                        hidden-sm-down
-                    {{/ logourl }}
-                        ">
-                        {{# logourl}}
-                        <span class="logo ">
-                            <img src="{{logourl}}" alt="{{sitename}}">
-                        </span>
-                        {{/ logourl}}
+            <a href="{{{ config.wwwroot }}}/?redirect=0" class="navbar-brand {{# logourl }}has-logo{{/ logourl }}
+                {{^ logourl }}
+                    hidden-sm-down
+                {{/ logourl }}
+                    ">
+                    {{# logourl}}
+                    <span class="logo ">
+                        <img src="{{logourl}}" alt="{{sitename}}">
+                    </span>
+                    {{/ logourl}}
 
-                    {{^ logourl }}
-                        <span class="site-name hidden-sm-down">{{{ sitename }}}</span>
-                    {{/ logourl }}
-                </a>
+                {{^ logourl }}
+                    <span class="site-name hidden-sm-down">{{{ sitename }}}</span>
+                {{/ logourl }}
+            </a>
 
-                <button class="{{{primaryclass}}}" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+            <button class="{{{primaryclass}}}" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
 
-                <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+            <div class="collapse navbar-toggleable-md" id="navbarResponsive">
 
-                    {{{output.primarymenu}}}
+                {{{output.primarymenu}}}
 
-                </div>
             </div>
+        </div>
+
+        {{{ output.standard_after_main_region_html }}}
     </div>
 </div>

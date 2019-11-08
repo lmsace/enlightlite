@@ -403,7 +403,7 @@ function theme_enlightlite_render_slideimg($p, $sliname) {
  * @param type|bool $format
  * @return bool
  */
-function theme_enlightlite_get_setting($setting, $format = false) {
+function theme_enlightlite_get_setting($setting, $format = true) {
     global $CFG;
     require_once($CFG->dirroot . '/lib/weblib.php');
     static $theme;
@@ -626,7 +626,7 @@ function theme_enlightlite_marketingspot1() {
 function theme_enlightlite_category_menu() {
     global $CFG, $PAGE;
     $categoryid = optional_param('categoryid', null, PARAM_INT);
-    $category = coursecat::get($categoryid);
+    $category = core_course_category::get($categoryid);
     $html = '';
     if ($category === null) {
         $selectedparents = array();
@@ -642,7 +642,7 @@ function theme_enlightlite_category_menu() {
     $catatlevel = array_unique($catatlevel);
 
     require_once($CFG->libdir. '/coursecatlib.php');
-    $listing = coursecat::get(0)->get_children();
+    $listing = core_course_category::get(0)->get_children();
     $html .= '<ul class="nav">';
     foreach ($listing as $listitem) {
         $subcategories = array();

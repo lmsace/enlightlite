@@ -22,7 +22,6 @@ $color_valencia_60_approx: rgba(225, 77, 67, .6);
 $color_valencia_80_approx: rgba(225, 77, 67, .8);
 $color_chicago_approx: #575757;
 $color_silver_approx: #bfbfbf;
-$color_picton_blue_approx: #39b3e6;
 $footbgimgOverlay: true !default;
 
 a {
@@ -921,8 +920,35 @@ td.submit {
 .course-content .topics h3 {
     color: $color_valencia_approx;
 }
-.block .header {
-    background: $color_valencia_approx;
+.block {
+    .header {
+        background: $color_valencia_approx;
+    }
+    .block-cards {
+        .progress-bar {
+            background: $color_valencia_approx;
+        }
+        a.coursename {
+            color: $color_valencia_approx;
+            i {
+                color: $color_valencia_approx;
+            }
+            &:hover {
+                color: $color_shark_approx;
+                i {
+                    color: $color_shark_approx;
+                }
+            }
+        }
+    }
+    .card-block .action-menu .dropdown .dropdown-menu a {
+        &:hover {
+            background: $color_valencia_approx;
+        }
+        &:focus {
+            background: $color_valencia_approx;
+        }
+    }
 }
 .block_navigation .block_tree {
     .active_tree_node {
@@ -1047,7 +1073,14 @@ td.submit {
 #frontpage-course-list h2 {
     color: $color_valencia_approx;
 }
-
+#frontpage-available-course-list {
+    .available-courses {
+        background: $color_valencia_approx;
+    }
+}
+#frontpage-available-course-list h2 {
+    color: $color_valencia_approx;
+}
 #frontpage-category-combo h2 {
     color: $color_valencia_approx;
 }
@@ -1145,6 +1178,12 @@ table.quizreviewsummary th.cell {
                 color: $color_valencia_approx;
             }
         }
+    }
+}
+#frontpage-available-course-list.frontpageblock-default {
+    background: none;
+    h2 {
+        color: $color_valencia_approx;
     }
 }
 #frontpage-category-names {
@@ -1264,3 +1303,190 @@ button.closebutton {
         background-color: $color_valencia_approx;
     }
 }
+
+/**moodle-3.6**/
+
+.btn-group {
+    .dropdown-menu {
+        .dropdown-item {
+            &.active {
+                background: $color_valencia_approx;
+            }
+            &:hover {
+                color: $white;
+                background: $color_valencia_approx;
+            }
+        }
+    }
+}
+.block-timeline {
+    .dropdown-menu {
+        .dropdown-item {
+            &.active {
+                background: $color_valencia_approx;
+            }
+        }
+    }
+}
+.btn.btn-outline-secondary.dropdown-toggle {
+    &:hover {
+        color: $white;
+        background: $color_valencia_approx;
+    }
+    &:focus {
+        color: $white;
+        background: $color_valencia_approx;
+        box-shadow: none;
+        &:active {
+            color: $white;
+            box-shadow: none;
+        }
+    }
+    &:active {
+        color: $white;
+        background: $color_valencia_approx;
+    }
+}
+
+.block-region .block .card-body .block-myoverview {
+    .card-title {
+        a {
+            color: $color_valencia_approx;
+        }
+    }
+    .dropdown-menu > li > a {
+        &:hover {
+            color: $color_valencia_approx;
+        }
+        &:focus {
+            color: $color_valencia_approx;
+        }
+        &:active {
+            color: $color_valencia_approx;
+            background: none;
+        }
+        &.active {
+            background: $color_valencia_approx;
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+}
+.activity-navigation {
+    a.btn.btn-link {
+        color: $color_valencia_approx;
+        &:hover {
+            color: $color_valencia_approx;
+        }
+    }
+}
+.path-course-view {
+    #page-header {
+        .action-menu .menubar {
+            .dropdown-menu.show {
+                .dropdown-item {
+                    &:first-child {
+                        background-color: $color_valencia_approx;
+                        a {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+#site-header .header-main .message-drawer {
+    .header-container {
+        .badge {
+            background-color: $color_valencia_approx !important;
+        }
+    }
+    .body-container {
+        .nav {
+            .nav-item {
+                a.nav-link {
+                    background: $color_shark_approx;
+                    &:hover {
+                        background: $color_valencia_approx;
+                    }
+                    &:focus {
+                        background: $color_valencia_approx;
+                    }
+                    &.active.show {
+                        background: $color_valencia_approx;
+                    }
+                }
+            }
+        }
+        .view-overview-body {
+            .section {
+                .badge {
+                    background-color: $color_valencia_approx !important;
+                }
+                .btn {
+                    &:focus {
+                        color: $color_valencia_approx;
+                    }
+                }
+            }
+        }
+        .custom-control.custom-radio {
+            .custom-control-input:checked~.custom-control-label {
+                &:before {
+                    background-color: $color_valencia_approx;
+                }
+            }
+            .custom-control-input:active~.custom-control-label {
+                &:before {
+                    background-color: rgba(225, 77, 67,.25);
+                }
+            }
+            .custom-control-input:checked:focus~.custom-control-label {
+                &:before {
+                    background-color: $color_valencia_approx;
+                    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(225, 77, 67,.25);
+                }
+            }
+        }
+        .switch {
+            input:checked + label {
+                &:before {
+                    background-color: $color_valencia_approx;
+                }
+            }
+            input:focus + label {
+                &:before {
+                    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(225, 77, 67,.25);
+                }
+            }
+            input:checked:focus + label {
+                &:before {
+                    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(225, 77, 67,.25);
+                }
+            }
+        }
+    }
+    a {
+        .text-primary {
+           color: $color_valencia_approx!important;
+        }
+        &:hover {
+            color: $color_shark_approx;
+            .text-primary {
+                color: $color_shark_approx!important;
+            }
+        }
+         &.dropdown-item {
+            color: $white;
+        }
+    }
+}
+.action-menu .menubar .dropdown-menu .dropdown-item:active {
+    background: $color_valencia_approx;
+    a {
+        color: $white;
+    }
+}
+

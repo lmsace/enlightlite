@@ -19,7 +19,6 @@ $color_mulled_wine_60_approx: rgba(82, 63, 109, .6);
 $color_mulled_wine_80_approx: rgba(82, 63, 109, .8);
 $color_chicago_approx: #575757;
 $color_silver_approx: #bfbfbf;
-$color_picton_blue_approx: #39b3e6;
 $color_shark_approx: #2a2a2a;
 $footbgimgOverlay: true !default;
 
@@ -831,8 +830,38 @@ td.submit {
 .course-content .topics h3 {
     color: $color_mulled_wine_approx;
 }
-.block .header {
-    background: $color_mulled_wine_approx;
+.block {
+    .header {
+        background: $color_mulled_wine_approx;
+    }
+    .minicalendar td.today a {
+        background: $black;
+    }
+    .block-cards {
+        .progress-bar {
+            background: $color_mulled_wine_approx;
+        }
+        a.coursename {
+            color: $color_mulled_wine_approx;
+            i {
+                color: $color_mulled_wine_approx;
+            }
+            &:hover {
+                color: $black;
+                i {
+                    color: $black;
+                }
+            }
+        }
+    }
+    .card-block .action-menu .dropdown .dropdown-menu a {
+        &:hover {
+            background: $color_mulled_wine_approx;
+        }
+        &:focus {
+            background: $color_mulled_wine_approx;
+        }
+    }
 }
 .block_navigation .block_tree {
     .active_tree_node {
@@ -965,7 +994,14 @@ td.submit {
 #frontpage-course-list h2 {
     color: $color_mulled_wine_approx;
 }
-
+#frontpage-available-course-list {
+    .available-courses {
+        background: $color_mulled_wine_approx;
+    }
+}
+#frontpage-available-course-list h2 {
+    color: $color_mulled_wine_approx;
+}
 #frontpage-category-combo h2 {
     color: $color_mulled_wine_approx;
 }
@@ -1048,13 +1084,10 @@ table.quizreviewsummary th.cell {
         }
     }
 }
-#frontpage-course-list.frontpageblock-default {
+#frontpage-course-list {
     background: none;
     h2 {
         color: $color_mulled_wine_approx;
-        &:before {
-            color: $color_mulled_wine_approx;
-        }
     }
     &.frontpage-mycourse-list {
         background: none;
@@ -1064,6 +1097,12 @@ table.quizreviewsummary th.cell {
                 color: $color_mulled_wine_approx;
             }
         }
+    }
+}
+#frontpage-available-course-list {
+    background: none;
+    h2 {
+        color: $color_mulled_wine_approx;
     }
 }
 #frontpage-category-names {
@@ -1184,5 +1223,226 @@ button.closebutton {
     &:hover {
         border-color: $color_mulled_wine_approx;
         background-color: $color_mulled_wine_approx;
+    }
+}
+
+/**moodle-3.6**/
+
+.btn-group {
+    .dropdown-menu {
+        .dropdown-item {
+            &.active {
+                background: $color_mulled_wine_approx;
+            }
+            &:hover {
+                color: $white;
+                background: $color_mulled_wine_approx;
+            }
+            &:focus {
+                color: $white;
+                background: $color_mulled_wine_approx;
+            }
+            &:active {
+                color: $white;
+                background: $color_mulled_wine_approx;
+            }
+        }
+    }
+}
+.block-timeline {
+    .dropdown-menu {
+        .dropdown-item {
+            &.active {
+                background: $color_mulled_wine_approx;
+            }
+        }
+    }
+}
+.btn.btn-outline-secondary.dropdown-toggle {
+    &:hover {
+        color: $white;
+        background: $color_mulled_wine_approx;
+    }
+    &:focus {
+        color: $white;
+        background: $color_mulled_wine_approx;
+        box-shadow: none;
+        &:active {
+            color: $white;
+            box-shadow: none;
+        }
+    }
+    &:active {
+        color: $white;
+        background: $color_mulled_wine_approx;
+    }
+}
+
+.block-region .block .card-body .block-myoverview {
+    .card-title {
+        a {
+            color: $color_mulled_wine_approx;
+        }
+    }
+    .dropdown-menu > li > a {
+        &:hover {
+            color: $color_mulled_wine_approx;
+        }
+        &:focus {
+            color: $color_mulled_wine_approx;
+        }
+        &:active {
+            color: $color_mulled_wine_approx;
+            background: none;
+        }
+        &.active {
+            background: $color_mulled_wine_approx;
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+}
+.activity-navigation {
+    a.btn.btn-link {
+        color: $color_mulled_wine_approx;
+        &:hover {
+            color: $color_mulled_wine_approx;
+        }
+    }
+}
+.path-course-view {
+    #page-header {
+        .action-menu .menubar {
+            .dropdown-menu.show {
+                .dropdown-item {
+                    &:first-child {
+                        background-color: $color_mulled_wine_approx;
+                        a {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#site-header .header-main .message-drawer {
+    .header-container {
+        .badge {
+            background-color: $color_mulled_wine_approx !important;
+        }
+    }
+    .body-container {
+        .nav {
+            .nav-item {
+                a.nav-link {
+                    background: $black;
+                    &:hover {
+                        background: $color_mulled_wine_approx;
+                    }
+                    &:focus {
+                        background: $color_mulled_wine_approx;
+                    }
+                    &.active.show {
+                        background: $color_mulled_wine_approx;
+                    }
+                }
+            }
+        }
+        .view-overview-body {
+            .section {
+                .badge {
+                    background-color: $color_mulled_wine_approx !important;
+                }
+                .btn {
+                    &:focus {
+                        color: $color_mulled_wine_approx;
+                    }
+                }
+            }
+        }
+        .custom-control.custom-radio {
+            .custom-control-input:checked~.custom-control-label {
+                &:before {
+                    background-color: $color_mulled_wine_approx;
+                }
+            }
+            .custom-control-input:active~.custom-control-label {
+                &:before {
+                    background-color: rgba(82, 63, 109,.25);
+                }
+            }
+            .custom-control-input:checked:focus~.custom-control-label {
+                &:before {
+                    background-color: $color_mulled_wine_approx;
+                    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(82, 63, 109,.25);
+                }
+            }
+        }
+        .switch {
+            input:checked + label {
+                &:before {
+                    background-color: $color_mulled_wine_approx;
+                }
+            }
+            input:focus + label {
+                &:before {
+                    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(82, 63, 109,.25);
+                }
+            }
+            input:checked:focus + label {
+                &:before {
+                    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(82, 63, 109,.25);
+                }
+            }
+        }
+    }
+    a {
+        .text-primary {
+           color: $color_mulled_wine_approx!important;
+        }
+        &:hover {
+            color: $black;
+            .text-primary {
+                color: $black!important;
+            }
+        }
+        &.dropdown-item {
+            color: $white;
+        }
+    }
+}
+
+#region-main.has-blocks {
+    .dashboard-card-deck .dashboard-card .card-body {
+        .dropdown {
+            .dropdown-menu {
+                .dropdown-item {
+                    i.icon {
+                        color: $black;
+                    }
+                    &:hover i.icon {
+                        color: $white;
+                    }
+                    &:focus i.icon {
+                        color: $white;
+                    }
+                    &:active {
+                        background: $color_mulled_wine_approx;
+                        i.icon {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.action-menu .menubar .dropdown-menu .dropdown-item:active {
+    background: $color_mulled_wine_approx;
+    a {
+        color: $white;
     }
 }

@@ -37,11 +37,11 @@ function footer_template() {
     $copyright = theme_enlightlite_lang($copyright);
     $fb1title = theme_enlightlite_get_setting('footerbtitle1', 'format_html');
     $fb1title = theme_enlightlite_lang($fb1title);
-    $fb2title = theme_enlightlite_get_setting('footerbtitle2', 'format_text');
+    $fb2title = theme_enlightlite_get_setting('footerbtitle2', 'format_html');
     $fb2title = theme_enlightlite_lang($fb2title);
-    $fb3title = theme_enlightlite_get_setting('footerbtitle3', 'format_text');
+    $fb3title = theme_enlightlite_get_setting('footerbtitle3', 'format_html');
     $fb3title = theme_enlightlite_lang($fb3title);
-    $fb4title = theme_enlightlite_get_setting('footerbtitle4', 'format_text');
+    $fb4title = theme_enlightlite_get_setting('footerbtitle4', 'format_html');
     $fb4title = theme_enlightlite_lang($fb4title);
     $footerblink1 = theme_enlightlite_get_setting('footerdesc1');
     $footerblink1 = theme_enlightlite_lang($footerblink1);

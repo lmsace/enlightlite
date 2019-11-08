@@ -140,12 +140,12 @@ echo $OUTPUT->doctype() ?>
 
     <?php
     $mspot2status = theme_enlightlite_get_setting('marketingSpot2_status');
-    $msp2title = theme_enlightlite_get_setting('mspot2title', 'format_text');
+    $msp2title = theme_enlightlite_get_setting('mspot2title', 'format_html');
     $msp2title = theme_enlightlite_lang($msp2title);
-    $msp2desc = theme_enlightlite_get_setting('mspot2desc', 'format_text');
+    $msp2desc = theme_enlightlite_get_setting('mspot2desc', 'format_html');
     $msp2desc = theme_enlightlite_lang($msp2desc);
     $msp2url = theme_enlightlite_get_setting('mspot2url');
-    $msp2urltxt = theme_enlightlite_get_setting('mspot2urltext', 'format_text');
+    $msp2urltxt = theme_enlightlite_get_setting('mspot2urltext', 'format_html');
     $msp2urltxt = theme_enlightlite_lang($msp2urltxt);
     $mspot2urltarget = theme_enlightlite_get_setting('mspot2urltarget');
     $target = ($mspot2urltarget == '1') ? "_blank" : "_self";
@@ -175,7 +175,7 @@ echo $OUTPUT->doctype() ?>
 <script>
 require(['jquery'], function($) {
 
-    var parent = $("#frontpage-course-list #available-courses").parents('div#frontpage-course-list')
+    var parent = $("#frontpage-available-course-list #available-courses").parents('div#frontpage-available-course-list')
     parent.addClass('frontpage-available-course frontpageblock-theme');
     $("#mycourses").parents('div#frontpage-course-list').addClass('frontpage-mycourse-list');
 

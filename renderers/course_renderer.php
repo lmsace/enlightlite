@@ -59,7 +59,7 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
         $content .= html_writer::tag('h2', get_string('categories'));
 
         global $CFG;
-        require_once($CFG->libdir. '/coursecatlib.php');
+        //require_once($CFG->libdir. '/coursecatlib.php');
         $chelper = new coursecat_helper();
         $chelper->set_subcat_depth($CFG->maxcategorydepth)->set_show_courses(
         self::COURSECAT_SHOW_COURSES_COUNT)->set_categories_display_options(
@@ -75,7 +75,7 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
         $content .= html_writer::start_tag('div', array('class' => 'content'));
         $content .= html_writer::start_tag('div', array('class' => 'subcategories'));
         foreach ($categories as $key => $value) {
-            $content .= $this->enlightlite_coursecat_category($chelper, coursecat::get($key), 1);
+            $content .= $this->enlightlite_coursecat_category($chelper, core_course_category::get($key), 1);
         }
         $content .= html_writer::end_tag('div');
         $content .= html_writer::end_tag('div');
@@ -179,8 +179,8 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
      */
     public function top_course_menu() {
         global $CFG, $OUTPUT, $DB;
-        require_once($CFG->libdir. '/coursecatlib.php');
-        $list = coursecat::make_categories_list();
+        //require_once($CFG->libdir. '/coursecatlib.php');
+        $list = core_course_category::make_categories_list();
         $mclist = array();
 
         $sql = "SELECT a.category , a.cnt from ( SELECT category , count(category) as cnt FROM {course}";
@@ -199,7 +199,7 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
         $mclist1 = array_slice($mclist, 0, 4, true);
         $rcourseids = array();
         foreach ($mclist1 as $catid) {
-            $coursecat = coursecat::get($catid);
+            $coursecat = core_course_category::get($catid);
             $cname = $coursecat->get_formatted_name();
             $menuheader = '<div class="cols"><h6>'.$cname.'</h6><ul>'."\n";
             $menufooter = '</ul></div>'."\n";
@@ -257,7 +257,7 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
         $page = optional_param('page', '0', PARAM_INT);
         $categoryid = optional_param('categoryid', null, PARAM_INT);
         $ctype = optional_param('ctype', null, PARAM_TEXT);
-        $displaylist = coursecat::make_categories_list();
+        $displaylist = core_course_category::make_categories_list();
         if (empty($count)) {
             $countstr = '<p>No course available</p>';
         } else if ($count == "1") {
@@ -298,7 +298,7 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
 
         global $CFG, $OUTPUT, $PAGE, $DB;
         $coursecontainer = '';
-        require_once($CFG->libdir. '/coursecatlib.php');
+       // require_once($CFG->libdir. '/coursecatlib.php');
 
         $chelper = new coursecat_helper();
 
@@ -311,9 +311,9 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
 
         $chelper->set_attributes( array( 'class' => 'frontpage-course-list-all frontpageblock-theme' ) );
 
-        $courses = coursecat::get(0)->get_courses( $chelper->get_courses_display_options() );
+        $courses = core_course_category::get(0)->get_courses( $chelper->get_courses_display_options() );
 
-        $totalcount = coursecat::get(0)->get_courses_count( $chelper->get_courses_display_options() );
+        $totalcount = core_course_category::get(0)->get_courses_count( $chelper->get_courses_display_options() );
 
         $rcourseids = array_keys( $courses );
 
@@ -360,8 +360,8 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
                     $courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
 
                     if ($course instanceof stdClass) {
-                        require_once($CFG->libdir. '/coursecatlib.php');
-                        $course = new course_in_list($course);
+                      //  require_once($CFG->libdir. '/coursecatlib.php');
+                        $course = new core_course_list_element($course);
                     }
 
                     $imgurl = '';
@@ -391,11 +391,11 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
                             'src' => $imgurl,
                             'width' => "249",
                             'height' => "200",
-                            'alt' => $course->fullname ) );
+                            'alt' => $course->get_formatted_name() ) );
                     $container .= html_writer::end_tag('a');
                     $container .= html_writer::end_tag('div');
                     $container .= html_writer::tag('h6', html_writer::tag('a',
-                        $course->fullname,
+                        $course->get_formatted_name(),
                         array( 'href' => $courseurl ) ),
                     array('class' => 'title-text') );
                     $container .= html_writer::end_tag('div');
@@ -481,6 +481,7 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
         if ($PAGE->pagelayout == "frontpage") {
             $output .= html_writer::tag('h2', get_string('search_courses', 'theme_enlightlite'));
         }
+        $search = get_string ('search');
         $output .= html_writer::start_tag('form',
             array(
                 'id' => $formid,
@@ -496,7 +497,7 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
                 'placeholder' => get_string('typesearch', 'theme_enlightlite'),
                 'value' => s($value)));
         $output .= html_writer::empty_tag('input', array('type' => 'submit',
-            'value' => get_string('search', 'theme_enlightlite') ));
+            'value' => $search));
         $output .= html_writer::end_tag('fieldset');
         $output .= html_writer::end_tag('form');
         $output .= html_writer::end_tag('div');
@@ -540,5 +541,93 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
         return $rcourseids;
     }
 
+    protected function coursecat_coursebox(coursecat_helper $chelper, $course, $additionalclasses = '') {
+        global $CFG;
+        if (!isset($this->strings->summary)) {
+            $this->strings->summary = get_string('summary');
+        }
+        if ($chelper->get_show_courses() <= self::COURSECAT_SHOW_COURSES_COUNT) {
+            return '';
+        }
+        if ($course instanceof stdClass) {
+            $course = new core_course_list_element($course);
+        }
+        $content = '';
+        $classes = trim('coursebox clearfix '. $additionalclasses);
+        if ($chelper->get_show_courses() >= self::COURSECAT_SHOW_COURSES_EXPANDED) {
+            $nametag = 'h3';
+        } else {
+            $classes .= ' collapsed';
+            $nametag = 'div';
+        }
+
+        // .coursebox
+        $content .= html_writer::start_tag('div', array(
+            'class' => $classes,
+            'data-courseid' => $course->id,
+            'data-type' => self::COURSECAT_TYPE_COURSE,
+        ));
+
+        $content .= html_writer::start_tag('div', array('class' => 'info'));
+
+        // course name
+        $coursename = $chelper->get_course_formatted_name($course);
+        $coursenamelink = html_writer::link(new moodle_url('/course/view.php', array('id' => $course->id)),
+                                            $coursename, array('class' => $course->visible ? '' : 'dimmed'));
+        $content .= html_writer::tag($nametag, $coursenamelink, array('class' => 'coursename'));
+        // If we display course in collapsed form but the course has summary or course contacts, display the link to the info page.
+        $content .= html_writer::start_tag('div', array('class' => 'moreinfo'));
+        if ($chelper->get_show_courses() < self::COURSECAT_SHOW_COURSES_EXPANDED) {
+            if ($course->has_summary() || $course->has_course_contacts() || $course->has_course_overviewfiles()) {
+                $url = new moodle_url('/course/info.php', array('id' => $course->id));
+                $image = $this->output->pix_icon('i/info', $this->strings->summary);
+                $content .= html_writer::link($url, $image, array('title' => $this->strings->summary));
+                // Make sure JS file to expand course content is included.
+                $this->coursecat_include_js();
+            }
+        }
+        $content .= html_writer::end_tag('div'); // .moreinfo
+        $contentimages = $contentfiles = $class='';
+        foreach ($course->get_course_overviewfiles() as $file) {
+            $isimage = $file->is_valid_image();
+            $url = file_encode_url("$CFG->wwwroot/pluginfile.php",
+                    '/'. $file->get_contextid(). '/'. $file->get_component(). '/'.
+                    $file->get_filearea(). $file->get_filepath(). $file->get_filename(), !$isimage);
+            if ($isimage) {
+                $contentimages .= html_writer::tag('div',
+                        html_writer::empty_tag('img', array('src' => $url)),
+                        array('class' => 'courseimage'));
+            } else {
+                $image = $this->output->pix_icon(file_file_icon($file, 24), $file->get_filename(), 'moodle');
+                $filename = html_writer::tag('span', $image, array('class' => 'fp-icon')).
+                        html_writer::tag('span', $file->get_filename(), array('class' => 'fp-filename'));
+                $contentfiles .= html_writer::tag('span',
+                        html_writer::link($url, $filename),
+                        array('class' => 'coursefile fp-filename-icon'));
+            }
+        }
+
+        if (!$contentimages && !$contentfiles) {
+            $class = 'no-image';
+        }
+
+        // print enrolmenticons
+        if ($icons = enrol_get_course_info_icons($course)) {
+            $content .= html_writer::start_tag('div', array('class' => 'enrolmenticons'));
+            foreach ($icons as $pix_icon) {
+                $content .= $this->render($pix_icon);
+            }
+            $content .= html_writer::end_tag('div'); // .enrolmenticons
+        }
+
+        $content .= html_writer::end_tag('div'); // .info
+
+        $content .= html_writer::start_tag('div', array('class' => 'content '.$class));
+        $content .= $this->coursecat_coursebox_content($chelper, $course);
+        $content .= html_writer::end_tag('div'); // .content
+
+        $content .= html_writer::end_tag('div'); // .coursebox
+        return $content;
+    }
 } // Here the theme_enlightlite_course renderer fucntion closed.
 

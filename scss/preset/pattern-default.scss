@@ -879,8 +879,27 @@ td.submit {
 .course-content .topics h3 {
     color: $color_picton_blue_approx;
 }
-.block .header {
-    background: $color_picton_blue_approx;
+.block {
+    .header {
+        background: $color_picton_blue_approx;
+    }
+    .block-cards {
+        .progress-bar {
+            background: $color_picton_blue_approx;
+        }
+        a.coursename {
+            color: $color_picton_blue_approx;
+            i {
+                color: $color_picton_blue_approx;
+            }
+            &:hover {
+                color: $color_tuatara_approx;
+                i {
+                    color: $color_tuatara_approx;
+                }
+            }
+        }
+    }
 }
 .block_navigation .block_tree {
     .active_tree_node {
@@ -952,12 +971,18 @@ td.submit {
     color: $color_picton_blue_approx;
 }
 
+#frontpage-available-course-list {
+    .available-courses {
+        background: $color_picton_blue_approx;
+    }
+}
+#frontpage-available-course-list h2 {
+    color: $color_picton_blue_approx;
+}
 
 #frontpage-category-combo h2 {
     color: $color_picton_blue_approx;
 }
-
-
 #coursesearch input[type="submit"] {
     background: $color_picton_blue_approx;
     &:hover {
@@ -1057,6 +1082,12 @@ table.quizreviewsummary th.cell {
                 color: $color_picton_blue_approx;
             }
         }
+    }
+}
+#frontpage-available-course-list.frontpageblock-default {
+    background: none;
+    h2 {
+        color: $color_picton_blue_approx;
     }
 }
 #frontpage-category-names {
@@ -1187,5 +1218,208 @@ button.closebutton {
     &:hover {
         background: $color_picton_blue_approx;
         border-color: $color_picton_blue_approx;
+    }
+}
+
+/**moodle-3.6**/
+
+.btn-group {
+    .dropdown-menu {
+        .dropdown-item {
+            &.active {
+                background: $color_picton_blue_approx;
+            }
+            &:hover {
+                color: $white;
+                background: $color_picton_blue_approx;
+            }
+            &:focus {
+                color: $white;
+                background: $color_picton_blue_approx;
+            }
+            &:active {
+                color: $white;
+                background: $color_picton_blue_approx;
+            }
+        }
+    }
+}
+.block-timeline {
+    .dropdown-menu {
+        .dropdown-item {
+            &.active {
+                background: $color_picton_blue_approx;
+            }
+        }
+    }
+}
+.btn.btn-outline-secondary.dropdown-toggle {
+    &:hover {
+        color: $white;
+        background: $color_picton_blue_approx;
+    }
+    &:focus {
+        color: $white;
+        background: $color_picton_blue_approx;
+        box-shadow: none;
+        &:active {
+            color: $white;
+            box-shadow: none;
+        }
+    }
+    &:active {
+        color: $white;
+        background: $color_picton_blue_approx;
+    }
+}
+.block-region .block .card-body .block-myoverview {
+    .card-title {
+        a {
+            color: $color_picton_blue_approx;
+        }
+    }
+    .dropdown-menu > li > a {
+        &:hover {
+            color: $color_picton_blue_approx;
+        }
+        &:focus {
+            color: $color_picton_blue_approx;
+        }
+        &:active {
+            color: $color_picton_blue_approx;
+            background: none;
+        }
+        &.active {
+            background: $color_picton_blue_approx;
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+}
+.activity-navigation {
+    a.btn.btn-link {
+        color: $color_picton_blue_approx;
+        &:hover {
+            color: $color_picton_blue_approx;
+        }
+    }
+}
+
+.activity-navigation {
+    a.btn.btn-link {
+        color: $color_picton_blue_approx;
+        &:hover {
+            color: $color_picton_blue_approx;
+        }
+    }
+}
+.path-course-view {
+    #page-header {
+        .action-menu .menubar {
+            .dropdown-menu.show {
+                .dropdown-item {
+                    &:first-child {
+                        background-color: $color_picton_blue_approx;
+                        a {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#site-header .header-main .message-drawer {
+    .header-container {
+        .badge {
+            background-color: $color_picton_blue_approx !important;
+        }
+    }
+    .body-container {
+        .nav {
+            .nav-item {
+                a.nav-link {
+                    background: $color_tuatara_approx;
+                    &:hover {
+                        background: $color_picton_blue_approx;
+                    }
+                    &:focus {
+                        background: $color_picton_blue_approx;
+                    }
+                    &.active.show {
+                        background: $color_picton_blue_approx;
+                    }
+                }
+            }
+        }
+        .view-overview-body {
+            .section {
+                .badge {
+                    background-color: $color_picton_blue_approx !important;
+                }
+                .btn {
+                    &:focus {
+                        color: $color_picton_blue_approx;
+                    }
+                }
+            }
+        }
+        .custom-control.custom-radio {
+            .custom-control-input:checked~.custom-control-label {
+                &:before {
+                    background-color: $color_picton_blue_approx;
+                }
+            }
+            .custom-control-input:active~.custom-control-label {
+                &:before {
+                    background-color: rgba(57, 179, 230,.25);
+                }
+            }
+            .custom-control-input:checked:focus~.custom-control-label {
+                &:before {
+                    background-color: $color_picton_blue_approx;
+                    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(57, 179, 230,.25);
+                }
+            }
+        }
+        .switch {
+            input:checked + label {
+                &:before {
+                    background-color: $color_picton_blue_approx;
+                }
+            }
+            input:focus + label {
+                &:before {
+                    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(57, 179, 230,.25);
+                }
+            }
+            input:checked:focus + label {
+                &:before {
+                    box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(57, 179, 230,.25);
+                }
+            }
+        }
+    }
+    a {
+        .text-primary {
+           color: $color_picton_blue_approx!important;
+        }
+        &:hover {
+            color: $color_tuatara_approx;
+            .text-primary {
+                color: $color_tuatara_approx!important;
+            }
+        }
+        &.dropdown-item {
+            color: $white;
+        }
+    }
+}
+.action-menu .menubar .dropdown-menu .dropdown-item:active {
+    background: $color_picton_blue_approx;
+    a {
+        color: $white;
     }
 }
