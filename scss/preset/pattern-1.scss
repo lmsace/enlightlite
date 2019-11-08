@@ -1,3 +1,4 @@
+//colors
 $color_sushi_approx: #7abb3b;
 $color_storm_dust_approx: #656565;
 $color_tuatara_approx: #353535;
@@ -18,8 +19,6 @@ $color_conifer_approx: #95d15b;
 $color_sushi_60_approx: rgba(122, 187, 59, .6);
 $color_sushi_80_approx: rgba(122, 187, 59, .8);
 $footbgimgOverlay: true !default;
-
-
 
 a {
     color: $color_sushi_approx;
@@ -267,7 +266,7 @@ button {
     }
 }
 
-@media(min-width: 980px) {
+@media (min-width: 980px) {
     #site-header {
         .header-top .navbar .nav > .dropdown:hover > .dropdown-toggle {
             background: $color_sushi_approx;
@@ -328,6 +327,16 @@ $overlayCheck: $white;
 #site-footer {
     .footer-bottom {
         background: $color_tuatara_approx;
+        p a {
+            &:hover {
+                background: $color_sushi_approx;
+                text-decoration: underline;
+            }
+            &:focus {
+                background: $color_sushi_approx;
+                text-decoration: underline;
+            }
+        }
     }
     .footer-main .bgtrans-overlay {
         background: $color_sushi_94_approx;
@@ -492,6 +501,9 @@ table {
         color: $color_sushi_approx;
     }
 }
+#region-main-box #region-main .no-overflow>.generaltable#plugins-control-panel th.pluginname a i.icon:before {
+    color: $color_sushi_approx;
+}
 .loginbox {
     input[type="submit"] {
         background: $color_sushi_approx;
@@ -634,10 +646,8 @@ table {
         .nav-link {
             &:hover {
                 color: $color_sushi_approx;
-                color: $color_sushi_approx;
             }
             &:focus {
-                color: $color_sushi_approx;
                 color: $color_sushi_approx;
             }
             &.open {
@@ -719,32 +729,32 @@ table {
 }
 .homepage-carousel {
     .camera_fakehover {
-    .camera_prev {
-        background: rgba(122, 187, 59, 0.7);
-        border-top-right-radius: 30px;
-        border-bottom-right-radius: 30px;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        > span {
-            background: none;
+        .camera_prev {
+            background: rgba(122, 187, 59, 0.7);
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            > span {
+                background: none;
+            }
+            &:hover {
+                background: rgba(53, 53, 53, 0.7);
+            }
         }
-        &:hover {
-            background: rgba(53, 53, 53, 0.7);
+        .camera_next {
+            background: rgba(122, 187, 59, 0.7);
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            > span {
+                background: none;
+            }
+            &:hover {
+                background: rgba(53, 53, 53, 0.7);
+            }
         }
-    }
-    .camera_next {
-        background: rgba(122, 187, 59, 0.7);
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        > span {
-            background: none;
-        }
-        &:hover {
-            background: rgba(53, 53, 53, 0.7);
-        }
-    }
     }
     .slide-text {
         a.btn {
@@ -1045,21 +1055,53 @@ td.submit {
         color: $color_sushi_approx;
     }
 }
+#header .header-top .popover-region {
+    .content-item-container {
+        &:hover {
+            background-color: $color_sushi_approx;
+            .content-item-body {
+                h3, p {
+                    color: $white;
+                }
+            }
+            .context-link {
+                .notification-message {
+                    color: $white;
+                }
+             }
+             .view-more {
+                color: $white;
+             }
+        }
+    }
+}
+.messaging-area-container .messaging-area .contacts-area .contacts .selected.contact {
+    background-color: $color_sushi_approx;
+}
 .site-info h2 {
     color: $color_sushi_approx;
 }
 .card .card-block .menubar {
     background: none;
 }
-.messaging-area-container .messaging-area .contacts-area .tabs .tab {
-    &.selected {
+.messaging-area-container .messaging-area {
+    .contacts-area .tabs .tab {
+        &.selected {
+            color: $color_sushi_approx;
+        }
+        &:hover {
+            color: $color_sushi_approx;
+        }
+    }
+    .messages-area .messages-header .btn-link {
         color: $color_sushi_approx;
     }
-    &:hover {
+    .response .message-box .send-button-container button {
         color: $color_sushi_approx;
     }
 }
 .page-item.active .page-link {
+    color: $white;
     background: $color_sushi_approx;
     border-color: $color_sushi_approx;
     &:focus {
@@ -1210,6 +1252,69 @@ table.quizreviewsummary th.cell {
         color: $color_sushi_approx;
     }
 }
-.dir-rtl .box .search-block h2:after {
-    color: $color_sushi_approx;
+
+
+.userlist .initialbar .pagination .page-item {
+    &.active .page-link {
+        color: $white;
+        background-color: $color_sushi_approx;
+        border-color: $color_sushi_approx;
+        &:hover {
+            color: $white;
+        }
+    }
+    .page-link {
+        color: $color_sushi_approx;
+    }
+}
+.moodle-dialogue-base button.closebutton,
+button.closebutton {
+    &:active {
+        background: none;
+    }
+}
+.dir-rtl .progress-chart-container .no-progress .icon {
+    left: 70%;
+}
+.calendarwrapper {
+    overflow: auto;
+}
+@media (max-width: 574px) {
+    .page-context-header {
+        .page-header-headings h1 {
+            font-size: 20px;
+        }
+        .page-header-image {
+            max-width: 80px;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    #page .card .card-body .d-flex .d-flex {
+        display: block !important;
+    }
+}
+.block_myoverview .content-centred .nav.nav-pills .nav-item .nav-link.active {
+    background-color: $color_sushi_approx;
+}
+.tab-content .tab-pane .list-group .list-group-item a.btn {
+    color: $color_mine_shaft_approx !important;
+    text-decoration: none;
+    &:hover {
+        color: $color_mine_shaft_approx !important;
+        text-decoration: none;
+    }
+}
+.block-region .block .card-body .card-title {
+    background: $color_sushi_approx;
+}
+.list-group-item.active {
+    border-color: $color_sushi_approx;
+    background-color: $color_sushi_approx;
+    &:hover {
+        border-color: $color_sushi_approx;
+        background-color: $color_sushi_approx;
+    }
 }

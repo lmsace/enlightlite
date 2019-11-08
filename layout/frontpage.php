@@ -56,7 +56,34 @@ echo $OUTPUT->doctype() ?>
     <link rel="stylesheet" href="<?php echo theme_enlightlite_theme_url(); ?>/style/slick.css" />
     <script type="text/javascript" src="<?php echo theme_enlightlite_theme_url();?>/javascript/slick.js"></script>
     <!--About Us-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            if ( $('body').hasClass('dir-rtl') ) {
+                rtl = true;
+            } else {
+                rtl = false;
+            }
+
+            $(".course-slider").slick({
+                arrows:true ,
+                swipe:true,
+                prevArrow:'#available-courses .pagenav .slick-prev',
+                nextArrow: '#available-courses .pagenav .slick-next',
+                rtl:rtl
+            });
+            var prow = $(".course-slider").attr("data-crow");
+            prow = parseInt(prow);
+            if (prow < 2) {
+                $("#available-courses .pagenav").hide();
+            }
+        })
+
+    </script>
     <?php
+
+    // $PAGE->requires->js('/theme/enlightlite/javascript/slick.js');
+
     $status = theme_enlightlite_get_setting('marketingSpot1_status');
     if ($status == "1") {
         echo theme_enlightlite_marketingspot1();
@@ -183,26 +210,8 @@ require(['jquery'], function($) {
     })
 });
 
-$(document).ready(function() {
-    if ( $('body').hasClass('dir-rtl') ) {
-        rtl = true;
-    } else {
-        rtl = false;
-    }
 
-    $(".course-slider").slick({
-        arrows:true ,
-        swipe:true,
-        prevArrow:'#available-courses .pagenav .slick-prev',
-        nextArrow: '#available-courses .pagenav .slick-next',
-        rtl:rtl
-    });
-    var prow = $(".course-slider").attr("data-crow");
-    prow = parseInt(prow);
-    if (prow < 2) {
-        $("#available-courses .pagenav").hide();
-    }
-})
+
 </script>
 
 <?php

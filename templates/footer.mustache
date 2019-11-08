@@ -22,78 +22,74 @@
      */
 }}
 <footer id="site-footer">
-  {{# footermain }}
-	<div class="footer-main">
-  	<div class="bgtrans-overlay"></div><!--Overlay transparent bg layer-->
-    <div class="container footer-main-wrap">
-      <div class="row {{{footerb1 }}}">
+    {{# footermain }}
+    <div class="footer-main">
+        <div class="bgtrans-overlay"></div><!--Overlay transparent bg layer-->
+        <div class="container footer-main-wrap">
+            <div class="row {{{footerb1 }}}">
+                {{# footerb1}}
+                <div class="{{ colClass }}">
+                    <h6>{{{ fb1title }}}</h6>
+                    <div class="footer-links">
 
-      {{# footerb1}}
-          <div class="{{ colClass }}">
-          	<h6>{{{ fb1title }}}</h6>
-            <div class="footer-links">
+                        {{{ footerblink1 }}}
 
-               {{{ footerblink1 }}}
+                    </div>
+                </div>
+                {{/ footerb1}}
 
+                {{# footerb2}}
+                <div class="{{ colClass }}">
+                    <h6> {{{ fb2title }}} </h6>
+                    <div class="footer-links">
+                        <ul>
+                        {{{ footerblink2 }}}
+                        </ul>
+                    </div>
+                </div>
+                {{/ footerb2}}
+
+                {{# footerb3}}
+                    <div class="{{ colClass }}">
+                        <h6>{{{ fb3title }}}</h6>
+                        <div class="footer-links">
+                            <ul>
+                                {{{ footerblink3 }}}
+                            </ul>
+                        </div>
+                    </div>
+                {{/ footerb3}}
+
+                {{# footerb4}}
+                    <div class="{{ colClass }}">
+                        <h6> {{{ fb4title }}} </h6>
+                        {{{footerAddress}}}
+                        <div class="social-media {{footericonclass}}">
+                            <ul>
+                                {{{ social_links }}}
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                {{/ footerb4}}
             </div>
-          </div>
-        {{/ footerb1}}
+        </div>
+    </div>
+    {{/ footermain}}
 
-        {{# footerb2}}
-          <div class="{{ colClass }}">
-          	<h6> {{{ fb2title }}} </h6>
-            <div class="footer-links">
-            	<ul>
-              {{{ footerblink2 }}}
-              </ul>
-            </div>
-          </div>
-        {{/ footerb2}}
-
-        {{# footerb3}}
-          <div class="{{ colClass }}">
-          	<h6>{{{ fb3title }}}</h6>
-            <div class="footer-links">
-            	<ul>
-                {{{ footerblink3 }}}
-              </ul>
-            </div>
-          </div>
-        {{/ footerb3}}
-
-        {{# footerb4}}
-          <div class="{{ colClass }}">
-            <h6> {{{ fb4title }}} </h6>
-            {{{footerAddress}}}
-            <div class="social-media {{footericonclass}}">
-            	<ul>
-                  {{{ social_links }}}
-              </ul>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-        {{/ footerb4}}
-
+    {{# copyright}}
+    <div class="footer-bottom">
+        <div class="container">
+        <p>{{{copyright}}}</p>
       </div>
     </div>
-  </div>
-  {{/ footermain}}
-
-  {{# copyright}}
-	<div class="footer-bottom">
-  	<div class="container">
-      <p>{{{copyright}}}</p>
-    </div>
-  </div>
-  {{/ copyright}}
+    {{/ copyright}}
 
 </footer>
 <!--E.O.Footer-->
  {{{ output.standard_footer_html }}}
  {{{ output.standard_end_of_body_html }}}
- {{# backToTop }}
 
-{{/ backToTop}}
 
 
 {{#js}}

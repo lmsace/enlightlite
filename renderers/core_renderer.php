@@ -138,12 +138,12 @@ class theme_enlightlite_core_renderer extends theme_boost\output\core_renderer {
         $ccontent = '';
         if ($cmenushow) {
 
-            $ccontent = '<li class="dropdown visible-lg-down hidden-lg-up course-link">';
+            $ccontent = '<li class="dropdown d-lg-none d-md-block course-link">';
             $ccontent .= '<a class="nav-item nav-link" href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">';
 
             $ccontent .= get_string('courses').'<i class="fa fa-chevron-down"></i><span class="caretup"></span></a>';
             $ccontent .= $tcmenu['topmmenu'];
-            $ccontent .= '</li><li class="visible-md-up hidden-md-down course-link" id="cr_link">';
+            $ccontent .= '</li><li class="d-none d-lg-block course-link" id="cr_link">';
             $ccontent .= '<a class="nav-item nav-link" href="'.new moodle_url('/course/index.php').'" >'.get_string('courses');
             $ccontent .= '<i class="fa fa-chevron-down"></i><span class="caretup"></span></a>'.$tcmenu['topcmenu'].'</li>';
         } else {
@@ -348,7 +348,7 @@ class theme_enlightlite_core_renderer extends theme_boost\output\core_renderer {
         }
 
         $returnstr .= html_writer::span(
-            html_writer::span($usertextcontents, 'usertext') .
+            html_writer::span($usertextcontents, 'usertext mr-2') .
             html_writer::span($avatarcontents, $avatarclasses),
             'userbutton'
         );

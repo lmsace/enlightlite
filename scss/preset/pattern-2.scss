@@ -1,3 +1,4 @@
+//colors
 $color_trendy_pink_approx: #8e558e;
 $color_storm_dust_approx: #656565;
 $color_shark_approx: #2a2a2a;
@@ -234,7 +235,7 @@ a {
     }
 }
 
-@media(min-width: 980px) {
+@media (min-width: 980px) {
     #site-header {
         .header-top .navbar .nav > .dropdown:hover > .dropdown-toggle {
             background: $color_trendy_pink_approx;
@@ -294,6 +295,16 @@ $overlayCheck: $white;
 #site-footer {
     .footer-bottom {
         background: $color_shark_approx;
+        p a {
+            &:hover {
+                background: $color_trendy_pink_approx;
+                text-decoration: underline;
+            }
+            &:focus {
+                background: $color_trendy_pink_approx;
+                text-decoration: underline;
+            }
+        }
     }
     .footer-main .bgtrans-overlay {
         background: $color_trendy_pink_94_approx;
@@ -462,6 +473,9 @@ table {
         color: $color_trendy_pink_approx;
     }
 }
+#region-main-box #region-main .no-overflow>.generaltable#plugins-control-panel th.pluginname a i.icon:before {
+    color: $color_trendy_pink_approx;
+}
 .loginbox {
     input[type="submit"] {
         background: $color_trendy_pink_approx;
@@ -627,50 +641,37 @@ table {
 }
 .homepage-carousel {
     .camera_fakehover {
-    .camera_prev {
-        background: rgba(142, 85, 142, 0.7);
-        border-top-right-radius: 30px;
-        border-bottom-right-radius: 30px;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        > span {
-            background: none;
+        .camera_prev {
+            background: rgba(142, 85, 142, 0.7);
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            > span {
+                background: none;
+            }
+            &:hover {
+                background: rgba(42, 42, 42, 0.7);
+            }
         }
-        &:hover {
-            background: rgba(42, 42, 42, 0.7);
+        .camera_next {
+            background: rgba(142, 85, 142, 0.7);
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            > span {
+                background: none;
+            }
+            &:hover {
+                background: rgba(42, 42, 42, 0.7);
+            }
         }
-    }
-    .camera_next {
-        background: rgba(142, 85, 142, 0.7);
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        > span {
-            background: none;
-        }
-        &:hover {
-            background: rgba(42, 42, 42, 0.7);
-        }
-    }
     }
     .slide-text {
         a.btn {
             background: $color_trendy_pink_approx;
-           /*  &:hover {
-                color: #fff;
-                background: rgba(0, 0, 0, .5);
-            } */
         }
-        /* a.btn + a {
-            color: #353535;
-            background: $white;
-            border: 0;
-            &:hover {
-                color: #fff;
-                background: rgba(0, 0, 0, .5);
-            }
-        } */
         &.text-fill-content {
             h1 {
                 background: $white;
@@ -991,15 +992,24 @@ button.btn.btn-primary {
 .block-region .block .card-block .card-title {
     background: $color_trendy_pink_approx;
 }
-.messaging-area-container .messaging-area .contacts-area .tabs .tab {
-    &.selected {
+.messaging-area-container .messaging-area {
+    .contacts-area .tabs .tab {
+        &.selected {
+            color: $color_trendy_pink_approx;
+        }
+        &:hover {
+            color: $color_trendy_pink_approx;
+        }
+    }
+     .messages-area .messages-header .btn-link {
         color: $color_trendy_pink_approx;
     }
-    &:hover {
+    .response .message-box .send-button-container button {
         color: $color_trendy_pink_approx;
     }
 }
 .page-item.active .page-link {
+    color: $white;
     background: $color_trendy_pink_approx;
     border-color: $color_trendy_pink_approx;
     &:focus {
@@ -1055,6 +1065,29 @@ button.btn.btn-primary {
     &:focus {
         background: $color_shark_approx;
     }
+}
+#header .header-top .popover-region {
+    .content-item-container {
+        &:hover {
+            background-color: $color_trendy_pink_approx;
+            .content-item-body {
+                h3, p {
+                    color: $white;
+                }
+            }
+            .context-link {
+                .notification-message {
+                    color: $white;
+                }
+             }
+             .view-more {
+                color: $white;
+             }
+        }
+    }
+}
+.messaging-area-container .messaging-area .contacts-area .contacts .selected.contact {
+    background-color: $color_trendy_pink_approx;
 }
 .loadmore-btn button:hover {
     background-color: $color_shark_approx;
@@ -1151,6 +1184,69 @@ table.quizreviewsummary th.cell {
         color: $color_trendy_pink_approx;
     }
 }
-.dir-rtl .box .search-block h2:after {
-    color: $color_trendy_pink_approx;
+
+
+.userlist .initialbar .pagination .page-item {
+    &.active .page-link {
+        color: $white;
+        background-color: $color_trendy_pink_approx;
+        border-color: $color_trendy_pink_approx;
+        &:hover {
+            color: $white;
+        }
+    }
+    .page-link {
+        color: $color_trendy_pink_approx;
+    }
+}
+.moodle-dialogue-base button.closebutton,
+button.closebutton {
+    &:active {
+        background: none;
+    }
+}
+.dir-rtl .progress-chart-container .no-progress .icon {
+    left: 70%;
+}
+.calendarwrapper {
+    overflow: auto;
+}
+@media (max-width: 574px) {
+    .page-context-header {
+        .page-header-headings h1 {
+            font-size: 20px;
+        }
+        .page-header-image {
+            max-width: 80px;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    #page .card .card-body .d-flex .d-flex {
+        display: block !important;
+    }
+}
+.block_myoverview .content-centred .nav.nav-pills .nav-item .nav-link.active {
+    background-color: $color_trendy_pink_approx;
+}
+.tab-content .tab-pane .list-group .list-group-item a.btn {
+    color: $color_mine_shaft_approx !important;
+    text-decoration: none;
+    &:hover {
+        color: $color_mine_shaft_approx !important;
+        text-decoration: none;
+    }
+}
+.block-region .block .card-body .card-title {
+    background: $color_trendy_pink_approx;
+}
+.list-group-item.active {
+    border-color: $color_trendy_pink_approx;
+    background-color: $color_trendy_pink_approx;
+    &:hover {
+        border-color: $color_trendy_pink_approx;
+        background-color: $color_trendy_pink_approx;
+    }
 }

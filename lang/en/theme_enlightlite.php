@@ -33,39 +33,21 @@ $string['categoryimgheading'] = 'Category images';
 $string['categoryimgheadingsub'] = 'USE IMAGES TO REPRESENT YOUR TOP LEVEL COURSE CATEGORIES';
 $string['categoryimgdesc'] = 'This section will allow you to set images for each top level course categories. The Recommended image size width=360px and height=360px';
 $string['categoryimgcategory'] = 'The image for the category: {$a->category}.';
-$string['choosereadme'] = '<div class="clearfix"><div class="theme_screenshot">
-<img class=img-polaroid src="enlightlite/pix/screenshot.jpg" />
-<h3>Theme Credits</h3>
-<p>
-<h3>Moodle Enlightlite theme</h3>
-<p>
-This theme is based on the Boost Moodle theme.
-</p>
-<p>
-Authors: LMSACE Dev Team<br>
-Contact: info@lmsace.com<br>
-Website: <a target="_blank" href="http://www.lmsace.com">www.lmsace.com</a><br>
-</p>';
+$string['choosereadme'] = '<div class="clearfix"><div class="theme_screenshot"><img class=img-polaroid src="enlightlite/pix/screenshot.jpg" /><h3>Theme Credits</h3><p><h3>Moodle Enlightlite theme</h3><p>This theme is based on the Bootstrapbase Moodle theme.</p><p><a href="http://getbootstrap.com">http://getbootstrap.com</a></p><p>Authors: LMSACE Dev Team<br>Contact: info@lmsace.com<br>Website: <a target="_blank" href="http://www.lmsace.com">www.lmsace.com</a><br></p>';
 $string['configtitle'] = 'Enlightlite';
 $string['copyright'] = 'Copyright content';
 $string['copyrightdefault'] = 'Copyright &copy; 2017 - Developed by <a href="http://lmsace.com">LMSACE.com</a>. Powered by <a href="https://moodle.org">Moodle</a>';
-$string['copyrightdesc'] = 'Enter the copyright information as
- plain text or lang:language_key for multi-lingual support (Ex <b>lang:information</b>).
- <br/>You can find the default language keys here : /theme/enlightlite/lang[FOLDER].';
+$string['copyrightdesc'] = 'Enter the copyright information as plain text or lang:language_key for multi-lingual support (Ex <b>lang:information</b>). <br/>You can find the default language keys here : /theme/enlightlite/lang[FOLDER].';
 $string['courses'] = 'Courses';
 $string['courselayout'] = 'Course category layout';
-$string['courselayoutdesc'] = 'To change the display format of the course category listing page choose
-any one of the custom layouts listed here, this will override layout of the course/index.php(i.e. coursecategory).
-Now the custom layout file will be used instead of the moodle\'s default layout.';
+$string['courselayoutdesc'] = 'To change the display format of the course category listing page choose any one of the custom layouts listed here, this will override layout of the course/index.php(i.e. coursecategory). Now the custom layout file will be used instead of the moodle\'s default layout.';
 $string['customcss'] = 'Custom SCSS';
 $string['customcssdesc'] = 'Use this field to provide SCSS or CSS code which will be injected at the end of the style sheet.';
 $string['enable'] = 'Enable';
 $string['enlightlite_settings'] = "ENLIGHTLITE THEME SETTINGS";
 $string['featuredcoursesheading'] = 'Featured Courses';
 $string['footerblock'] = 'Footer Block';
-$string['footerbtitledesc'] = 'Enter a title for this block as plain text or lang:language_key for multi-lingual support.
- You can find the theme language keys here: /theme/enlightlite/lang/en/theme_enlightlite.php';
-
+$string['footerbtitledesc'] = 'Enter a title for this block as plain text or lang:language_key for multi-lingual support. You can find the theme language keys here: /theme/enlightlite/lang/en/theme_enlightlite.php';
  $string['footerdescription'] = 'A brief description in the context of the block title, for multi-lingual support enter lang:language_key.';
 $string['footerbtitle1default'] = 'About us';
 $string['footerbtitle2default'] = 'INFORMATION FOR';
@@ -73,28 +55,21 @@ $string['footerbtitle3default'] = 'QUICK LINKS';
 $string['footerbtitle4default'] = 'CONTACT US';
 $string['footerheading'] = 'Footer blocks';
 $string['footerblink'] = 'Footer Block Link';
-$string['footerblink1default'] = '<div>
-          	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et lobortis diam.&nbsp;</p><p>Duis tellus enim, vestibulum eget varius id, vulputate et mi. Nullam feugiat, diam quis interdum varius</p></div><a href="#"><span style="color: #fff; font-weight: bold; border-bottom: 1px solid #fff">Start Learning Now</span></a>';
+$string['footerblink1default'] = '<div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et lobortis diam.&nbsp;</p><p>Duis tellus enim, vestibulum eget varius id, vulputate et mi. Nullam feugiat, diam quis interdum varius</p></div><a href="#"><span style="color: #fff; font-weight: bold; border-bottom: 1px solid #fff">Start Learning Now</span></a>';
 $string['footerblink2default'] = 'Future students|http://www.example.com/
 International students |http://www.example.com/
 Researchers|http://www.example.com/';
 $string['footerblink3default'] = 'Accessibility|http://www.example.com/
 Contact us|http://www.example.com/
 Jobs|http://www.example.com/';
-$string['footerblink_desc'] = 'You can configure Footer Block{$a->blockno} Links here to be shown by themes.
-Each line consists of some menu text (lang:language_key or just plain text) ,
- a link URL separated by pipe characters. For example:
-<pre>
-lang:moodlecommunity|https://moodle.org
-Moodle Support|https://moodle.org/support
-</pre>';
+$string['footerblink_desc'] = 'You can configure Footer Block{$a->blockno} Links here to be shown by themes.Each line consists of some menu text (lang:language_key or just plain text) , a link URL separated by pipe characters. For example: <pre> lang:moodlecommunity|https://moodle.org
+Moodle Support|https://moodle.org/support </pre>';
 $string['frontpageheading'] = 'Marketing spots';
 $string['layout'] = 'Layout';
 $string['loginbg'] = 'Background image for login page';
 $string['loginbgdesc'] = 'Upload a BG image for user login page. The Recommended image size width=1350px and height=650px';
 $string['logo'] = 'Logo';
-$string['logodesc'] = 'Upload logo image for your website.<br>
-	The image should be 50px high and any reasonable width (minimum:235px) that suits.';
+$string['logodesc'] = 'Upload logo image for your website.<br> The image should be 50px high and any reasonable width (minimum:235px) that suits.';
 $string['marketingspot'] = 'Marketing Spot';
 $string['marketingspot1desc'] = 'Enter the Marketing Spot 1 block content either language key or text here.For ex: lang:display or Display';
 $string['marketingspot2desc'] = 'Enter the Marketing Spot 2 block content either language key or text here.For ex: lang:display or Display';
@@ -128,8 +103,7 @@ $string["slideshowStatus"] = "Show homepage slider";
 $string["slideshowStatus_desc"] = "Choose “No” if you don’t want an image slider on your home page.";
 $string['enable'] = "Enable";
 $string['disable'] = "Disable";
-$string['slideshowdesc'] = 'The homepage slider will allow you to promote important elements of your site; you have to upload at least one slide image to make the slideshow appear. Slide title, description and button are optional.
-Use larger images for best results, the slider will crop your images to fit the height and width of the slideshow. If you use too small images it won’t work correctly.';
+$string['slideshowdesc'] = 'The homepage slider will allow you to promote important elements of your site; you have to upload at least one slide image to make the slideshow appear. Slide title, description and button are optional. Use larger images for best results, the slider will crop your images to fit the height and width of the slideshow. If you use too small images it won’t work correctly.';
 $string['slideinterval'] = 'Pause Time';
 $string['slideintervaldesc'] = 'Use this option to set the pause or wait time between each slide change in the slideshow. Value is in milliseconds (i.e 1 second = 1000 milliseconds)';
 $string['slideshowheading'] = 'Homepage slider';
@@ -205,26 +179,17 @@ $string['popularcourses'] = 'Popular Courses';
 $string['newcourses'] = 'New Courses';
 $string['seeallcourses'] = 'See all courses';
 $string['slideurl1text'] = 'Button 1 Text';
-$string['slideurl1textdesc'] = 'Use this option to set the text for first button of the slide. If you do not want to have button on your slide set this option to blank.<br>
-Enter the button text as plain text or lang:language_key for multi-lingual support.<br>
-You can find the theme language keys here: /theme/enlightlite/lang/en/theme_enlightlite.php';
+$string['slideurl1textdesc'] = 'Use this option to set the text for first button of the slide. If you do not want to have button on your slide set this option to blank.<br> Enter the button text as plain text or lang:language_key for multi-lingual support.<br> You can find the theme language keys here: /theme/enlightlite/lang/en/theme_enlightlite.php';
 $string['slideurl2text'] = 'Button 2 Text';
-$string['slideurl2textdesc'] = 'Use this option to set the text for second button of the slide. If you do not want to have button on your slide set this option to blank.<br>
-Enter the button text as plain text or lang:language_key for multi-lingual support.<br>
-You can find the theme language keys here: /theme/enlightlite/lang/en/theme_enlightlite.php';
-$string['mspottitledesc'] = 'Enter the block title as plain text or lang:language_key for multi-lingual support.<br>
-You can find the theme language keys here: /theme/enlightlite/lang/en/theme_enlightlite.php.
-<br/>You can find the default language keys here : /theme/enlightlite/lang[FOLDER].';
-$string['mspotdescdesc'] = 'Enter the description as plain text or lang:language_key for multi-lingual support.<br>
-You can find the theme language keys here: /theme/enlightlite/lang/en/theme_enlightlite.php.';
+$string['slideurl2textdesc'] = 'Use this option to set the text for second button of the slide. If you do not want to have button on your slide set this option to blank.<br> Enter the button text as plain text or lang:language_key for multi-lingual support.<br> You can find the theme language keys here: /theme/enlightlite/lang/en/theme_enlightlite.php';
+$string['mspottitledesc'] = 'Enter the block title as plain text or lang:language_key for multi-lingual support.<br> You can find the theme language keys here: /theme/enlightlite/lang/en/theme_enlightlite.php. <br/>You can find the default language keys here : /theme/enlightlite/lang[FOLDER].';
+$string['mspotdescdesc'] = 'Enter the description as plain text or lang:language_key for multi-lingual support.<br> You can find the theme language keys here: /theme/enlightlite/lang/en/theme_enlightlite.php.';
 $string['link'] = 'Link';
 $string['text'] = 'Text';
 $string['button'] = 'Button';
 $string['target'] = 'Target';
 $string['mspot2urldesc'] = 'Use this option to set the link for button.';
-$string['mspot2urltxtdesc'] = 'Use this option to set the text for button. If you do not want to have button set this option to blank.
-Enter the button text as plain text or lang:language_key for multi-lingual support.
-You can find the theme language keys here: /theme/enlightlite/lang/en/theme_enlightlite.php';
+$string['mspot2urltxtdesc'] = 'Use this option to set the text for button. If you do not want to have button set this option to blank. Enter the button text as plain text or lang:language_key for multi-lingual support. You can find the theme language keys here: /theme/enlightlite/lang/en/theme_enlightlite.php';
 $string['copyrightheading'] = 'Change copyright information';
 $string['viewallcourses'] = 'View all Courses';
 $string['aboutus'] = '<b>About</b> Us';
@@ -240,14 +205,13 @@ $string['default'] = "Default";
 $string['cat-placeholder'] = "Type the course name here...";
 $string['primarymenu'] = "Primary menu items";
 $string['primarymenudesc'] = "You can configure a primary menu here to be shown by themes. Each line consists of some menu text, a link URL (optional), a tooltip title (optional) and a language code or comma-separated list of codes (optional, for displaying the line to users of the specified language only), separated by pipe characters. Lines starting with a hyphen will appear as menu items in the previous top level menu, and dividers can be used by adding a line of one or more # characters where desired. <br>
-For example: <br>
-Moodle community|https://moodle.org <br>
--Moodle free support|https://moodle.org/support <br>
--Moodle Docs|http://docs.moodle.org|Moodle Docs <br>
--German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de <br>
--### <br>
--Moodle development|https://moodle.org/development <br>
-Moodle.com|http://moodle.com/ <br>";
+For example: <br> Moodle community|https://moodle.org <br>
+	-Moodle free support|https://moodle.org/support <br>
+	-Moodle Docs|http://docs.moodle.org|Moodle Docs <br>
+	-German Moodle Docs|http://docs.moodle.org/de|Documentation in German|de <br>
+	-### <br>
+	-Moodle development|https://moodle.org/development <br>
+	Moodle.com|http://moodle.com/ <br>";
 $string['acourse_displaytype'] = 'Available courses display style';
 $string['acourse_displaytypedesc'] = 'Select a display style for available courses listing.';
 $string['categories_displaytype'] = 'Course categories display style';
@@ -276,31 +240,9 @@ $string['tmonialTraversal_status'] = 'Show pagination';
 $string['tmonialTraversal_statusdesc'] = '';
 $string['mspotmediadesc'] = 'Insert an image or embed a youtube video.';
 $string['media'] = 'Media';
-$string['marketingspot1_content'] = '<div class="site-info">
-    	<div class="container">
-            <div class="info-content">
-            <div class="info-video">
-                <video width="540px" controls>
-                    <source src="" type="video/mp4">
-                    <source src="" type="video/ogg">
-                </video>
-                </div>
-
-            <div class="info-block">
-                    <h2><b>About</b> Us</h2>
-                    <p>Each of our courses will lead you towards a specific career. Companies do want just a college graduate anymore, they want employees with specific skill sets. An explosion of social media, new devices, such as tablets and smart phones, and increased Internet usage, companies are increasing their IT staff. In addition, many new businesses are seeking more programmers and designers. Data security concerns continue to grow. The field of Information Technology covers a wide range that includes database management, web development, system analysis, information security, and more.</p>
-                    <div class="read-more">
-                        <a href="#">Read more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>';
-
-
+$string['marketingspot1_content'] = '<div class="site-info"><div class="container"><div class="info-content"><div class="info-video"><video width="540px" controls><source src="" type="video/mp4"><source src="" type="video/ogg"></video></div><div class="info-block"><h2><b>About</b> Us</h2><p>Each of our courses will lead you towards a specific career. Companies do want just a college graduate anymore, they want employees with specific skill sets. An explosion of social media, new devices, such as tablets and smart phones, and increased Internet usage, companies are increasing their IT staff. In addition, many new businesses are seeking more programmers and designers. Data security concerns continue to grow. The field of Information Technology covers a wide range that includes database management, web development, system analysis, information security, and more.</p><div class="read-more"><a href="#">Read more</a></div></div><div class="clearfix"></div></div></div></div>';
 $string['popularCourses_type'] = "Generate popular courses based on";
-$string['popularCourse_typedesc'] = "Please choose your preferred criteria to generate popular courses.<br>
-	If you choose custom courses option, you must mention the IDS of the courses you want to have on popular courses block in below setting.";
+$string['popularCourse_typedesc'] = "Please choose your preferred criteria to generate popular courses.<br> 	If you choose custom courses option, you must mention the IDS of the courses you want to have on popular courses block in below setting.";
 $string['popularCourses_id'] = "Popular courses IDS";
 $string['popularCourse_iddesc'] = "Please enter the courses IDS separated by commas.";
 $string['no_enrol'] = "Number of enrolled users";
@@ -436,8 +378,7 @@ $string["testimonialsbg_desc"] = "Upload an image for testimonial block backgrou
 $string["footbgimg"] = "Background image for footer section";
 $string["footbgimg_desc"] = "Upload an image for footer section background. The Recommended image size width=1350px and height=350px";
 $string["popularcoursesbg"] = "Background image for popular courses block";
-$string["popularcoursesbg_desc"] = "Upload an image for popular courses block background.<br>
-The Recommended image size width=1350px and height=450px";
+$string["popularcoursesbg_desc"] = "Upload an image for popular courses block background.<br> The Recommended image size width=1350px and height=450px";
 $string["testimonialsbg_type"] = "Background color options for testimonials block";
 $string["testimonialsbg_typedesc"] = "Choose a background option you would like to have for testimonials block.";
 $string["footbgimg_type"] = "Background color options for footer section";
@@ -494,14 +435,11 @@ $string["sliderOverlay"] = 'SliderOverlay';
 $string["textFillContent"] = 'TextFillContent';
 $string["text_item_content"] = 'Text_item_content';
 $string["double_heading_content"] = 'Double_heading_content';
-$string['slideContentStyle_desc'] = 'Use this option to set the content style in the slide.
-<br>If you choose the content style as "Double title" you should mention the two titles on slide title option.<br>
+$string['slideContentStyle_desc'] = 'Use this option to set the content style in the slide. <br>If you choose the content style as "Double title" you should mention the two titles on slide title option.<br>
 The titles must be separated with pipe (|) , Ex : <i>Title1 | Title2</i>.';
 $string['slideContentStyle'] = "Content style";
 $string["importDemo"] = "Import demo content";
-$string["importDemo_desc"] = "Please check the above box to import the demo data that will make your installation look like our <a href='http://www.lmsace.com/lab/m32/'>demo</a> site.<br>
-<b>WARNING!</b> Don’t install the sample data on your live existing website, unless it’s a fresh installation. <br>
-It may be possible that your current data get corrupted. We strongly recommend installing the sample data on a fresh Moodle installation. ";
+$string["importDemo_desc"] = "Please check the above box to import the demo data that will make your installation look like our <a href='http://www.lmsace.com/lab/m32/'>demo</a> site.<br> <b>WARNING!</b> Don’t install the sample data on your live existing website, unless it’s a fresh installation. <br> It may be possible that your current data get corrupted. We strongly recommend installing the sample data on a fresh Moodle installation. ";
 $string["loginpageType"] = "Login page layout";
 $string["loginpageType_desc"] = "Use this option to override the layout of the login page..";
 $string["logintheme"] = "Enlightlite theme style";
@@ -518,8 +456,7 @@ $string['slidedesc2default'] = "Crafted for learning management system";
 $string['slidecaption3default'] = "FULLY RESPONSIVE DESIGN";
 $string['slidedesc3default'] = "Looks perfect on all mobile devices";
 $string['readmore'] = "Read More";
-$string['informationdesc'] = '<div>
-          	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et lobortis diam.&nbsp;</p><p>Duis tellus enim, vestibulum eget varius id, vulputate et mi. Nullam feugiat, diam quis interdum varius</p></div><a href="#" style="color: #353535;">Start Learning Now</a>';
+$string['informationdesc'] = '<div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et lobortis diam.&nbsp;</p><p>Duis tellus enim, vestibulum eget varius id, vulputate et mi. Nullam feugiat, diam quis interdum varius</p></div><a href="#" style="color: #353535;">Start Learning Now</a>';
 
 $string["contentOverlay"] = "Content overlay";
 $string["sliderOverlay"] = "Fullslide overlay";

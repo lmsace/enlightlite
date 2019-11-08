@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $THEME->name = 'enlightlite';
 
-$THEME->sheets = [ 'font-awesome.min'];
+$THEME->sheets = [];
 
 $THEME->editor_sheets = [];
 

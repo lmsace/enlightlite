@@ -534,12 +534,11 @@ function theme_enlightlite_strip_html_tags( $text ) {
 }
 
 /**
- * Cut the Course content.
- *
- * @param string $str
- * @param integer $n
- * @param char $end_char
- * @return string $out
+ * Cut the Course content. *
+ * @param type|string $str
+ * @param type|integer $n
+ * @param type|char $end_char
+ * @return type|string
  */
 function theme_enlightlite_course_trim_char($str, $n = 500, $endchar = '&#8230;') {
     if (strlen($str) < $n) {
@@ -664,13 +663,12 @@ function theme_enlightlite_category_menu() {
 
 /**
  * Returns the categories menus content.
- *
  * @param coursecat $category
  * @param array $subcategories
- * @param $totalsubcategories
- * @param null $selectedcategory
- * @param array $selectedcategories
- * @return string $html
+ * @param type $totalsubcategories
+ * @param type|null $selectedcategory
+ * @param type|array $selectedcategories
+ * @return type|string
  */
 function theme_enlightlite_category_menu_item(coursecat $category, array $subcategories, $totalsubcategories,
 $selectedcategory = null, $selectedcategories = array()) {

@@ -29,14 +29,8 @@
         }
     }
 }}
-{{{ output.doctype }}}
-<html {{{ output.htmlattributes }}}>
-<head>
-    <title>{{{ output.page_title }}}</title>
-    <link rel="shortcut icon" href="{{{ output.favicon }}}" />
-    {{{ output.standard_head_html }}}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+{{> theme_boost/head }}
+
 <body {{{ bodyattributes }}}>
 
 <div id="page-wrapper">
@@ -45,10 +39,10 @@
 
     {{> theme_enlightlite/header }}
 
-    <div id="page" class="container-fluid">
+    <div id="page" class="container-fluid mt-0">
         <div id="page-content" class="row">
-            <div id="region-main-box">
-                <section id="region-main" class="col-xs-12">
+            <div id="region-main-box" class="col-12">
+                <section id="region-main" class="col-12">
                     {{{ output.course_content_header }}}
                     {{{ output.main_content }}}
                     {{{ output.course_content_footer }}}
@@ -57,6 +51,7 @@
         </div>
     </div>
 </div>
+{{> theme_boost/nav-drawer}}
 {{> theme_enlightlite/footer }}
 
 
