@@ -1122,6 +1122,9 @@ button.btn.btn-primary {
         }
     }
 }
+.notification-area .control-area .content .content-item-container.selected {
+        background-color: $color_trendy_pink_approx;
+}
 .messaging-area-container .messaging-area .contacts-area .contacts .selected.contact {
     background-color: $color_trendy_pink_approx;
 }
@@ -1395,7 +1398,7 @@ button.closebutton {
     }
 }
 
-#site-header .header-main .message-drawer {
+#site-header .header-main .message-app {
     .header-container {
         .badge {
             background-color: $color_trendy_pink_approx !important;
@@ -1481,9 +1484,29 @@ button.closebutton {
         }
     }
 }
+.message-app {
+    .body-container {
+        .nav-pills .nav-link {
+            &.active {
+                background-color: $color_trendy_pink_approx;
+            }
+        }
+    }
+}
 .action-menu .menubar .dropdown-menu .dropdown-item:active {
     background: $color_trendy_pink_approx;
     a {
         color: $white;
+    }
+}
+
+/*Moodle-3.7*/
+.block_recentlyaccessedcourses .paging-bar-container {
+    .pagination {
+        .page-item {
+            .page-link {
+                color: $color_trendy_pink_approx;
+            }
+        }
     }
 }

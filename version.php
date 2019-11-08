@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 // The current component version (Date: YYYYMMDDXX).
-$plugin->version = 2019012600;
+$plugin->version = 2019052000;
 
 // This version's maturity level.
 $plugin->maturity = MATURITY_STABLE;
@@ -34,12 +34,12 @@ $plugin->maturity = MATURITY_STABLE;
 $plugin->requires  = 2018120300;
 
 // Plugin release version.
-$plugin->release = 'v3.6.2';
+$plugin->release = 'v3.7';
 
 // Full name of the plugin.
 $plugin->component = 'theme_enlightlite';
 
 // Plugin dependencies and dependencies version.
 $plugin->dependencies = [
-    'theme_boost' => 2017111300
+    'theme_boost' => 2019022600
 ];

@@ -503,6 +503,7 @@ img {
         &:focus {
             @extend %extend_2;
             box-shadow: none !important;
+            color: $white;
         }
     }
     &.active {
@@ -5050,9 +5051,14 @@ select[multiple] {
     .forumpost.starter {
         padding: 10px;
     }
-    .forumpost .subject {
-        font-size: 24px;
-        font-weight: normal;
+    .forumpost {
+        .subject {
+            font-size: 24px;
+            font-weight: normal;
+        }
+        .header + div + div {
+            max-width: 500px;
+        }
     }
     .forumaddnew {
         display: block;
@@ -5067,7 +5073,7 @@ select[multiple] {
         margin: 20px;
         clear: both;
     }
-    .forumpost .maincontent {
+    .forumpost {
         .attachedimages {
             margin-top: 20px;
             max-width: 500px;
@@ -6039,6 +6045,13 @@ td.submit {
     tbody .discussion td {
         line-height: 20px;
         padding: 12px;
+    }
+}
+tr.discussion {
+    .btn {
+        i.icon {
+            color: $color_ironside_gray_approx;
+        }
     }
 }
 #tag-search-box form > div > button {
@@ -7255,8 +7268,13 @@ button.closebutton {
     }
 }
 
-.block_myoverview .content-centred .nav.nav-pills .nav-item .nav-link.active {
-    background-color: $color_picton_blue_approx;
+.block_myoverview {
+    .content-centred .nav.nav-pills .nav-item .nav-link.active {
+        background-color: $color_picton_blue_approx;
+    }
+    .paged-content-page-container {
+        margin-top: 10px;
+    }
 }
 .tab-content .tab-pane .list-group .list-group-item a.btn {
     color: $color_mine_shaft_approx !important;
@@ -7527,7 +7545,7 @@ button.close, .moodle-dialogue-base button.closebutton {
 #header .usermenu a.dropdown-toggle {
     padding: 0;
 }
-#site-header .header-main .message-drawer {
+#site-header .header-main .message-app {
     .header-container {
         .input-group .input-group-prepend {
             .input-group-text {
@@ -7605,6 +7623,15 @@ button.close, .moodle-dialogue-base button.closebutton {
         }
     }
 }
+.message-app {
+    .body-container {
+        .nav-pills .nav-link {
+            &.active {
+                background-color: $color_picton_blue_approx;
+            }
+        }
+    }
+}
 .block-region .block {
     &.card .card-body {
         padding: 0 !important;
@@ -7648,5 +7675,40 @@ button.close, .moodle-dialogue-base button.closebutton {
 #page-login-index {
     #header .navbar-nav button.btn {
         display: none;
+    }
+    .card .card-block {
+        .potentialidplist {
+            .potentialidp {
+                display: inline-block;
+                margin: 10px 10px 10px 0;
+                width: 100%;
+                &:last-child {
+                    margin-right: 0;
+                }
+                a {
+                    padding: 10px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+/*Moodle-3.7*/
+
+.block_recentlyaccessedcourses .paging-bar-container {
+    margin-top: 0;
+    .pagination {
+        .page-item {
+            .page-link {
+                color: $color_picton_blue_approx;
+            }
+        }
+    }
+}
+#recipientform,
+.langimport {
+    select {
+        max-width: 100%;
     }
 }

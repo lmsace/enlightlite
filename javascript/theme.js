@@ -22,9 +22,9 @@
 
 $(function(){
 
-    img = $("header#header").find('.avatars').find('img[src$="/u/f2"]');
-    src = img.attr('src');
-    img.attr('src', src + '_white');
+    var img = $("nav#header").find('.avatar').find('img[src$="/u/f2"]');
+    var src = img.attr('src');
+    img.attr('src', src + "_white");
     msg = $("header#header").find('#nav-message-popover-container .nav-link').find("img[src$='t/message']");
     msgsrc = msg.attr('src');
     msg.attr('src', msgsrc + "_white");
