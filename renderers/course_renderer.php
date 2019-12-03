@@ -218,7 +218,7 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
                         continue;
                     }
                     $courseurl = new moodle_url("/course/view.php", array("id" => $cc->id));
-                    $menuitems .= '<li><a href="'.$courseurl.'">'.$cc->fullname.'</a></li>'."\n";
+                    $menuitems .= '<li><a href="'.$courseurl.'">'.$cc->get_formatted_name().'</a></li>'."\n";
                 }
                 if (!empty($menuitems)) {
                     $rcourseids[$catid] = array("desk" => $menuheader.$menuitems.$menufooter,

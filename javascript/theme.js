@@ -31,14 +31,14 @@ $(function(){
     note = $("header#header").find('#nav-notification-popover-container .nav-link').find("img[src$='i/notifications']");
     notesrc = note.attr('src');
     note.attr('src', notesrc + "_white");
-    $( "table" ).wrap( function() {
+    /*$( "table" ).wrap( function() {
         var ctab_obj = $(this);
         if (ctab_obj.parent('div').hasClass('no-overflow')) {
 
         } else {
             return "<div class='no-overflow'></div>";
         }
-    });
+    });*/
     par = $('#page');
     par.find('h2').each(function(){
         cont = $(this).html();

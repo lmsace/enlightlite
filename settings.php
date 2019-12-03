@@ -44,11 +44,11 @@ if ($ADMIN->fulltree) {
     $description = get_string('patternselectdesc', 'theme_enlightlite');
     $default = 'default';
     $choices = array(
-        'default' => get_string("blue", "theme_enlightlite"),
-        '1' => get_string("green", "theme_enlightlite"),
-        '2' => get_string("lavender", "theme_enlightlite"),
-        '3' => get_string("red", "theme_enlightlite"),
-        '4' => get_string("purple", "theme_enlightlite")
+        'blue' => get_string("blue", "theme_enlightlite"),
+        'green' => get_string("green", "theme_enlightlite"),
+        'lavender' => get_string("lavender", "theme_enlightlite"),
+        'red' => get_string("red", "theme_enlightlite"),
+        'purple' => get_string("purple", "theme_enlightlite")
     );
 
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
@@ -320,8 +320,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_enlightlite/mspot1media';
     $title = get_string('media', 'theme_enlightlite');
     $description = get_string('mspotmediadesc', 'theme_enlightlite', array('msno' => '1'));
-    $default = '<iframe src="https://www.youtube.com/embed/zKD91RTMwK0"
-    allowfullscreen="" width="560" height="315" frameborder="0"></iframe>';
+    $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
     /* Marketing Spot 1*/
