@@ -1,5 +1,4 @@
 :root {
-
     --color_primary : [[color_primary]];
     --color_secondary : [[color_secondary]];
     --color_carousel_control : [[color_carousel_control]];
@@ -3710,14 +3709,14 @@ input[type="reset"][disabled] {
     margin-top: 15px;
 }
 .forumpost .d-flex.flex-wrap .post-actions>a {
-    color: var(--color_mine_shaft_approx);
+    color: var(--color_primary);
     display: inline-block;
     margin: 0 5px;
     vertical-align: middle;
 }
 .forumpost .d-flex.flex-wrap .post-actions>a:hover,
 .forumpost .d-flex.flex-wrap .post-actions>a:focus {
-    color: var(--color_primary);
+    color: var(--color_secondary);
     outline: none;
     text-decoration: none;
 }
@@ -4721,6 +4720,7 @@ select[multiple] {
     max-width: 500px;
 }
 #site-news-forum .forumpost .attachedimages img {
+    max-width: 150px !important;
     width: 100%;
     object-fit: cover;
 }
@@ -6192,6 +6192,12 @@ tr.discussion .btn i.icon {
     color: var(--color_gravel_approx);
     margin: 0;
 }
+.coursebox .content .summary p img {
+    display: none;
+}
+.coursebox .content.no-image:empty {
+    display: none;
+}
 .coursebox .content .teachers {
     padding-top: 5px;
 }
@@ -6847,6 +6853,9 @@ button.closebutton:active {
     #page .card .card-body .d-flex .d-flex {
         display: block !important;
     }
+}
+.block_myoverview button#groupingdropdown+.dropdown-menu li.dropdown-divider {
+    display: none;
 }
 .block_myoverview .content-centred .nav.nav-pills .nav-item .nav-link.active {
     background-color: var(--color_primary);
