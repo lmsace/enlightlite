@@ -580,10 +580,12 @@ table.rolecap tr.header .header,
 .btn:active:focus,
 .btn.active,
 .btn.disabled {
-    outline: 0 none;
+    outline: 0;
     background: var(--color_silver_approx);
 }
-
+.btn-outline-secondary:hover {
+    color: var(--color_secondary);
+}
 .btn .caret {
     margin-left: 5px;
 }
@@ -616,8 +618,8 @@ img {
 .btn-primary:active,
 .btn-primary:active:focus,
 .btn-primary.disabled {
-    color: var(--white);
-    background: var(--color_secondary);
+    color: var(--white) !important;
+    background: var(--color_secondary) !important;
     box-shadow: none !important;
 }
 
@@ -638,7 +640,7 @@ img {
 .btn-secondary:disabled:hover,
 .btn-secondary:active,
 .btn-secondary.focus {
-    background: var(--color_silver_approx);
+    background: var(--color_silver_approx) !important;
     box-shadow: none !important;
 }
 
@@ -1602,8 +1604,8 @@ input[type="submit"]:focus {
 }
 
 input[type="submit"]:active {
-    color: var(--color_chicago_approx);
-    background: var(--color_silver_approx);
+    color: var(--color_chicago_approx) !important;
+    background: var(--color_silver_approx) !important;
 }
 
 input[type="submit"].active {
@@ -2560,10 +2562,11 @@ input[type="reset"][disabled] {
         width: auto;
         min-width: 300px;
         max-width: 100%;
+        padding: 0 20px;
         position: absolute;
-        left: auto;
-        right: 2%;
-        top: 150px;
+        left: 0;
+        right: 0;
+        top: 140px;
         z-index: 1000;
     }
     #site-header .header-main .course-link .custom-dropdown-menu a:after {
@@ -5831,9 +5834,7 @@ tr.discussion .btn i.icon {
 .form-group .filemanager .filemanager-toolbar a.btn:active {
     background: var(--color_quill_gray_approx);
 }
-.form-inline .form-check-label {
-    padding-left: 1.25em;
-}
+
 .form-inline .form-check-label .form-group {
     display: block;
 }
@@ -6857,6 +6858,9 @@ button.closebutton:active {
 .block_myoverview button#groupingdropdown+.dropdown-menu li.dropdown-divider {
     display: none;
 }
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background: var(--color_primary);
+}
 .block_myoverview .content-centred .nav.nav-pills .nav-item .nav-link.active {
     background-color: var(--color_primary);
 }
@@ -6934,8 +6938,14 @@ button.closebutton:active {
 .block_online_users .content .list li.listentry .user .userpicture {
     width: auto;
 }
+.mform .fcontainer .form-inline .form-group {
+    width: 100%;
+}
 .fdate_time_selector {
-    display: block !important;
+    width: 100%;
+}
+.mform .form-inline .fdate_time_selector .form-group {
+    width: auto;
 }
 @media (min-width: 768px) {
     .slick-initialized .slick-slide {
@@ -7176,6 +7186,12 @@ button.close:focus,
 
 .frontpage-siteinfo h1 {
     color: var(--color_primary);
+}
+.path-course-view #page-header .action-menu .menubar .dropdown-menu.show .dropdown-item {
+    padding: 0;
+}
+.path-course-view #page-header .action-menu .menubar .dropdown-menu.show .dropdown-item a {
+    padding: .25rem 1.5rem;
 }
 .path-course-view #page-header .action-menu .menubar .dropdown-menu.show .dropdown-item:first-child {
     background-color: var(--color_primary);
