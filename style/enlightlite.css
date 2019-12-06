@@ -1675,6 +1675,7 @@ input[type="reset"][disabled] {
 }
 
 #header {
+    height: 100%;
     background: var(--color_secondary);
     border-bottom: 0;
 }
