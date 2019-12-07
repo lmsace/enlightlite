@@ -3,7 +3,7 @@
 
 return array(
 
-	'blue' => array(
+	'default' => array(
 		'color_primary' => "#39b3e6",
 		'color_secondary' =>  "#353535",
 		'color_carousel_control' => '#005f92',
@@ -21,7 +21,7 @@ return array(
 		'color_tuatara_70_approx' => 'rgba(53, 53, 53, .7)'
 	),
 
-	'green' => array(
+	'1' => array(
 		'color_primary' => "#7abb3b",
 		'color_secondary' =>  "#353535",
 		'color_carousel_control' => '#54a307',
@@ -39,7 +39,7 @@ return array(
 		'color_tuatara_70_approx' => 'rgba(53, 53, 53, .7)'
 	),
 
-	'lavender' => array(
+	'2' => array(
 		'color_primary' => "#8e558e",
 		'color_secondary' =>  "#2a2a2a",
 		'color_carousel_control' => '#853d85',
@@ -57,7 +57,7 @@ return array(
 		'color_tuatara_70_approx' => 'rgba(42, 42, 42, 0.7)'
 	),
 
-	'red' => array(
+	'3' => array(
 		'color_primary' => "#e14d43",
 		'color_secondary' =>  "#2a2a2a",
 		'color_carousel_control' => '#c83f35',
@@ -75,7 +75,7 @@ return array(
 		'color_tuatara_70_approx' => 'rgba(42, 42, 42, 0.7)'
 	),
 
-	'purple' => array(
+	'4' => array(
 	     'color_primary' => "#523f6d",
 	     'color_secondary' =>  "#000",
 		 'color_carousel_control' => '#005f92',
