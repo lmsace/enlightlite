@@ -312,8 +312,8 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
 
         $rcourseids = array_keys( $courses );
 
-        $acourseids = array_chunk( $rcourseids, 6);
-
+        //$acourseids = array_chunk( $rcourseids, 6);
+        $acourseids = $rcourseids;
         $tcount = count($acourseids);
 
         $newcourse = get_string( 'availablecourses' );
@@ -327,13 +327,13 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
         $header .= html_writer::start_tag('div', array('class' => 'container'));
         $header .= html_writer::tag('h2', get_string('availablecourses'));
 
-        if ($tcount > '1') {
+       /* if ($tcount > '1') {
             $header .= html_writer::start_tag('div', array('class' => 'pagenav slider-nav') );
             $header .= html_writer::tag('button', '', array('class' => 'slick-prev nav-item previous', 'type' => 'button') );
             $header .= html_writer::tag('button', '', array('class' => 'slick-next nav-item next', 'type' => 'button') );
             $header .= html_writer::tag('div', '', array('class' => 'clearfix') );
             $header .= html_writer::end_tag('div');
-        }
+        }*/
         $sliderclass = 'course-slider';
         $header .= html_writer::start_tag('div', array('class' => 'row') );
         $header .= html_writer::start_tag('div', array( 'class' => " $sliderclass col-md-12") );
@@ -344,11 +344,11 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
         $footer .= html_writer::end_tag('div');
         if (count($rcourseids) > 0) {
             $i = '0';
-            foreach ($acourseids as $courseids) {
+      /*      foreach ($acourseids as $courseids) {
 
-                $rowcontent = '<div class="slider-row ">';
-
-                foreach ($courseids as $courseid) {
+                $rowcontent = '<div class="slider-row ">';*/
+                $rowcontent = '';
+                foreach ($acourseids as $courseid) {
                     $container = '';
                     $course = get_course($courseid);
                     $noimgurl = $this->output->image_url('no-image', 'theme');
@@ -398,15 +398,14 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
                     $rowcontent .= $container;
                 }
                 $i++;
-                $rowcontent .= html_writer::end_tag('div');
+           /*$rowcontent .= html_writer::end_tag('div');*/
                 $coursecontainer .= $rowcontent;
-            }
+           // }
 
         }
         $footer .= html_writer::end_tag('div');
         $footer .= html_writer::end_tag('div');
         $coursehtml = $header.$coursecontainer.$footer;
-
         return $coursehtml;
 
         if (!$totalcount && !$this->page->user_is_editing() && has_capability('moodle/course:create', context_system::instance())) {
@@ -619,6 +618,60 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
         $content .= html_writer::end_tag('div'); // Content.
 
         $content .= html_writer::end_tag('div'); // Coursebox.
+        return $content;
+    }
+
+     /**
+     * Returns HTML to display a tree of subcategories and courses in the given category
+     *
+     * @param coursecat_helper $chelper various display options
+     * @param core_course_category $coursecat top category (this category's name and description will NOT be added to the tree)
+     * @return string
+     */
+    protected function coursecat_tree(coursecat_helper $chelper, $coursecat) {
+        // Reset the category expanded flag for this course category tree first.
+        $this->categoryexpandedonload = false;
+        $categorycontent = $this->coursecat_category_content($chelper, $coursecat, 0);
+        if (empty($categorycontent)) {
+            return '';
+        }
+
+        // Start content generation
+        $content = '';
+        $attributes = $chelper->get_and_erase_attributes('course_category_tree clearfix');
+        $content .= html_writer::start_tag('div', $attributes);
+
+        if ($coursecat->get_children_count()) {
+            $classes = array(
+                'collapseexpand', 'aabtn'
+            );
+
+            // Check if the category content contains subcategories with children's content loaded.
+            if ($this->categoryexpandedonload) {
+                $classes[] = 'collapse-all';
+                $linkname = get_string('collapseall');
+            } else {
+                $linkname = get_string('expandall');
+            }
+
+            $type = theme_enlightlite_get_setting('comboListboxType');
+            if ($type == 1) {
+                $linkname = get_string('expandall');
+            } else {
+                $linkname = get_string('collapseall');
+            }
+
+            // Only show the collapse/expand if there are children to expand.
+            $content .= html_writer::start_tag('div', array('class' => 'collapsible-actions'));
+            $content .= html_writer::link('#', $linkname, array('class' => implode(' ', $classes)));
+            $content .= html_writer::end_tag('div');
+            $this->page->requires->strings_for_js(array('collapseall', 'expandall'), 'moodle');
+        }
+
+        $content .= html_writer::tag('div', $categorycontent, array('class' => 'content'));
+
+        $content .= html_writer::end_tag('div'); // .course_category_tree
+
         return $content;
     }
 } // Here the theme_enlightlite_course renderer fucntion closed.

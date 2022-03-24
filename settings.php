@@ -320,7 +320,7 @@ if ($ADMIN->fulltree) {
     $name = 'theme_enlightlite/mspot1media';
     $title = get_string('media', 'theme_enlightlite');
     $description = get_string('mspotmediadesc', 'theme_enlightlite', array('msno' => '1'));
-    $default = '';
+    $default = '<div style="display:none;">image</div><img src="https://res.cloudinary.com/lmsace/image/upload/v1593602097/about-img_rztwgu.jpg">';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $temp->add($setting);
     /* Marketing Spot 1*/

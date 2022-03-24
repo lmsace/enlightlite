@@ -308,7 +308,7 @@ function theme_enlightlite_get_logo_url($type='header') {
     }
 
     $logo = $theme->setting_file_url('logo', 'logo');
-    $logo = empty($logo) ? $OUTPUT->image_url('home/logo', 'theme') : $logo;
+    $logo = empty($logo) ? '' : $logo;
     return $logo;
 }
 
@@ -419,7 +419,7 @@ function theme_enlightlite_social_links() {
         $iconurl = theme_enlightlite_get_setting('siconurl'.$i);
         $iconstr = '';
         $iconsty = (empty($iconcolor)) ? '' : ' style="background: '.$iconcolor.';"';
-        if ($iconenable == "1") {
+        if ($iconenable == "1" && !empty($icon)) {
             $iconstr = '<li class="media0'.$i.'"'.$iconsty.'><a href="'.$iconurl.'"><i class="fa fa-'.$icon.'"></i></a></li>'."\n";
             $htmlstr .= $iconstr;
         }
@@ -531,16 +531,22 @@ function theme_enlightlite_marketingspot1() {
             $content .= html_writer::start_tag('div', array('class' => 'container'));
 
             $content .= html_writer::start_tag('div', array('class' => 'info-content '. $classmedia ));
-            $content .= html_writer::tag('h2', html_writer::tag('b', $title1) ." ".$title2, array('style' => $hide) );
+            $content .= html_writer::tag('h2', html_writer::tag('b', $title1) ." ".$title2, array('style' => $hide));
 
-            $content .= html_writer::start_tag('div', array('class' => 'info-video'));
-            $content .= $media;
-            $content .= html_writer::end_tag('div');
-
+          
             if (!empty($description)) {
+
+                $content .= html_writer::start_tag('div', array('class' => 'info-video','style' => 'max-width:550px;float:left;'));
+                $content .= $media;
+                $content .= html_writer::end_tag('div');
                 $content .= html_writer::start_tag('div', array('class' => 'info-block'));
                 $content .= html_writer::tag('h2', html_writer::tag('b', $title1) ." ".$title2, array('style' => $hide2) );
                 $content .= html_writer::tag('p', $description);
+                $content .= html_writer::end_tag('div');
+            } else {
+
+                $content .= html_writer::start_tag('div', array('class' => 'info-video','style' => 'max-width:700px; height: 350px;'));
+                $content .= $media;
                 $content .= html_writer::end_tag('div');
             }
             $content .= html_writer::end_tag('div');

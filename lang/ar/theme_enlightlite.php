@@ -195,3 +195,5 @@ $string['red'] = "أحمر";
 $string['green'] = "أخضر";
 $string['default'] = "افتراضي";
 $string['cat-placeholder'] = "اكتب اسم الدورة التدريبية هنا ...";
+$string['search_courses'] = "ابحث في الدورات التدريبية الخاصة بك";
+$string['typesearch'] = "اكتب واضغط على بحث";
