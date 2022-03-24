@@ -81,9 +81,6 @@ echo $OUTPUT->doctype() ?>
 
     </script>
     <?php
-
-    // $PAGE->requires->js('/theme/enlightlite/javascript/slick.js');.
-
     $status = theme_enlightlite_get_setting('marketingSpot1_status');
     if ($status == "1") {
         echo theme_enlightlite_marketingspot1();

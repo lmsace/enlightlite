@@ -37,9 +37,9 @@ class theme_enlightlite_core_renderer extends theme_boost\output\core_renderer {
      * @return type|string
      */
     public function primarymenu() {
-        global $CFG, $PAGE, $OUTPUT;
+        global $CFG;
         require_once($CFG->dirroot . '/lib/outputrenderers.php');
-        $custommenuitems = isset($PAGE->theme->settings->primarymenu) ? $PAGE->theme->settings->primarymenu : "";
+        $custommenuitems = isset($this->page->theme->settings->primarymenu) ? $this->page->theme->settings->primarymenu : "";
         $custommenu = new custom_menu($custommenuitems, current_language());
         return $this->custom_menu_render($custommenu);
     }
@@ -52,9 +52,9 @@ class theme_enlightlite_core_renderer extends theme_boost\output\core_renderer {
      */
     protected function custom_menu_render(custom_menu $menu) {
 
-        global $CFG, $PAGE;
-        if (isset($PAGE->theme->settings->cmenuPosition)) {
-            $cmenuposition = $PAGE->theme->settings->cmenuPosition;
+        global $CFG;
+        if (isset($this->page->theme->settings->cmenuPosition)) {
+            $cmenuposition = $this->page->theme->settings->cmenuPosition;
         } else {
             $cmenuposition = "";
         }
@@ -96,9 +96,9 @@ class theme_enlightlite_core_renderer extends theme_boost\output\core_renderer {
      * @return type|null
      */
     public function enlightlite_course_menu_position($skey, $count) {
-        global $PAGE, $CFG;
+        global $CFG;
         $status = "";
-        $cmenuposition = $PAGE->theme->settings->cmenuPosition;
+        $cmenuposition = $this->page->theme->settings->cmenuPosition;
         $cmenuposition = intval($cmenuposition);
         if (!is_numeric($cmenuposition)) {
             return "";
@@ -131,8 +131,7 @@ class theme_enlightlite_core_renderer extends theme_boost\output\core_renderer {
      * @return type|string
      */
     public function course_menu() {
-        global $PAGE;
-        $courserenderer = $PAGE->get_renderer('course');
+        $courserenderer = $this->page->get_renderer('course');
         $tcmenu = $courserenderer->top_course_menu();
         $cmenushow = theme_enlightlite_get_setting('cmenushow');
         $ccontent = '';
@@ -425,7 +424,7 @@ class theme_enlightlite_core_renderer extends theme_boost\output\core_renderer {
      * @return type|string
      */
     public function render_login(\core_auth\output\login $form) {
-        global $CFG, $PAGE, $SITE, $OUTPUT;
+        global $CFG, $SITE;
         $context = $form->export_for_template($this);
         // Override because rendering is not supported in template yet.
         $context->cookieshelpiconformatted = $this->help_icon('cookiesenabled');

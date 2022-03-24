@@ -54,12 +54,11 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
      * @return string(html)
      */
     public function frontpage_categories_list() {
-        global $CFG, $PAGE, $OUTPUT;
+        global $CFG;
         $content = html_writer::start_tag('div', array('class' => 'container'));
         $content .= html_writer::tag('h2', get_string('categories'));
 
         global $CFG;
-        // require_once($CFG->libdir. '/coursecatlib.php');.
         $chelper = new coursecat_helper();
         $chelper->set_subcat_depth($CFG->maxcategorydepth)->set_show_courses(
         self::COURSECAT_SHOW_COURSES_COUNT)->set_categories_display_options(
@@ -178,8 +177,7 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
      * @return type|string
      */
     public function top_course_menu() {
-        global $CFG, $OUTPUT, $DB;
-        // require_once($CFG->libdir. '/coursecatlib.php');.
+        global $CFG , $DB;
         $list = core_course_category::make_categories_list();
         $mclist = array();
 
@@ -253,7 +251,7 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
      * @return type|string
      */
     private function category_menu2($count) {
-        global $OUTPUT, $PAGE, $CFG, $DB, $USER;
+        global $CFG, $DB, $USER;
         $page = optional_param('page', '0', PARAM_INT);
         $categoryid = optional_param('categoryid', null, PARAM_INT);
         $ctype = optional_param('ctype', null, PARAM_TEXT);
@@ -296,12 +294,9 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
      */
     public function frontpage_available_courses() {
 
-        global $CFG, $OUTPUT, $PAGE, $DB;
+        global $CFG , $DB;
         $coursecontainer = '';
-        // require_once($CFG->libdir. '/coursecatlib.php');.
-
         $chelper = new coursecat_helper();
-
         $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_EXPANDED)->set_courses_display_options( array(
             'recursive' => true,
             'limit' => $CFG->frontpagecourselimit,
@@ -356,11 +351,10 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
                 foreach ($courseids as $courseid) {
                     $container = '';
                     $course = get_course($courseid);
-                    $noimgurl = $OUTPUT->image_url('no-image', 'theme');
+                    $noimgurl = $this->output->image_url('no-image', 'theme');
                     $courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
 
                     if ($course instanceof stdClass) {
-                        // require_once($CFG->libdir. '/coursecatlib.php');.
                         $course = new core_course_list_element($course);
                     }
 
@@ -427,7 +421,7 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
      */
     public function frontpage_my_courses() {
 
-        global $USER, $CFG, $DB, $OUTPUT, $PAGE;
+        global $USER, $CFG, $DB;
         $content = html_writer::start_tag('div', array('class' => 'frontpage-enrolled-courses') );
         $content .= html_writer::start_tag('div', array('class' => 'container'));
         $content .= html_writer::tag('h2', get_string('mycourses'));
@@ -471,14 +465,13 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
                 $inputid = 'coursesearchbox';
                 $inputsize = 30;
         }
-        global $PAGE;
 
         $strsearchcourses = get_string("searchcourses");
         $searchurl = new moodle_url('/course/search.php');
         $output = html_writer::start_tag('div', array('class' => 'search-block'));
         $output .= html_writer::start_tag('div', array('class' => 'container'));
 
-        if ($PAGE->pagelayout == "frontpage") {
+        if ($this->page->pagelayout == "frontpage") {
             $output .= html_writer::tag('h2', get_string('search_courses', 'theme_enlightlite'));
         }
         $search = get_string ('search');
@@ -561,7 +554,7 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
             $nametag = 'div';
         }
 
-        // .coursebox.
+        // Coursebox.
         $content .= html_writer::start_tag('div', array(
             'class' => $classes,
             'data-courseid' => $course->id,
@@ -570,7 +563,7 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
 
         $content .= html_writer::start_tag('div', array('class' => 'info'));
 
-        // course name.
+        // Course name.
         $coursename = $chelper->get_course_formatted_name($course);
         $coursenamelink = html_writer::link(new moodle_url('/course/view.php', array('id' => $course->id)),
                                             $coursename, array('class' => $course->visible ? '' : 'dimmed'));
@@ -586,7 +579,7 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
                 $this->coursecat_include_js();
             }
         }
-        $content .= html_writer::end_tag('div'); // .moreinfo.
+        $content .= html_writer::end_tag('div'); // Moreinfo.
         $contentimages = $contentfiles = $class = '';
         foreach ($course->get_course_overviewfiles() as $file) {
             $isimage = $file->is_valid_image();
@@ -611,22 +604,21 @@ class theme_enlightlite_core_course_renderer extends core_course_renderer {
             $class = 'no-image';
         }
 
-        // print enrolmenticons.
         if ($icons = enrol_get_course_info_icons($course)) {
             $content .= html_writer::start_tag('div', array('class' => 'enrolmenticons'));
-            foreach ($icons as $pix_icon) {
-                $content .= $this->render($pix_icon);
+            foreach ($icons as $pixicon) {
+                $content .= $this->render($pixicon);
             }
-            $content .= html_writer::end_tag('div'); // .enrolmenticons.
+            $content .= html_writer::end_tag('div'); // Enrolmenticons.
         }
 
-        $content .= html_writer::end_tag('div'); // .info.
+        $content .= html_writer::end_tag('div'); // Info.
 
         $content .= html_writer::start_tag('div', array('class' => 'content '.$class));
         $content .= $this->coursecat_coursebox_content($chelper, $course);
-        $content .= html_writer::end_tag('div'); // .content.
+        $content .= html_writer::end_tag('div'); // Content.
 
-        $content .= html_writer::end_tag('div'); // .coursebox.
+        $content .= html_writer::end_tag('div'); // Coursebox.
         return $content;
     }
 } // Here the theme_enlightlite_course renderer fucntion closed.

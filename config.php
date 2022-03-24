@@ -26,7 +26,7 @@ defined('MOODLE_INTERNAL') || die();
 
 $THEME->name = 'enlightlite';
 
-$THEME->sheets = ['enlightlite'];
+$THEME->sheets = ['enlightlite' , 'custom'];
 
 $THEME->editor_sheets = [];
 
@@ -42,16 +42,7 @@ $THEME->requiredblocks = '';
 
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 
-/*$THEME->prescsscallback = 'theme_enlightlite_get_pre_scss';
-
-$THEME->extrascsscallback = 'theme_enlightlite_get_extra_scss';*/
-
 $THEME->csstreepostprocessor = 'theme_enlightlite_css_tree_post_processor';
-
-/*$THEME->scss = function($theme) {
-
-    return theme_enlightlite_get_main_scss_content($theme);
-};*/
 
 $THEME->javascripts_footer = ['theme'];
 

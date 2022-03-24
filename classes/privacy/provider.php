@@ -15,32 +15,24 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Theme version page.
+ * Enlightlite theme configuration values
+ *
  * @package    theme_enlightlite
  * @copyright  2015 onwards LMSACE Dev Team (http://www.lmsace.com)
  * @author    LMSACE Dev Team
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die;
-
-// The current component version (Date: YYYYMMDDXX).
-$plugin->version = 2022032200;
-
-// This version's maturity level.
-$plugin->maturity = MATURITY_STABLE;
-
-// Requires this Moodle version.
-$plugin->requires  = 2020061500;
-
-
-// Plugin release version.
-$plugin->release = 'v3.9';
-
-// Full name of the plugin.
-$plugin->component = 'theme_enlightlite';
-
-// Plugin dependencies and dependencies version.
-$plugin->dependencies = [
-    'theme_boost' => 2016120500
-];
+namespace theme_enlightlite\privacy;
+ 
+class provider implements \core_privacy\local\metadata\null_provider {
+ 
+    /**
+     * Returns meta data about this system.
+     *
+     * @return  string
+     */
+    public static function get_reason() : string {
+        return 'privacy:metadata';
+    }
+}

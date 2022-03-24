@@ -48,18 +48,27 @@ function theme_enlightlite_page_init(moodle_page $page) {
  */
 function theme_enlightlite_process_css($css, $theme) {
     global $OUTPUT, $CFG;
-
-    if(!empty($theme->settings->patternselect)) {
+    if (!empty($theme->settings->patternselect)) {
         $pselect = $theme->settings->patternselect;
     } else {
-        $pselect =  '#39b3e6';
+        $pselect = '#39b3e6';
     }
-    //$css = theme_enlightlite_pre_css_set_fontwww($css);
+    $customcss = !empty($theme->settings->customcss) ? $theme->settings->customcss : '';
+    $css = theme_enlightlite_custom_css($css , $customcss);
     $css = theme_enlightlite_set_fontwww($css);
     $css = theme_enlightlite_get_pattern_color($css, $theme);
+    $css = theme_enlightlite_set_slide_opacity($theme , $css);
     return $css;
 }
 
+function theme_enlightlite_custom_css($css , $customcss) {
+
+    $tag = '[[setting:customcss]]';
+    $replacement = $customcss;
+    $css = str_replace($tag , $replacement , $css);
+    return $css;
+
+}
 
 
 /**
@@ -83,15 +92,17 @@ function theme_enlightlite_set_bgimg() {
  * @param type|array $theme
  * @return type|string
  */
-function theme_enlightlite_set_slide_opacity($theme) {
+function theme_enlightlite_set_slide_opacity($theme , $css) {
 
     if (!empty($theme->settings->slideOverlay_opacity)) {
         $opacity = $theme->settings->slideOverlay_opacity;
     } else {
         $opacity = "0";
     }
-    $opacitycss = '$slideOverlay_opacity:' . $opacity . ";\n";
-    return $opacitycss;
+    $tag = '[[opacity]]';
+    $replacement = $opacity;
+    $css = str_replace($tag , $replacement , $css);
+    return $css;
 }
 
 function theme_enlightlite_set_fontwww($css) {
@@ -766,55 +777,6 @@ function theme_enlightlite_get_pattern_color( $css, $type='') {
     }
     return $css;
 }
-/*
-function _theme_enlightlite_get_pattern_color( $css, $type='') {
-
-    $pattern = array(
-    	"blue" => ["#39b3e6", "#353535" ],
-    	"green" => ["#7abb3b", "#353535"],
-    	"lavender" => ["#8e558e", "#2a2a2a"],
-    	"red" => ["#e14d43", "#2a2a2a"],
-    	"purple" => ["#523f6d", "#000"]
-    );
-
-    $patternstatus = theme_enlightlite_get_setting('patternselect');
-
-    $tag = '[[setting:primarycolor]]';
-    $second_tag = '[[setting:secondarycolor]]';
-
-    $primary_replace = $pattern[$patternstatus][0];
-    $second_replace = $pattern[$patternstatus][1];
-
-    if (is_null($primary_replace)) {
-        $primary_replace = '#39b3e6';
-    }
-
-    if (is_null($second_replace)) {
-        $second_replace = '#353535';
-    }
-
-    $css = str_replace($tag, $primary_replace, $css);
-
-    $css = str_replace($second_tag, $second_replace, $css);
-
-	$primaryapprox = array(
-		'[[color_primary_90_approx]]' => '9', //: rgba(57, 179, 230, .9);
-		'[[color_primary_80_approx]]' => '8', //: rgba(57, 179, 230, 0.8);
-		'[[color_primary_70_approx]]' => '7', //: rgba(57, 179, 230, 0.7);
-		'[[color_primary_60_approx]]' => '6', //: rgba(57, 179, 230, .6);
-		'[[color_primary_50_approx]]' => '5', //: rgba(57, 179, 230, 0.5);
-		'[[color_primary_25_approx]]' => '25' //: rgba(57, 179, 230, 0.25);
-	);
-
-	foreach ($primaryapprox as $key => $value) {
-		$rgb = theme_enlightlite_get_hexa($pattern[$patternstatus][0], $value);
-		$css = str_replace($key, $rgb, $css);
-	}
-
-    return $css;
-}
-*/
-
 
 /**
  * Function returns the rgb format with the combination of passed color hex and opacity.
