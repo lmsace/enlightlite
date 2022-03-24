@@ -31,11 +31,11 @@ $plugin->version = 2022032400;
 $plugin->maturity = MATURITY_STABLE;
 
 // Requires this Moodle version.
-$plugin->requires  = 2020110900;
+$plugin->requires  = 2021051701;
 
 
 // Plugin release version.
-$plugin->release = 'v3.10';
+$plugin->release = 'v3.11';
 
 // Full name of the plugin.
 $plugin->component = 'theme_enlightlite';
