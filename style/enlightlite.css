@@ -1251,9 +1251,6 @@ legend {
 legend + div {
     clear: both;
 }
-legend + * {
-    -webkit-margin-top-collapse: separate;
-}
 button {
     font-family: alegreyasansR, Arial, Helvetica, sans-serif;
 }
@@ -1891,7 +1888,7 @@ input[type="reset"][disabled] {
     padding: 19px 0;
 }
 #site-header .header-main a.has-logo .logo img {
-    max-height: 140px
+    max-height: 140px;
 }
 #site-header .header-main a.dropdown-item {
     color: var(--white);
@@ -4500,13 +4497,13 @@ select[multiple] {
 #frontpage-available-course-list .available-courses .course-slider > button.slick-prev:before {
     content: '\f104';
 }
-.dir-rtl #frontpage-available-course-list .available-courses .course-slider>button.slick-prev:before {
+.dir-rtl #frontpage-available-course-list .available-courses .course-slider > button.slick-prev:before {
     content: '\f105';
 }
 #frontpage-available-course-list .available-courses .course-slider > button.slick-next:before {
     content: '\f105';
 }
-.dir-rtl #frontpage-available-course-list .available-courses .course-slider>button.slick-next:before {
+.dir-rtl #frontpage-available-course-list .available-courses .course-slider > button.slick-next:before {
     content: '\f104';
 }
 #frontpage-available-course-list .available-courses .course-slider {
@@ -6311,7 +6308,7 @@ table.quizreviewsummary th.cell {
     }
     .available-courses .available-block h2 {
         text-align: center;
-        display: block; 
+        display: block;
         margin-bottom: 70px;
     }
     .my-courses .mycourses-block h2 {
@@ -6881,18 +6878,23 @@ button.close:focus,
 #site-header .header-main .message-app .body-container .nav .nav-item a.nav-link.active.show {
     background: var(--color_primary);
 }
-#site-header .header-main .message-app .body-container .custom-control.custom-radio .custom-control-input:checked + .custom-control-label:before,
-#site-header .header-main .message-app .body-container .custom-control.custom-switch .custom-control-input:checked + .custom-control-label:before {
+#site-header .header-main .message-app .body-container .custom-control.custom-radio
+.custom-control-input:checked + .custom-control-label:before,
+#site-header .header-main .message-app .body-container .custom-control.custom-switch
+.custom-control-input:checked + .custom-control-label:before {
     background-color: var(--color_primary);
     border-color: var(--color_primary);
 }
-#site-header .header-main .message-app .body-container .custom-control.custom-radio .custom-control-input:active ~ .custom-control-label:before {
+#site-header .header-main .message-app .body-container .custom-control.custom-radio
+.custom-control-input:active ~ .custom-control-label:before {
     background-color: var(--color_picton_25_approx);
 }
-#site-header .header-main .message-app .body-container .custom-control.custom-radio .custom-control-input:checked ~ .custom-control-label:before {
+#site-header .header-main .message-app .body-container .custom-control.custom-radio
+.custom-control-input:checked ~ .custom-control-label:before {
     background-color: var(--color_primary);
 }
-#site-header .header-main .message-app .body-container .custom-control.custom-radio .custom-control-input:checked:focus ~ .custom-control-label:before {
+#site-header .header-main .message-app .body-container .custom-control.custom-radio
+.custom-control-input:checked:focus ~ .custom-control-label:before {
     background-color: var(--color_primary);
     box-shadow: 0 0 0 1px var(--white), 0 0 0 0.2rem var(--color_picton_25_approx);
 }
