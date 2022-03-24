@@ -1256,9 +1256,6 @@ legend {
 legend + div {
     clear: both;
 }
-legend + * {
-    -webkit-margin-top-collapse: separate;
-}
 button {
     font-family: alegreyasansR, Arial, Helvetica, sans-serif;
 }
@@ -4541,13 +4538,13 @@ select[multiple] {
 #frontpage-available-course-list .available-courses .course-slider > button.slick-prev:before {
     content: '\f104';
 }
-.dir-rtl #frontpage-available-course-list .available-courses .course-slider>button.slick-prev:before {
+.dir-rtl #frontpage-available-course-list .available-courses .course-slider > button.slick-prev:before {
     content: '\f105';
 }
 #frontpage-available-course-list .available-courses .course-slider > button.slick-next:before {
     content: '\f105';
 }
-.dir-rtl #frontpage-available-course-list .available-courses .course-slider>button.slick-next:before {
+.dir-rtl #frontpage-available-course-list .available-courses .course-slider > button.slick-next:before {
     content: '\f104';
 }
 #frontpage-available-course-list .available-courses .course-slider {
@@ -6358,7 +6355,7 @@ table.quizreviewsummary th.cell {
     }
     .available-courses .available-block h2 {
         text-align: center;
-        display: block; 
+        display: block;
         margin-bottom: 70px;
     }
     .my-courses .mycourses-block h2 {
@@ -6950,8 +6947,10 @@ button.close:focus,
     background-color: var(--color_primary);
     box-shadow: 0 0 0 1px var(--white), 0 0 0 0.2rem var(--color_picton_25_approx);
 }
-.message-app .body-container .custom-control.custom-radio .custom-control-input:not(:disabled):active ~ .custom-control-label:before,
-.message-app .body-container .custom-control.custom-switch .custom-control-input:not(:disabled):active ~ .custom-control-label:before {
+.message-app .body-container .custom-control.custom-radio
+.custom-control-input:not(:disabled):active ~ .custom-control-label:before,
+.message-app .body-container .custom-control.custom-switch
+.custom-control-input:not(:disabled):active ~ .custom-control-label:before {
     border-color: var(--color_primary);
     background-color: var(--color_primary);
 }
