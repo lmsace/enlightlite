@@ -15,23 +15,20 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Asingle column layout
- * @package    theme_enlightlite
- * @copyright  2015 onwards LMSACE Dev Team (http://www.lmsace.com)
+ * The one column layout.
+ *
+ * @package   theme_enlightlite
+ * @copyright 2015 LMSACE Dev Team,lmsace.com
  * @author    LMSACE Dev Team
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
+$bodyattributes = $OUTPUT->body_attributes([]);
+$templatecontext = [
+    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
+    'output' => $OUTPUT,
+    'bodyattributes' => $bodyattributes
+];
 
-
-require_once($CFG->dirroot."/theme/enlightlite/classes/header_block.php");
-$headervalues = header_contents();
-require_once($CFG->dirroot."/theme/enlightlite/classes/main_block.php");
-$mainblock = main_block();
-require_once($CFG->dirroot."/theme/enlightlite/classes/footer_block.php");
-$footer = footer_template();
-$check = array_merge($mainblock, $headervalues);
-$fulltemplate = array_merge($check, $footer);
-$OUTPUT->doctype();
-echo $OUTPUT->render_from_template('theme_enlightlite/columns1', $fulltemplate);
+echo $OUTPUT->render_from_template('theme_enlightlite/columns1', $templatecontext);

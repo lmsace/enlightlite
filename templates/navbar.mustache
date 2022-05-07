@@ -22,12 +22,11 @@
 
     <div class="container navbar-nav">
         <div data-region="drawer-toggle" class="d-inline-block mr-3">
-            <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left mr-1 btn-secondary" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav">{{#pix}}i/menubars{{/pix}}<span class="sr-only">{{#str}}sidepanel, core{{/str}}</span>
-            <span aria-hidden="true"> </span>
-            <span aria-hidden="true"> </span>
-            <span aria-hidden="true"> </span>
-            </button>
-
+            {{#primarymoremenu}}
+                <div class="primary-navigation">
+                    {{> core/moremenu}}
+                </div>
+            {{/primarymoremenu}}
             <ul class="navbar-nav d-none d-lg-flex">
                 <!-- custom_menu -->
                 {{{ output.custom_menu }}}
@@ -50,6 +49,7 @@
                 <li class="nav-item d-flex align-items-center">
                     {{{ output.user_menu }}}
                 </li>
+                {{{ output.edit_switch }}}
             </ul>
         </div>
     </div>

@@ -24,11 +24,14 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+require_once($CFG->dirroot."/theme/enlightlite/classes/footer_block.php");
+
 $templatecontext = [
     // We cannot pass the context to format_string, this layout can be used during
     // installation. At that stage database tables do not exist yet.
     'sitename' => format_string($SITE->shortname, true, ["escape" => false]),
     'output' => $OUTPUT
 ];
+$templatecontext = array_merge($templatecontext, $footercontext);
 
 echo $OUTPUT->render_from_template('theme_enlightlite/maintenance', $templatecontext);

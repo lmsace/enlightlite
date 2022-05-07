@@ -1,0 +1,43 @@
+{{#slideshowStatus}}
+<div class='homepage-carousel'>
+    {{#numberofslides}}
+        <a href="#" class="prevBtn carousel-control left"> <span aria-hidden="true"></span> </a>
+        <a href="#" class="nextBtn carousel-control right"> <span aria-hidden="true"></span> </a>
+    {{/numberofslides}}
+    <div id="homepage-carousel">
+        {{#slides}}
+            {{#slideStatus}}
+                {{#slideimg}}
+                    <div class="homecarousel-slide-item carousel-item">
+                        <div class="slide-item slide-content {{overlayClass}}">
+                            <div class="slide-main-background">
+                                {{#slideimg}}
+                                    <img src="{{{slideimg}}}" class="slide-image">
+                                {{/slideimg}}
+                            </div>
+                            {{! Slide content }}
+                            <div class="slide-text content_overlayer {{contentClass}}" data-width="{{cont_width}}">
+                                <div class="heading-content">
+                                    {{#slidecaption}}
+                                        <h1 data-animation='animated {{contentAnimation}}' class="{{contentAclass}}">{{{slidecaption}}}</h1>
+                                    {{/slidecaption}}
+                                    {{#slidedesc}}
+                                        <p data-animation='animated {{contentAnimation}}' class="{{contentAclass}}">{{{slidedesc}}}</p>
+                                    {{/slidedesc}}
+                                    <div class="link-button">
+                                        {{#slideurltext1}}
+                                        <a href="{{{slideurl1}}}" target="{{btntarget1}}" class='btn btn-primary {{contentAclass}}' data-animation='animated {{contentAnimation}}'>
+                                            {{slideurltext1}}
+                                        </a>
+                                        {{/slideurltext1}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/slideimg}}
+            {{/slideStatus}}
+        {{/slides}}
+    </div>
+</div>
+{{/slideshowStatus}}

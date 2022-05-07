@@ -22,7 +22,14 @@
  * @author    LMSACE Dev Team
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-defined('MOODLE_INTERNAL') || die();
+
+namespace theme_enlightlite\output;
+
+use moodle_url;
+use lang_string;
+use html_writer;
+use stdClass;
+use core_course_category;
 
 /**
  * This class has function for renderer primary menu and top course menus
@@ -30,7 +37,7 @@ defined('MOODLE_INTERNAL') || die();
  * @author    LMSACE Dev Team
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class theme_enlightlite_core_renderer extends theme_boost\output\core_renderer {
+class core_renderer extends \theme_boost\output\core_renderer {
 
     /**
      * This function have the code to create the primary menu from the settings.
@@ -40,7 +47,7 @@ class theme_enlightlite_core_renderer extends theme_boost\output\core_renderer {
         global $CFG;
         require_once($CFG->dirroot . '/lib/outputrenderers.php');
         $custommenuitems = isset($this->page->theme->settings->primarymenu) ? $this->page->theme->settings->primarymenu : "";
-        $custommenu = new custom_menu($custommenuitems, current_language());
+        $custommenu = new \custom_menu($custommenuitems, current_language());
         return $this->custom_menu_render($custommenu);
     }
 
@@ -50,7 +57,7 @@ class theme_enlightlite_core_renderer extends theme_boost\output\core_renderer {
      * @param custom_menu $menu
      * @return type|string
      */
-    protected function custom_menu_render(custom_menu $menu) {
+    protected function custom_menu_render(\custom_menu $menu) {
 
         global $CFG;
         if (isset($this->page->theme->settings->cmenuPosition)) {
@@ -131,8 +138,7 @@ class theme_enlightlite_core_renderer extends theme_boost\output\core_renderer {
      * @return type|string
      */
     public function course_menu() {
-        $courserenderer = $this->page->get_renderer('course');
-        $tcmenu = $courserenderer->top_course_menu();
+        $tcmenu = $this->top_course_menu();
         $cmenushow = theme_enlightlite_get_setting('cmenushow');
         $ccontent = '';
         if ($cmenushow) {
@@ -152,6 +158,79 @@ class theme_enlightlite_core_renderer extends theme_boost\output\core_renderer {
         return $ccontent;
     }
 
+        /**
+     * Course list for course menu on header
+     * @return type|string
+     */
+    public function top_course_menu() {
+        global $CFG , $DB;
+        $list = \core_course_category::make_categories_list();
+        $mclist = array();
+
+        $sql = "SELECT a.category , a.cnt from ( SELECT category , count(category) as cnt FROM {course}";
+        $sql .= " WHERE category != '0' and visible = ? group by category ) as a order by a.cnt desc ";
+
+        $params = array('1');
+        $result = $DB->get_records_sql($sql, $params, 0, 0);
+        shuffle($result);
+        if ($result) {
+            foreach ($result as $rowcat) {
+                if ($result = $DB->record_exists('course_categories', array('id' => $rowcat->category))) {
+                    $mclist[] = $rowcat->category;
+                }
+            }
+        }
+        $mclist1 = array_slice($mclist, 0, 4, true);
+        $rcourseids = array();
+        foreach ($mclist1 as $catid) {
+            $coursecat = \core_course_category::get($catid);
+            $cname = $coursecat->get_formatted_name();
+            $menuheader = '<div class="cols"><h6>'.$cname.'</h6><ul>'."\n";
+            $menufooter = '</ul></div>'."\n";
+            $href = $CFG->wwwroot.'/course/index.php?categoryid='.$catid;
+            $mmenuheader = '<li class="dropdown-submenu"><a href="'.$href.'" class="">'.$cname.'</a><ul class="dropdown-menu">';
+            $mmenufooter = '</ul></li>';
+            $menuitems = '';
+            $options = array();
+            $options['recursive'] = true;
+            $options['offset'] = 0;
+            $options['limit'] = 6;
+            $options['sort'] = array('sortorder' => 'ASC');
+            if ($ccc = $coursecat->get_courses($options)) {
+                foreach ($ccc as $cc) {
+                    if ($cc->visible == "0" || $cc->id == "1") {
+                        continue;
+                    }
+                    $courseurl = new moodle_url("/course/view.php", array("id" => $cc->id));
+                    $menuitems .= '<li><a href="'.$courseurl.'">'.$cc->get_formatted_name().'</a></li>'."\n";
+                }
+                if (!empty($menuitems)) {
+                    $rcourseids[$catid] = array("desk" => $menuheader.$menuitems.$menufooter,
+                         "mobile" => $mmenuheader.$menuitems.$mmenufooter
+                    );
+                }
+            }
+        }
+        $mcourseids = array_slice($rcourseids, 0, 4);
+        $strcourse = $mstrcourse = '';
+        foreach ($mcourseids as $ctid => $marr) {
+            $strcourse .= $marr["desk"]."\n";
+            $mstrcourse .= $marr["mobile"]."\n";
+        }
+
+        $courseaurl = new moodle_url('/course/index.php');
+        if (!empty($strcourse)) {
+            $topcmenu = '<div class="custom-dropdown-menu" id="cr_menu" style="display:none;">';
+            $topcmenu .= '<div class="cols-wrap">'.$strcourse.'<div class="clearfix"></div></div></div>';
+        } else {
+            $topcmenu = "";
+        }
+        $topmmenu = '<ul class="dropdown-menu">'.$mstrcourse.'
+        <li><a href="'.$courseaurl.'">
+        '.get_string('viewall', 'theme_enlightlite').'</a></li></ul>';
+        return compact('topcmenu', 'topmmenu');
+    }
+
     /**
      * This code renders the custom menu items for the
      * bootstrap dropdown menu.
@@ -160,7 +239,7 @@ class theme_enlightlite_core_renderer extends theme_boost\output\core_renderer {
      * @param type|integer $level
      * @return type|string
      */
-    protected function render_custom_menu_item(custom_menu_item $menunode, $level = 0 ) {
+    protected function render_custom_menu_item(\custom_menu_item $menunode, $level = 0 ) {
         static $submenucount = 0;
         $content = '';
         if ($menunode->has_children()) {
@@ -353,14 +432,14 @@ class theme_enlightlite_core_renderer extends theme_boost\output\core_renderer {
         );
 
         // Create a divider (well, a filler).
-        $divider = new action_menu_filler();
+        $divider = new \action_menu_filler();
         $divider->primary = false;
 
-        $am = new action_menu();
+        $am = new \action_menu();
         $am->set_menu_trigger(
             $returnstr
         );
-        $am->set_alignment(action_menu::TR, action_menu::BR);
+        $am->set_menu_left(\action_menu::TR, \action_menu::BR);
         $am->set_nowrap_on_items();
         if ($withlinks) {
             $navitemcount = count($opts->navitems);
@@ -381,7 +460,7 @@ class theme_enlightlite_core_renderer extends theme_boost\output\core_renderer {
                         // Process this as a link item.
                         $pix = null;
                         if (isset($value->pix) && !empty($value->pix)) {
-                            $pix = new pix_icon($value->pix, $value->title, null, array('class' => 'iconsmall'));
+                            $pix = new \pix_icon($value->pix, $value->title, null, array('class' => 'iconsmall'));
                         } else if (isset($value->imgsrc) && !empty($value->imgsrc)) {
                             $value->title = html_writer::img(
                                 $value->imgsrc,
@@ -390,7 +469,7 @@ class theme_enlightlite_core_renderer extends theme_boost\output\core_renderer {
                             ) . $value->title;
                         }
 
-                        $al = new action_menu_link_secondary(
+                        $al = new \action_menu_link_secondary(
                             $value->url,
                             $pix,
                             $value->title,

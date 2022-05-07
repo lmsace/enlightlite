@@ -27,7 +27,6 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot."/theme/enlightlite/classes/header_block.php");
 $headervalues = header_contents();
-$headervalues['navdraweropen'] = false;
 require_once($CFG->dirroot."/theme/enlightlite/classes/main_block.php");
 $mainblock = main_block();
 require_once($CFG->dirroot."/theme/enlightlite/classes/footer_block.php");

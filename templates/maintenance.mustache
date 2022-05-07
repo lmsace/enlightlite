@@ -42,6 +42,7 @@
 </head>
 
 <body {{{ output.body_attributes }}}>
+{{> core/local/toast/wrapper}}
 
 <div id="page-wrapper">
 
@@ -56,23 +57,20 @@
         </div>
 
         <div id="page-content" class="row">
-            <section id="region-main" class="col-12">
+            <section id="region-main" class="col-12" aria-label="{{#str}}content{{/str}}">
                 {{{ output.main_content }}}
             </section>
         </div>
 
     </div>
+    {{> theme_enlightlite/footer }}
 </div>
-
-<footer id="page-footer" class="py-3 bg-dark text-light">
-    <div class="container">
-        {{{ output.standard_footer_html }}}
-        {{{ output.standard_end_of_body_html }}}
-    </div>
-</footer>
 
 </body>
 </html>
 {{#js}}
-require(['theme_boost/loader']);
+M.util.js_pending('theme_boost/loader');
+require(['theme_boost/loader'], function() {
+  M.util.js_complete('theme_boost/loader');
+});
 {{/js}}

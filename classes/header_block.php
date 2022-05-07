@@ -32,27 +32,12 @@
 function header_contents() {
 
     global $CFG, $PAGE, $OUTPUT, $SITE;
-    user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
-    require_once($CFG->libdir . '/behat/lib.php');
-    if (isloggedin() && $PAGE->pagelayout != 'frontpage') {
-        $navdraweropen = (get_user_preferences('drawer-open-nav', 'true') == 'true');
-    } else {
-        $navdraweropen = false;
-    }
-    $extraclasses = [];
-    if ($navdraweropen) {
-        $extraclasses[] = 'drawer-open-left';
-    }
     $primarymenu = $OUTPUT->primarymenu();
     if ($primarymenu == '') {
         $class = "navbar-toggler hidden-lg-up nocontent-navbar";
     } else {
         $class = "navbar-toggler hidden-lg-up";
     }
-    $bodyattributes = $OUTPUT->body_attributes($extraclasses);
-    $blockshtml = $OUTPUT->blocks('side-pre');
-    $hasblocks = strpos($blockshtml, 'data-block=') !== false;
-    $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
     $surl = new moodle_url('/course/search.php');
     $courserenderer = $PAGE->get_renderer('core', 'course');
     $tcmenu = $courserenderer->top_course_menu();
@@ -64,15 +49,15 @@ function header_contents() {
     $shome = get_string('home');
     $cmenuhide = (!$cmenuhide) ? 0 : 1;
     $scourses = get_string('courses');
+    $secondarynavigation = false;
+    if (!defined('BEHAT_SITE_RUNNING')) {
+        $buildsecondarynavigation = $PAGE->has_secondary_navigation();
+        if ($buildsecondarynavigation) {
+            $moremenu = new \core\navigation\output\more_menu($PAGE->secondarynav, 'nav-tabs');
+            $secondarynavigation = $moremenu->export_for_template($OUTPUT);
+        }
+    }
     $templatecontext = [
-        'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
-        'output' => $OUTPUT,
-        'sidepreblocks' => $blockshtml,
-        'hasblocks' => $hasblocks,
-        'bodyattributes' => $bodyattributes,
-        'navdraweropen' => $navdraweropen,
-        'regionmainsettingsmenu' => $regionmainsettingsmenu,
-        'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
         "curl" => $curl,
         "logourl" => $logourl,
         "topmmenu" => $topmmenu,
@@ -86,6 +71,4 @@ function header_contents() {
 
     return $templatecontext;
 }
-$template = header_contents();
-$template['flatnavigation'] = $PAGE->flatnav;
-$flatnavbar = $OUTPUT->render_from_template('theme_boost/nav-drawer', $template);
+$headercontext = header_contents();

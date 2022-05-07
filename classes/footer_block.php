@@ -88,7 +88,6 @@ function footer_template() {
     $footeraddress = theme_enlightlite_footer_address();
 
     $templatecontext = [
-    'output' => $OUTPUT,
         "copyright" => $copyright,
         "fb1title" => $fb1title,
         "fb2title" => $fb2title,
@@ -110,4 +109,4 @@ function footer_template() {
     ];
     return $templatecontext;
 }
-$footertemplate = footer_template();
+$footercontext = footer_template();

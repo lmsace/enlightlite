@@ -559,6 +559,38 @@ function theme_enlightlite_marketingspot1() {
 }
 
 /**
+ * Return the html contents for the  the marketing spot2 (anytime)
+ */
+function theme_enlightlite_marketingspot2() {
+    $content = '';
+    $mspot2status = theme_enlightlite_get_setting('marketingSpot2_status');
+    $msp2title = theme_enlightlite_get_setting('mspot2title', 'format_html');
+    $msp2title = theme_enlightlite_lang($msp2title);
+    $msp2desc = theme_enlightlite_get_setting('mspot2desc', 'format_html');
+    $msp2desc = theme_enlightlite_lang($msp2desc);
+    $msp2url = theme_enlightlite_get_setting('mspot2url');
+    $msp2urltxt = theme_enlightlite_get_setting('mspot2urltext', 'format_html');
+    $msp2urltxt = theme_enlightlite_lang($msp2urltxt);
+    $mspot2urltarget = theme_enlightlite_get_setting('mspot2urltarget');
+    $target = ($mspot2urltarget == '1') ? "_blank" : "_self";
+    if ($mspot2status == '1') {
+        $content .= html_writer::start_tag("div", array("class" => "jumbo-viewall"));
+        $content .= html_writer::start_tag("div", array("class" => "container"));
+        $content .= html_writer::start_tag("div", array("class" => "inner-wrap"));
+        $content .= html_writer::start_tag("div", array("class" => "desc-wrap"));
+            $content .= html_writer::tag("h3", $msp2title);
+            $content .= html_writer::tag("p", $msp2desc);
+        $content .= html_writer::end_tag("div");
+        $content .= html_writer::link($msp2url, $msp2urltxt, array('target' => $target, 'class' => 'btn-jumbo'));
+        $content .= html_writer::end_tag("div");
+        $content .= html_writer::end_tag("div");
+        $content .= html_writer::end_tag("div");
+    }
+    return $content;
+}
+
+
+/**
  * Function returns the category list random order for header menu.
  * @return type|string
  */
