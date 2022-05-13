@@ -2478,7 +2478,7 @@ button.close:focus,
     color: var(--black);
     border: 0;
     padding: 0;
-    top: 0;    
+    top: 0;
     right: 50px;
 }
 #header .navbar-nav .simplesearchform .input-group .btn-close i {
@@ -2793,7 +2793,7 @@ button.close:focus,
     border: 0;
 }
 #site-header .header-main .navbar .nav > .active > a {
-    background: var(--color_secondary);  
+    background: var(--color_secondary);
     box-shadow: none;
 }
 #site-header .header-main .navbar .nav > .active > a:hover {
@@ -5059,13 +5059,13 @@ img.userpicture {
 #frontpage-available-course-list .available-courses .course-slider > button.slick-prev:before {
     content: '\f104';
 }
-.dir-rtl #frontpage-available-course-list .available-courses .course-slider>button.slick-prev:before {
+.dir-rtl #frontpage-available-course-list .available-courses .course-slider > button.slick-prev:before {
     content: '\f105';
 }
 #frontpage-available-course-list .available-courses .course-slider > button.slick-next:before {
     content: '\f105';
 }
-.dir-rtl #frontpage-available-course-list .available-courses .course-slider>button.slick-next:before {
+.dir-rtl #frontpage-available-course-list .available-courses .course-slider > button.slick-next:before {
     content: '\f104';
 }
 #frontpage-available-course-list .available-courses .course-slider {
@@ -5197,7 +5197,7 @@ img.userpicture {
     }
     .available-courses .available-block h2 {
         text-align: center;
-        display: block; 
+        display: block;
         margin-bottom: 70px;
     }
 }
@@ -5768,8 +5768,10 @@ body.pagelayout-frontpage .load-content {
     background-color: var(--color_primary);
     box-shadow: 0 0 0 1px var(--white), 0 0 0 0.2rem var(--color_picton_25_approx);
 }
-.message-app .body-container .custom-control.custom-radio .custom-control-input:not(:disabled):active ~ .custom-control-label:before,
-.message-app .body-container .custom-control.custom-switch .custom-control-input:not(:disabled):active ~ .custom-control-label:before {
+.message-app .body-container .custom-control.custom-radio
+.custom-control-input:not(:disabled):active ~ .custom-control-label:before,
+.message-app .body-container .custom-control.custom-switch
+.custom-control-input:not(:disabled):active ~ .custom-control-label:before {
     border-color: var(--color_primary);
     background-color: var(--color_primary);
 }
