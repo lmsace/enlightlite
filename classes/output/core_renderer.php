@@ -502,7 +502,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
      * @param \core_auth\output\login $form
      * @return type|string
      */
-    public function render_login(\core_auth\output\login $form) {
+    /* public function render_login(\core_auth\output\login $form) {
         global $CFG, $SITE;
         $context = $form->export_for_template($this);
         // Override because rendering is not supported in template yet.
@@ -510,5 +510,5 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $context->errorformatted = $this->error_text($context->error);
         $maincontent = $this->render_from_template('theme_enlightlite/login_form', $context);
         return  $maincontent;
-    }
+    } */
 } // Here the course renderer fucntion closed.
