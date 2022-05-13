@@ -4050,6 +4050,7 @@ button.close:focus,
 #page-wrapper #page {
     padding: 0;
     margin-top: 0;
+    overflow: visible;
 }
 #page-navbar {
     padding: 3px 0;
