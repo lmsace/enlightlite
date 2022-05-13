@@ -575,7 +575,7 @@ function theme_enlightlite_marketingspot2() {
     $target = ($mspot2urltarget == '1') ? "_blank" : "_self";
     if ($mspot2status == '1') {
         $content .= html_writer::start_tag("div", array("class" => "jumbo-viewall"));
-        $content .= html_writer::start_tag("div", array("class" => "container"));
+        $content .= html_writer::start_tag("div", array("class" => "container-fluid"));
         $content .= html_writer::start_tag("div", array("class" => "inner-wrap"));
         $content .= html_writer::start_tag("div", array("class" => "desc-wrap"));
             $content .= html_writer::tag("h3", $msp2title);
