@@ -19,7 +19,10 @@
     Page navbar.
 }}
 <nav role="banner" id="header" class="fixed-top navbar navbar-light bg-faded navbar-expand moodle-has-zindex">
-
+    <button class="navbar-toggler aabtn d-block d-md-none px-1 my-1 border-0" data-toggler="drawers" data-action="toggle" data-target="theme_boost-drawers-primary">
+        <span class="navbar-toggler-icon"></span>
+        <span class="sr-only">{{#str}}sidepanel, core{{/str}}</span>
+    </button>
     <div class="container-fluid navbar-nav">
 
         <div class="header-top" id="Mainmenu">
@@ -30,7 +33,6 @@
                     </div>
                 {{/primarymoremenu}}
             </div>
-        
             <ul class="nav navbar-nav ml-auto">
                 <div class="d-none d-lg-flex">
                 {{{ output.search_box }}}
@@ -48,4 +50,6 @@
         </div>
     </div>
 </nav>
+
+{{> theme_boost/primary-drawer-mobile }}
 
