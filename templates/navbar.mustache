@@ -1,4 +1,4 @@
-
+    
 {{!
     This file is part of Moodle - http://moodle.org/
 
@@ -20,23 +20,17 @@
 }}
 <nav role="banner" id="header" class="fixed-top navbar navbar-light bg-faded navbar-expand moodle-has-zindex">
 
-    <div class="container navbar-nav">
-        <div data-region="drawer-toggle" class="d-inline-block mr-3">
-            {{#primarymoremenu}}
-                <div class="primary-navigation">
-                    {{> core/moremenu}}
-                </div>
-            {{/primarymoremenu}}
-            <ul class="navbar-nav d-none d-lg-flex">
-                <!-- custom_menu -->
-                {{{ output.custom_menu }}}
-                <!-- page_heading_menu -->
-                {{{ output.page_heading_menu }}}
-            </ul>
-        </div>
+    <div class="container-fluid navbar-nav">
 
         <div class="header-top" id="Mainmenu">
-
+            <div data-region="drawer-toggle" class="d-inline-block mr-3">
+                {{#primarymoremenu}}
+                    <div class="primary-navigation">
+                        {{> core/moremenu}}
+                    </div>
+                {{/primarymoremenu}}
+            </div>
+        
             <ul class="nav navbar-nav ml-auto">
                 <div class="d-none d-lg-flex">
                 {{{ output.search_box }}}
