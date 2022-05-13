@@ -20,6 +20,11 @@
 }}
 <nav role="banner" id="header" class="fixed-top navbar navbar-light bg-faded navbar-expand moodle-has-zindex">
 
+    <button class="navbar-toggler aabtn d-block d-md-none px-1 my-1 border-0" data-toggler="drawers" data-action="toggle" data-target="theme_boost-drawers-primary">
+        <span class="navbar-toggler-icon"></span>
+        <span class="sr-only">{{#str}}sidepanel, core{{/str}}</span>
+    </button>
+
     <div class="container navbar-nav">
         <div data-region="drawer-toggle" class="d-inline-block mr-3">
             {{#primarymoremenu}}
