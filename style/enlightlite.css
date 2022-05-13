@@ -3842,6 +3842,7 @@ button.close:focus,
         right: auto;
         left: 0;
     }
+}
 
 @media (max-width: 767px) {
     .jumbo-viewall .inner-wrap {
