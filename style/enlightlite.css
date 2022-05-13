@@ -846,7 +846,7 @@ table tr a img.icon {
     padding: 0;
     border: 1px solid var(--light_grey);
     border-radius: 0;
-    box-shadow: 0 0 6px 0 var(--black_20);
+    box-shadow: 2px 2px 5px var(--black_20);
 }
 .dropdown-menu > li + li {
     border-top: 1px solid var(--color_gray_nurse_approx);
@@ -2395,7 +2395,6 @@ button.close:focus,
 #header .header-top .dropdown .dropdown-menu {
     color: var(--white);
     background: var(--color_dropdown_background);
-    margin-top: 5px;
     left: 0;
     right: auto;
     padding: 0;
@@ -4048,9 +4047,10 @@ button.close:focus,
 }
 
 /*Page header - breadcrumb*/
-#page-site-index.pagelayout-frontpage #page {
+#page-wrapper #page {
     padding: 0;
     margin-top: 0;
+    overflow: visible;
 }
 #page-navbar {
     padding: 3px 0;

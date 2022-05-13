@@ -528,7 +528,7 @@ function theme_enlightlite_marketingspot1() {
                 $hide2 = "display:none";
             }
             $content .= html_writer::start_tag('div', array('class' => 'site-info' ));
-            $content .= html_writer::start_tag('div', array('class' => 'container'));
+            $content .= html_writer::start_tag('div', array('class' => 'container-fluid'));
 
             $content .= html_writer::start_tag('div', array('class' => 'info-content '. $classmedia ));
             $content .= html_writer::tag('h2', html_writer::tag('b', $title1) ." ".$title2, array('style' => $hide));

@@ -256,7 +256,7 @@ class course_renderer extends \core_course_renderer {
             array( 'class' => 'available-courses', 'id' => 'available-courses') );
         $header .= html_writer::start_tag('div', array( 'class' => 'available-overlay' ) );
         $header .= html_writer::start_tag('div', array( 'class' => 'available-block' ) );
-        $header .= html_writer::start_tag('div', array('class' => 'container'));
+        $header .= html_writer::start_tag('div', array('class' => 'container-fluid'));
         $header .= html_writer::tag('h2', get_string('availablecourses'));
 
        /* if ($tcount > '1') {
