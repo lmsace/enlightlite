@@ -26,13 +26,12 @@
 defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->dirroot."/theme/enlightlite/classes/header_block.php");
-$headervalues = header_contents();
-require_once($CFG->dirroot."/theme/enlightlite/classes/main_block.php");
-$mainblock = main_block();
 require_once($CFG->dirroot."/theme/enlightlite/classes/footer_block.php");
-$footer = footer_template();
-$check = array_merge($mainblock, $headervalues);
-$fulltemplate = array_merge($check, $footer);
-$OUTPUT->doctype();
-echo $OUTPUT->render_from_template('theme_enlightlite/login', $fulltemplate);
+$templatecontext = array_merge($headercontext, $footercontext);
+$templatecontext += [
+    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
+    'output' => $OUTPUT,
+    'bodyattributes' => $bodyattributes
+];
+echo $OUTPUT->render_from_template('theme_enlightlite/login', $templatecontext);
 
