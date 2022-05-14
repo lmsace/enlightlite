@@ -307,7 +307,7 @@ class course_renderer extends \core_course_renderer {
                         $imgurl = $noimgurl;
                     }
 
-                    $container .= html_writer::start_tag('div', array( 'class' => 'col-md-2') );
+                    $container .= html_writer::start_tag('div', array( 'class' => '') );
                     $container .= html_writer::start_tag('div', array( 'class' => 'available-content'));
                     $container .= html_writer::start_tag('div', array( 'class' => 'available-img'));
 

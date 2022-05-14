@@ -139,7 +139,8 @@ a.dropdown-item:focus,
 a.dropdown-toggle:focus,
 .modal-dialog[tabindex="0"]:focus,
 .moodle-dialogue-base .closebutton:focus,
-button.close:focus {
+button.close:focus,
+[role="treeitem"]:not([aria-expanded="true"]):focus {
     outline: none;
     box-shadow: none;
 }
@@ -156,7 +157,10 @@ a:not([class]):focus,
     background: none;
     box-shadow: none;
 }
-
+[role="treeitem"][aria-expanded="true"].focus > *:first-child,
+[role="treeitem"][aria-expanded="true"]:focus > *:first-child {
+    box-shadow: none;
+}
 h1,
 h2,
 h3,
@@ -309,6 +313,7 @@ td.submit input {
 .btn.btn-link:focus,
 .btn.btn-link:active {
     color: var(--color_secondary);
+    background: none;
 }
 .btn-primary,
 .btn-primary:hover,
@@ -1164,6 +1169,14 @@ div.backup-section + form {
 .message .messagearea #personsearch .message_form input[type="text"] {
     min-width: 100px;
 }
+.jsenabled .collapsible-actions a:before {
+    content: '\f105';
+    font-family: var(--font_0);
+    margin-right: 5px;
+}
+.jsenabled .collapsible-actions a.collapse-all:before {
+    content: '\f107';
+}
 .collapsible-actions {
     padding: 10px 0;
 }
@@ -1173,9 +1186,7 @@ div.backup-section + form {
     font-family: var(--font_1);
     color: var(--color_gravel_approx);
 }
-.collapsible-actions a:hover {
-    text-decoration: none;
-}
+.collapsible-actions a:hover,
 .collapsible-actions a:focus {
     text-decoration: none;
 }
@@ -1194,9 +1205,12 @@ div.backup-section + form {
     padding-top: 0;
     text-align: left;
 }
+.mform fieldset legend {
+    padding: 10px 0 15px;
+    margin-bottom: 0;
+}
 .mform fieldset.collapsible legend a.fheader {
-    padding-left: 25px;
-    margin-left: 0;
+    padding-left: 3px;
 }
 .mform .fdescription.required {
     margin-left: 0;
@@ -1700,6 +1714,9 @@ button.closebutton:active {
 .card-deck .card .card-body.course-info-container {
     padding: 1.25rem;
 }
+.card-deck .card .card-body.course-info-container .text-truncate .coursename {
+    padding: 0;
+}
 .mform .fcontainer .form-inline .form-group {
     width: 100%;
 }
@@ -1780,9 +1797,6 @@ button.close:focus,
 .simplesearchform .btn-submit {
     background: var(--color_silver_approx);
 }
-.simplesearchform .input-group .input-group-append .btn {
-    border-radius: 0;
-}
 .pagelayout-frontpage #page.drawers div[role="main"] {
     padding: 0;
 }
@@ -1793,31 +1807,57 @@ button.close:focus,
     border-color: var(--white);
     background: var(--white);
 }
-.custom-control-input:checked ~ .custom-control-label:before,
-.custom-control-input:not(:disabled):active ~ .custom-control-label:before {
+.custom-control-input:checked:not(.custom-checkbox) ~ .custom-control-label:before,
+.custom-control-input:not(:disabled):not(.custom-checkbox):active ~ .custom-control-label:before {
     border-color: var(--white);
     background: var(--white);
 }
-.custom-control-input:focus:not(:checked) ~ .custom-control-label:before {
+.custom-control-input:focus:not(:checked):not(.custom-checkbox) ~ .custom-control-label:before {
     border-color: var(--white);
 }
-.custom-control-input:focus ~ .custom-control-label:before {
+.custom-control-input:not(.custom-checkbox):focus ~ .custom-control-label:before {
     box-shadow: none;
 }
-.custom-switch .custom-control-label:after,
-.custom-switch .custom-control-input:checked ~ .custom-control-label:after {
+.custom-switch .custom-control-label:not(.custom-checkbox):after,
+.custom-switch .custom-control-input:checked:not(.custom-checkbox) ~ .custom-control-label:after {
     background-color: var(--color_primary);
 }
 .pagelayout-standard #page.drawers .main-inner,
-body.limitedwidth #page.drawers .main-inner {
+body.limitedwidth #page.drawers .main-inner,
+.header-maxwidth,
+.secondary-navigation {
     max-width: none;
-    padding: 0;
     margin: 0;
+}
+.secondary-navigation .navigation {
+    border: 0;
+}
+.nav .caret {
+    display: none;
+}
+.page-admin-setting-themesettingenlightlite #region-main {
+    overflow-x: visible;
+}
+#region-main {
+    padding: 15px;
+}
+.path-mod-assign [data-region="user-info"] .img-rounded {
+    width: 50px;
+}
+.assignfeedback_editpdf_widget .pageheader .navigation,
+.assignfeedback_editpdf_widget .pageheader .navigation button,
+.assignfeedback_editpdf_widget .pageheader select {
+    min-width: auto;
+    min-height: auto;
+    width: auto;
 }
 
 @media (max-width: 575px) {
     .settingsform .tab-content + .row {
         margin: 0;
+    }
+    body.limitedwidth #page.drawers .main-inner {
+        padding: 0 15px;
     }
 }
 
@@ -1847,6 +1887,9 @@ body.limitedwidth #page.drawers .main-inner {
     .slick-initialized .slick-slide {
         display: flex;
     }
+    #page.drawers div[role="main"] {
+        padding: 0;
+    }
 }
 
 @media (max-width: 767px) {
@@ -1867,6 +1910,16 @@ body.limitedwidth #page.drawers .main-inner {
     #page-grade-report-history-index .fdate_selector .fitem .custom-select {
         max-width: 100%;
         min-width: auto;
+    }
+    .path-mod-assign [data-region="grading-navigation"] [data-region="input-field"] input {
+        max-width: none;
+        width: 100%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    #region-main {
+        overflow-x: visible;
     }
 }
 
@@ -1965,15 +2018,16 @@ body.limitedwidth #page.drawers .main-inner {
     .page-context-header .page-header-headings h1 {
         font-size: 20px;
     }
-    .page-context-header .page-header-image {
-        max-width: 80px;
-    }
     .page-context-header .page-header-image img {
         width: 100%;
         height: auto;
     }
     #page .card .card-body .d-flex .d-flex {
         display: block !important;
+    }
+    .dropdown-menu {
+        left: auto !important;
+        right: 0;
     }
 }
 
@@ -2048,8 +2102,8 @@ body.limitedwidth #page.drawers .main-inner {
     text-align: right;
 }
 .dir-rtl .mform fieldset.collapsible legend a.fheader {
-    padding-right: 25px;
-    margin-right: 0;
+    padding-right: 3px;
+    padding-left: 0;
 }
 .dir-rtl .mform .fdescription.required {
     margin-right: 0;
@@ -2239,7 +2293,7 @@ body.limitedwidth #page.drawers .main-inner {
     margin-left: 10px;
 }
 #header .header-top .navbar-nav .editmode-switch-form .input-group label {
-    color: var(--white);
+    color: var(--white) !important;
 }
 #header .header-top .search-input-wrapper {
     padding: 0;
@@ -2361,7 +2415,6 @@ body.limitedwidth #page.drawers .main-inner {
     background-color: inherit;
     border: 0;
     border-radius: 0;
-    box-shadow: none;
 }
 #header .header-top .dropdown-menu > li > a {
     font-size: 16px;
@@ -3277,7 +3330,7 @@ body.limitedwidth #page.drawers .main-inner {
 /*Homepage carousel*/
 
 .homepage-carousel {
-    height: 700px;
+    height: 600px;
     margin-bottom: 0;
 }
 .homepage-carousel .slidesContainer {
@@ -3580,8 +3633,10 @@ body.limitedwidth #page.drawers .main-inner {
 }
 
 @media (max-width: 600px) {
-    .homepage-carousel .slide-text {
-        text-align: center;
+    .homepage-carousel .homecarousel-slide-item .slide-item.slide-content .slide-text.content_overlayer {
+        top: 25%;
+        left: 10px;
+        right: 10px;
     }
     .homepage-carousel .slide-text.double-heading-content {
         max-width: none;
@@ -4163,9 +4218,6 @@ body.limitedwidth #page.drawers .main-inner {
 }
 #page-navbar {
     padding: 3px 0;
-}
-.page-context-header .page-header-image {
-    margin: 0 0 5px !important;
 }
 .page-context-header .page-header-image img {
     max-width: 50px;
@@ -5141,6 +5193,7 @@ img.userpicture {
 }
 #frontpage-available-course-list .available-courses .course-slider.slick-initialized .slick-track .slick-slide {
     max-width: 100%;
+    margin: 0 15px;
 }
 #frontpage-available-course-list .available-courses .container {
     position: relative;
@@ -5212,11 +5265,12 @@ img.userpicture {
     font-size: 18px;
 }
 .available-courses .available-block .available-img {
-    height: 150px;
+    height: 180px;
     background-color: var(--white);
     padding: 3px;
 }
 .available-courses .available-block .available-img img {
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -5264,9 +5318,6 @@ img.userpicture {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    .available-courses .available-block .available-img {
-        height: auto;
-    }
     .available-block .available-img > a {
         width: 100%;
         height: 100px;
@@ -5440,6 +5491,16 @@ img.userpicture {
 .block_myoverview .block-myoverview .searchbar .input-group-append .input-group-text button:focus {
     box-shadow: none;
 }
+.block-region .block.block_myoverview .card-body .card-text .block-myoverview > hr {
+    display: none;
+}
+.drawer .block-region .block.block_myoverview .card-body .card-text .block-myoverview > hr + div {
+    display: block !important;
+}
+.block-region .block.block_myoverview .card-body .card-text .block-myoverview > hr + div > div {
+    margin-bottom: 10px!important;
+    display: flex!important;
+}
 .block .card-title {
     display: block;
 }
@@ -5454,6 +5515,9 @@ img.userpicture {
 }
 .block .maincalendar .calendarmonth td {
     height: 2em;
+}
+.block .maincalendar .calendarmonth td.today .day-number-circle {
+    background-color: var(--color_primary);
 }
 .block .maincalendar .calendarwrapper .controls .calendar-controls a.arrow_link .arrow_text {
     display: none;
@@ -5491,10 +5555,6 @@ img.userpicture {
 }
 .block .block-controls .dropdown-toggle:after {
     color: var(--white);
-}
-.block .block-controls i.icon {
-    color: var(--white);
-    margin: 0;
 }
 .block .block-controls .dropdown-item i.icon {
     color: var(--color_mine_shaft_approx);
@@ -5591,8 +5651,19 @@ img.userpicture {
 .block-region .block .card-body .block-myoverview .card-title .dropdown-menu > li > a.active:hover {
     color: var(--white);
 }
+.block_navigation .block_tree li.depth_1 > .tree_item.branch {
+    padding: 5px;
+    box-shadow: none;
+}
+.block_navigation .block_tree li ul p.tree_item {
+    box-shadow: none;
+}
 .block-region .block.card .card-body {
     padding: 15px;
+}
+.block-region .block.card .block-recentlyaccesseditems .card-deck .card .card-body {
+    padding: 0;
+    border: 0;
 }
 #region-main.has-blocks .dashboard-card-deck .dashboard-card .card-body .card-title {
     width: 100%;
@@ -5619,11 +5690,11 @@ img.userpicture {
 .block_recentlyaccessedcourses .paging-bar-container .pagination .page-item .page-link {
     color: var(--color_primary);
 }
-.block_recentlyaccessedcourses .card.dashboard-card .card-body .align-items-start {
-    padding: 10px;
-}
 .block_recentlyaccessedcourses .card.dashboard-card .card-body .align-items-start a.coursename {
     padding: 0;
+}
+.page-mycourses .block-region .block.block_myoverview .card-body {
+    border: 0;
 }
 
 
@@ -5843,22 +5914,22 @@ body.pagelayout-frontpage .load-content {
     border-color: var(--color_primary);
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    box-shadow: none;
 }
 .main-inner .drawer-right-toggle button.btn:not(:disabled):not(.disabled) {
     border-color: var(--color_primary);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
-}
-.main-inner .drawer-left-toggle button:focus,
-.main-inner .drawer-right-toggle button:focus {
-    background: var(--color_primary);
     box-shadow: none;
 }
 .drawer .drawerheader .drawertoggle {
-    height: auto;
+    width: 35px;
+    height: 35px;
+    line-height: 31px;
     color: var(--white);
     background: var(--color_primary);
-    padding: 5px;
+    border-radius: 50%;
+    padding: 0;
 }
 .drawer .drawerheader .drawertoggle:hover,
 .drawer .drawerheader .drawertoggle:focus {
@@ -5868,7 +5939,8 @@ body.pagelayout-frontpage .load-content {
     background: var(--color_primary);
     border-color: var(--color_primary);
 }
-.drawer .drawercontent .courseindex .courseindex-section .courseindex-item:hover a.courseindex-link {
+.drawer .drawercontent .courseindex .courseindex-section .courseindex-item:hover a,
+.drawer .drawercontent .courseindex .courseindex-section .courseindex-item:hover .courseindex-locked {
     color: var(--white);
 }
 .main-inner .secondarynavigation .moremenu .nav-tabs .dropdownmoremenu .dropdown-menu {
@@ -5915,6 +5987,12 @@ body.pagelayout-frontpage .load-content {
 .message-app .body-container .nav-pills .nav-link.active {
     background-color: var(--color_primary);
 }
+.message-app .list-group .list-group-item.list-group-item-action:hover {
+    background: var(--color_primary);
+}
+.message-app .list-group .list-group-item.list-group-item-action:hover i.icon {
+    color: var(--white);
+}
 
 @media (min-width: 1200px) {
     .pagelayout-course #page.drawers .main-inner {
@@ -5955,6 +6033,7 @@ body.pagelayout-frontpage .load-content {
     background: none;
     border: 0;
     border-top: 2px solid transparent;
+    border-radius: 5px;
     margin-right: 1px;
 }
 .moremenu .nav-tabs .nav-item .nav-link:hover,
@@ -5962,6 +6041,13 @@ body.pagelayout-frontpage .load-content {
     color: var(--white);
     background: var(--color_primary);
     border-top-color: var(--color_primary);
+}
+.moremenu .nav-link[data-toggle="tab"]::after {
+    display: none;
+}
+.collapsemenu .collapseall,
+.collapsemenu.collapsed .expandall {
+    display: inline-block;
 }
 
 @media (min-width: 768px) {
