@@ -113,6 +113,7 @@ $templatecontext += [
     'aboutus' => theme_enlightlite_marketingspot1(),
     'marketingspot' => theme_enlightlite_marketingspot2(),
 ];
-
+/* print_object($slideconfig);
+exit; */
 echo $OUTPUT->render_from_template('theme_enlightlite/frontpage', $templatecontext);
 

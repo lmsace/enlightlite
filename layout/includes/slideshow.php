@@ -84,7 +84,6 @@ function slideshow_slide_settings($general = array(), $s1 = "") {
         $slide['contentPosition'] = theme_enlightlite_get_setting('slide'. $s1 .'contentPosition');
         $urltarget1 = theme_enlightlite_get_setting('slide'. $s1 .'urltarget1');
         $contwidth = theme_enlightlite_get_setting('slide'.$s1.'contFullwidth');
-
         $slidedesc = theme_enlightlite_get_setting('slide' . $s1 . 'desc', 'format_html');
         $slideurltext1 = theme_enlightlite_get_setting('slide' . $s1 . 'urltext1');
         $slidecaption = theme_enlightlite_get_setting('slide' . $s1 . 'caption', true);
