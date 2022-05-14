@@ -42,9 +42,11 @@
                 {{{ output.navbar_plugin_output }}}
                 </li>
                 <!-- user_menu -->
-                <li class="nav-item d-flex align-items-center">
-                    {{{ output.user_menu }}}
-                </li>
+                <div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
+                    {{#usermenu}}
+                        {{> core/user_menu }}
+                    {{/usermenu}}
+                </div>
                 {{{ output.edit_switch }}}
             </ul>
         </div>
