@@ -60,7 +60,7 @@ class course_renderer extends \core_course_renderer {
      */
     public function frontpage_categories_list() {
         global $CFG;
-        $content = html_writer::start_tag('div', array('class' => 'container'));
+        $content = html_writer::start_tag('div', array('class' => 'container-fluid'));
         $content .= html_writer::tag('h2', get_string('categories'));
 
         global $CFG;
@@ -354,7 +354,7 @@ class course_renderer extends \core_course_renderer {
 
         global $USER, $CFG, $DB;
         $content = html_writer::start_tag('div', array('class' => 'frontpage-enrolled-courses') );
-        $content .= html_writer::start_tag('div', array('class' => 'container'));
+        $content .= html_writer::start_tag('div', array('class' => 'container-fluid'));
         $content .= html_writer::tag('h2', get_string('mycourses'));
         $coursehtml = parent::frontpage_my_courses();
         if ($coursehtml == '') {
@@ -400,7 +400,7 @@ class course_renderer extends \core_course_renderer {
         $strsearchcourses = get_string("searchcourses");
         $searchurl = new moodle_url('/course/search.php');
         $output = html_writer::start_tag('div', array('class' => 'search-block'));
-        $output .= html_writer::start_tag('div', array('class' => 'container'));
+        $output .= html_writer::start_tag('div', array('class' => 'container-fluid'));
 
         if ($this->page->pagelayout == "frontpage") {
             $output .= html_writer::tag('h2', get_string('search_courses', 'theme_enlightlite'));
