@@ -30,7 +30,7 @@ $slidecontent = "";
 
 /**
  * Return's the general configuration values of slideshow.
- * @return type|array
+ * @return array
  */
 function slideshow_general_config() {
 
@@ -51,8 +51,8 @@ function slideshow_general_config() {
 
 /**
  * Returns the maincontent of the slideshow.
- * @param type|array $general
- * @return type|string
+ * @param array $general
+ * @return string
  */
 function slideshow_body($general) {
     $data = array();

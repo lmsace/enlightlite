@@ -22,8 +22,6 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
-
 /**
  * Page init functions runs every time page loads.
  * @param moodle_page $page
@@ -61,6 +59,11 @@ function theme_enlightlite_process_css($css, $theme) {
     return $css;
 }
 
+/**
+ * Get custom css.
+ * @param string $css
+ * @param string $customcss
+ */
 function theme_enlightlite_custom_css($css , $customcss) {
 
     $tag = '[[setting:customcss]]';
@@ -89,8 +92,9 @@ function theme_enlightlite_set_bgimg() {
 
 /**
  * Get the slider obacity level from the settings and load into scss.
- * @param type|array $theme
- * @return type|string
+ * @param object $theme
+ * @param string $css
+ * @return string
  */
 function theme_enlightlite_set_slide_opacity($theme , $css) {
 
@@ -105,6 +109,11 @@ function theme_enlightlite_set_slide_opacity($theme , $css) {
     return $css;
 }
 
+/**
+ * Set enlightlite fontww.
+ * @param string $css
+ * @return string
+ */
 function theme_enlightlite_set_fontwww($css) {
     global $CFG, $PAGE;
     if (empty($CFG->themewww)) {
@@ -209,8 +218,8 @@ function theme_enlightlite_serve_css($filename) {
 
 /**
  * Set browser cache used in php header.
- * @param type|string $lastmodified
- * @param type|string $etag
+ * @param string $lastmodified
+ * @param string $etag
  *
  */
 function theme_enlightlite_send_unmodified($lastmodified, $etag) {
@@ -228,10 +237,10 @@ function theme_enlightlite_send_unmodified($lastmodified, $etag) {
 
 /**
  * Cached css.
- * @param type|string $path
- * @param type|string $filename
- * @param type|integer $lastmodified
- * @param type\string $etag
+ * @param string $path
+ * @param string $filename
+ * @param integer $lastmodified
+ * @param string $etag
  */
 function theme_enlightlite_send_cached_css($path, $filename, $lastmodified, $etag) {
     global $CFG;
@@ -297,8 +306,8 @@ function theme_enlightlite_get_html_for_settings(renderer_base $output, moodle_p
 
 /**
  * Load the logo url.
- * @param type|string $type
- * @return type|string
+ * @param string $type
+ * @return string
  */
 function theme_enlightlite_get_logo_url($type='header') {
     global $OUTPUT;
@@ -314,8 +323,8 @@ function theme_enlightlite_get_logo_url($type='header') {
 
 /**
  * Renderer the slider images.
- * @param type|integer $p
- * @param type|string $sliname
+ * @param integer $p
+ * @param string $sliname
  * @return null
  */
 function theme_enlightlite_render_slideimg($p, $sliname) {
@@ -332,8 +341,8 @@ function theme_enlightlite_render_slideimg($p, $sliname) {
 /**
  * Functions helps to get the admin config values which are related to the
  * theme
- * @param type|array $setting
- * @param type|bool $format
+ * @param array $setting
+ * @param bool $format
  * @return bool
  */
 function theme_enlightlite_get_setting($setting, $format = true) {
@@ -370,7 +379,7 @@ function theme_enlightlite_theme_url() {
 
 /**
  * Display Footer Block Custom Links
- * @param type|string $menuname Footer block link name.
+ * @param string $menuname Footer block link name.
  * @return string The Footer links are return.
  */
 function theme_enlightlite_generate_links($menuname = '') {
@@ -468,10 +477,10 @@ function theme_enlightlite_strip_html_tags( $text ) {
 
 /**
  * Cut the Course content. *
- * @param type|string $str
- * @param type|integer $n
- * @param type|char $end_char
- * @return type|string
+ * @param string $str
+ * @param integer $n
+ * @param string $endchar
+ * @return string
  */
 function theme_enlightlite_course_trim_char($str, $n = 500, $endchar = '&#8230;') {
     if (strlen($str) < $n) {
@@ -532,11 +541,9 @@ function theme_enlightlite_marketingspot1() {
 
             $content .= html_writer::start_tag('div', array('class' => 'info-content '. $classmedia ));
             $content .= html_writer::tag('h2', html_writer::tag('b', $title1) ." ".$title2, array('style' => $hide));
-
-          
             if (!empty($description)) {
-
-                $content .= html_writer::start_tag('div', array('class' => 'info-video','style' => 'max-width:550px;float:left;'));
+                $content .= html_writer::start_tag('div', array('class' => 'info-video',
+                    'style' => 'max-width:550px;float:left;'));
                 $content .= $media;
                 $content .= html_writer::end_tag('div');
                 $content .= html_writer::start_tag('div', array('class' => 'info-block'));
@@ -545,7 +552,8 @@ function theme_enlightlite_marketingspot1() {
                 $content .= html_writer::end_tag('div');
             } else {
 
-                $content .= html_writer::start_tag('div', array('class' => 'info-video','style' => 'max-width:700px; height: 350px;'));
+                $content .= html_writer::start_tag('div', array('class' => 'info-video',
+                    'style' => 'max-width:700px; height: 350px;'));
                 $content .= $media;
                 $content .= html_writer::end_tag('div');
             }
@@ -636,10 +644,10 @@ function theme_enlightlite_category_menu() {
  * Returns the categories menus content.
  * @param coursecat $category
  * @param array $subcategories
- * @param type $totalsubcategories
- * @param type|null $selectedcategory
- * @param type|array $selectedcategories
- * @return type|string
+ * @param int $totalsubcategories
+ * @param null $selectedcategory
+ * @param array $selectedcategories
+ * @return string
  */
 function theme_enlightlite_category_menu_item(coursecat $category, array $subcategories, $totalsubcategories,
 $selectedcategory = null, $selectedcategories = array()) {
@@ -689,8 +697,8 @@ $selectedcategory = null, $selectedcategories = array()) {
 
 /**
  * Returns the language values from the given lang string or key.
- * @param type|string $key
- * @return type|string
+ * @param string $key
+ * @return string
  */
 function theme_enlightlite_lang($key='') {
     $pos = strpos($key, 'lang:');
@@ -709,8 +717,8 @@ function theme_enlightlite_lang($key='') {
 
 /**
  * Check the memeber status for show the person.
- * @param type|array $nums
- * @return type|array
+ * @param array $nums
+ * @return array
  */
 function theme_enlightlite_check_our_team_status($nums) {
     foreach ($nums as $key => $value) {
@@ -724,9 +732,9 @@ function theme_enlightlite_check_our_team_status($nums) {
 
 /**
  * Check the given content length and return it's removed contents.
- * @param type|string $value
- * @param type|integer $length
- * @return type|string
+ * @param string $value
+ * @param integer $length
+ * @return string
  */
 function enlightlite_check_length($value, $length) {
 
@@ -740,7 +748,7 @@ function enlightlite_check_length($value, $length) {
 
 /**
  * Check the admin theme config for combolist type its expandable/collapsable
- * @return type|bool
+ * @return bool
  */
 function theme_enlightlite_combolist_type() {
     global $PAGE;
@@ -754,8 +762,8 @@ function theme_enlightlite_combolist_type() {
 
 /**
  * Returns the footer block address section values from admin configs.
- * @param type|string $check
- * @return type|string
+ * @param string $check
+ * @return string
  */
 function theme_enlightlite_footer_address($check = "") {
     global $PAGE;
@@ -803,7 +811,12 @@ function theme_enlightlite_footer_address($check = "") {
     return $value;
 }
 
-
+/**
+ * Get pattern color
+ * @param string $css
+ * @param string $type
+ * @return string
+ */
 function theme_enlightlite_get_pattern_color( $css, $type='') {
     global $CFG;
     $patterncolors = include($CFG->dirroot.'/theme/enlightlite/classes/pattern_colors.php');
@@ -818,9 +831,9 @@ function theme_enlightlite_get_pattern_color( $css, $type='') {
 
 /**
  * Function returns the rgb format with the combination of passed color hex and opacity.
- * @param type|string $hexa
- * @param type|int $opacity
- * @return type|string
+ * @param string $hexa
+ * @param int $opacity
+ * @return string
  */
 function theme_enlightlite_get_hexa($hexa, $opacity) {
     if (!empty($hexa)) {

@@ -92,7 +92,7 @@ class course_renderer extends \core_course_renderer {
      * Returns HTML to display a course category as a part of a tree
      *
      * This is an internal function, to display a particular category and all its contents
-     * use {@link core_course_renderer::course_category()}
+     * use {@see core_course_renderer::course_category()}
      *
      * @param coursecat_helper $chelper various display options
      * @param coursecat $coursecat
@@ -136,8 +136,8 @@ class course_renderer extends \core_course_renderer {
 
     /**
      * Course home.
-     * @param type|integer $f
-     * @return type|string
+     * @param integer $f
+     * @return string
      */
     public function course_insights_home ($f = 0) {
         $courses = 0;
@@ -179,8 +179,8 @@ class course_renderer extends \core_course_renderer {
 
     /**
      * Second Category menu for megamenu.
-     * @param type|integer $count
-     * @return type|string
+     * @param integer $count
+     * @return string
      */
     private function category_menu2($count) {
         global $CFG, $DB, $USER;
@@ -244,7 +244,6 @@ class course_renderer extends \core_course_renderer {
 
         $rcourseids = array_keys( $courses );
 
-        //$acourseids = array_chunk( $rcourseids, 6);
         $acourseids = $rcourseids;
         $tcount = count($acourseids);
 
@@ -259,13 +258,6 @@ class course_renderer extends \core_course_renderer {
         $header .= html_writer::start_tag('div', array('class' => 'container-fluid'));
         $header .= html_writer::tag('h2', get_string('availablecourses'));
 
-       /* if ($tcount > '1') {
-            $header .= html_writer::start_tag('div', array('class' => 'pagenav slider-nav') );
-            $header .= html_writer::tag('button', '', array('class' => 'slick-prev nav-item previous', 'type' => 'button') );
-            $header .= html_writer::tag('button', '', array('class' => 'slick-next nav-item next', 'type' => 'button') );
-            $header .= html_writer::tag('div', '', array('class' => 'clearfix') );
-            $header .= html_writer::end_tag('div');
-        }*/
         $sliderclass = 'course-slider';
         $header .= html_writer::start_tag('div', array('class' => 'row') );
         $header .= html_writer::start_tag('div', array( 'class' => " $sliderclass col-md-12") );
@@ -276,64 +268,58 @@ class course_renderer extends \core_course_renderer {
         $footer .= html_writer::end_tag('div');
         if (count($rcourseids) > 0) {
             $i = '0';
-      /*      foreach ($acourseids as $courseids) {
+            $rowcontent = '';
+            foreach ($acourseids as $courseid) {
+                $container = '';
+                $course = get_course($courseid);
+                $noimgurl = $this->output->image_url('no-image', 'theme');
+                $courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
 
-                $rowcontent = '<div class="slider-row ">';*/
-                $rowcontent = '';
-                foreach ($acourseids as $courseid) {
-                    $container = '';
-                    $course = get_course($courseid);
-                    $noimgurl = $this->output->image_url('no-image', 'theme');
-                    $courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
+                if ($course instanceof stdClass) {
+                    $course = new \core_course_list_element($course);
+                }
 
-                    if ($course instanceof stdClass) {
-                        $course = new \core_course_list_element($course);
-                    }
+                $imgurl = '';
+                $context = context_course::instance($course->id);
 
-                    $imgurl = '';
-                    $context = context_course::instance($course->id);
-
-                    foreach ($course->get_course_overviewfiles() as $file) {
-                        $isimage = $file->is_valid_image();
-                        $imgurl = file_encode_url("$CFG->wwwroot/pluginfile.php",
-                            '/'. $file->get_contextid(). '/'. $file->get_component(). '/'.
-                            $file->get_filearea(). $file->get_filepath(). $file->get_filename(), !$isimage);
-                        if (!$isimage) {
-                            $imgurl = $noimgurl;
-                        }
-                    }
-
-                    if (empty($imgurl)) {
+                foreach ($course->get_course_overviewfiles() as $file) {
+                    $isimage = $file->is_valid_image();
+                    $imgurl = file_encode_url("$CFG->wwwroot/pluginfile.php",
+                        '/'. $file->get_contextid(). '/'. $file->get_component(). '/'.
+                        $file->get_filearea(). $file->get_filepath(). $file->get_filename(), !$isimage);
+                    if (!$isimage) {
                         $imgurl = $noimgurl;
                     }
-
-                    $container .= html_writer::start_tag('div', array( 'class' => 'col-md-2') );
-                    $container .= html_writer::start_tag('div', array( 'class' => 'available-content'));
-                    $container .= html_writer::start_tag('div', array( 'class' => 'available-img'));
-
-                    $container .= html_writer::start_tag('a', array( 'href' => $courseurl) );
-                    $container .= html_writer::empty_tag('img',
-                        array(
-                            'src' => $imgurl,
-                            'width' => "249",
-                            'height' => "200",
-                            'alt' => $course->get_formatted_name() ) );
-                    $container .= html_writer::end_tag('a');
-                    $container .= html_writer::end_tag('div');
-                    $container .= html_writer::tag('h6', html_writer::tag('a',
-                        $course->get_formatted_name(),
-                        array( 'href' => $courseurl ) ),
-                    array('class' => 'title-text') );
-                    $container .= html_writer::end_tag('div');
-                    $container .= html_writer::end_tag('div');
-
-                    $rowcontent .= $container;
                 }
-                $i++;
-           /*$rowcontent .= html_writer::end_tag('div');*/
-                $coursecontainer .= $rowcontent;
-           // }
 
+                if (empty($imgurl)) {
+                    $imgurl = $noimgurl;
+                }
+
+                $container .= html_writer::start_tag('div', array( 'class' => 'col-md-2') );
+                $container .= html_writer::start_tag('div', array( 'class' => 'available-content'));
+                $container .= html_writer::start_tag('div', array( 'class' => 'available-img'));
+
+                $container .= html_writer::start_tag('a', array( 'href' => $courseurl) );
+                $container .= html_writer::empty_tag('img',
+                    array(
+                        'src' => $imgurl,
+                        'width' => "249",
+                        'height' => "200",
+                        'alt' => $course->get_formatted_name() ) );
+                $container .= html_writer::end_tag('a');
+                $container .= html_writer::end_tag('div');
+                $container .= html_writer::tag('h6', html_writer::tag('a',
+                    $course->get_formatted_name(),
+                    array( 'href' => $courseurl ) ),
+                array('class' => 'title-text') );
+                $container .= html_writer::end_tag('div');
+                $container .= html_writer::end_tag('div');
+
+                $rowcontent .= $container;
+            }
+            $i++;
+            $coursecontainer .= $rowcontent;
         }
         $footer .= html_writer::end_tag('div');
         $footer .= html_writer::end_tag('div');
@@ -371,9 +357,9 @@ class course_renderer extends \core_course_renderer {
 
     /**
      * Course search form renderer function.
-     * @param type|string $value
-     * @param type|string $format
-     * @return type|string
+     * @param string $value
+     * @param string $format
+     * @return string
      */
     public function course_search_form($value = '', $format = 'plain') {
         static $count = 0;
@@ -431,9 +417,9 @@ class course_renderer extends \core_course_renderer {
 
     /**
      * Get the course details for the particular  id.
-     * @param type|integer $courseid
-     * @param type|bool $clone
-     * @return type|array
+     * @param integer $courseid
+     * @param bool $clone
+     * @return array
      */
     public function get_course($courseid, $clone = true) {
         global $DB, $COURSE, $SITE;
@@ -451,8 +437,8 @@ class course_renderer extends \core_course_renderer {
 
     /**
      * Check the given id have the courses details.
-     * @param type|array $rcourseids
-     * @return type|array
+     * @param array $rcourseids
+     * @return array
      */
     public function check_course_id($rcourseids) {
         if (!empty($rcourseids)) {
@@ -465,6 +451,18 @@ class course_renderer extends \core_course_renderer {
         return $rcourseids;
     }
 
+    /**
+     * Displays one course in the list of courses.
+     *
+     * This is an internal function, to display an information about just one course
+     * please use {@see core_course_renderer::course_info_box()}
+     *
+     * @param coursecat_helper $chelper various display options
+     * @param core_course_list_element|stdClass $course
+     * @param string $additionalclasses additional classes to add to the main <div> tag (usually
+     *    depend on the course position in list - first/last/even/odd)
+     * @return string
+     */
     protected function coursecat_coursebox(coursecat_helper $chelper, $course, $additionalclasses = '') {
         global $CFG;
         if (!isset($this->strings->summary)) {
@@ -553,7 +551,7 @@ class course_renderer extends \core_course_renderer {
         return $content;
     }
 
-     /**
+    /**
      * Returns HTML to display a tree of subcategories and courses in the given category
      *
      * @param coursecat_helper $chelper various display options
@@ -568,7 +566,7 @@ class course_renderer extends \core_course_renderer {
             return '';
         }
 
-        // Start content generation
+        // Start content generation.
         $content = '';
         $attributes = $chelper->get_and_erase_attributes('course_category_tree clearfix');
         $content .= html_writer::start_tag('div', $attributes);
@@ -602,9 +600,8 @@ class course_renderer extends \core_course_renderer {
 
         $content .= html_writer::tag('div', $categorycontent, array('class' => 'content'));
 
-        $content .= html_writer::end_tag('div'); // .course_category_tree
+        $content .= html_writer::end_tag('div');
 
         return $content;
     }
 } // Here the theme_enlightlite_course renderer fucntion closed.
-

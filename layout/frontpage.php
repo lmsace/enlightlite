@@ -17,7 +17,7 @@
 /**
  * frontpage.php
  *
- * @package   theme_eguru
+ * @package   theme_enlightlite
  * @copyright 2015 LMSACE Dev Team,lmsace.com
  * @author    LMSACE Dev Team
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -113,7 +113,5 @@ $templatecontext += [
     'aboutus' => theme_enlightlite_marketingspot1(),
     'marketingspot' => theme_enlightlite_marketingspot2(),
 ];
-/* print_object($slideconfig);
-exit; */
 echo $OUTPUT->render_from_template('theme_enlightlite/frontpage', $templatecontext);
 

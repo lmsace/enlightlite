@@ -30,15 +30,15 @@ require_once($CFG->dirroot . '/course/lib.php');
 require_once($CFG->dirroot."/theme/enlightlite/classes/header_block.php");
 require_once($CFG->dirroot."/theme/enlightlite/classes/footer_block.php");
 
-
-$templatecontext = array_merge($headercontext, $footercontext);
-
 // Add block button in editing mode.
 $addblockbutton = $OUTPUT->addblockbutton();
 
 user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
 user_preference_allow_ajax_update('drawer-open-index', PARAM_BOOL);
 user_preference_allow_ajax_update('drawer-open-block', PARAM_BOOL);
+
+
+$templatecontext = array_merge($headercontext, $footercontext);
 
 if (isloggedin()) {
     $courseindexopen = (get_user_preferences('drawer-open-index', true) == true);

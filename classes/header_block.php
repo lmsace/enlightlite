@@ -49,14 +49,6 @@ function header_contents() {
     $shome = get_string('home');
     $cmenuhide = (!$cmenuhide) ? 0 : 1;
     $scourses = get_string('courses');
-    $secondarynavigation = false;
-    if (!defined('BEHAT_SITE_RUNNING')) {
-        $buildsecondarynavigation = $PAGE->has_secondary_navigation();
-        if ($buildsecondarynavigation) {
-            $moremenu = new \core\navigation\output\more_menu($PAGE->secondarynav, 'nav-tabs');
-            $secondarynavigation = $moremenu->export_for_template($OUTPUT);
-        }
-    }
     $templatecontext = [
         "curl" => $curl,
         "logourl" => $logourl,
