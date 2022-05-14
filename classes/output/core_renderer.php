@@ -98,9 +98,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
     /**
      * Set the Position for course mega menu in header primary menu.
-     * @param type|string $skey
-     * @param type|string $count
-     * @return type|null
+     * @param string $skey
+     * @param string $count
+     * @return null
      */
     public function enlightlite_course_menu_position($skey, $count) {
         global $CFG;
@@ -158,7 +158,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         return $ccontent;
     }
 
-        /**
+    /**
      * Course list for course menu on header
      * @return type|string
      */
@@ -236,8 +236,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
      * bootstrap dropdown menu.
      *
      * @param custom_menu_item $menunode
-     * @param type|integer $level
-     * @return type|string
+     * @param integer $level
+     * @return string
      */
     protected function render_custom_menu_item(\custom_menu_item $menunode, $level = 0 ) {
         static $submenucount = 0;
@@ -298,9 +298,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
     /**
      * This code renderers the user menu from default menu.
      *
-     * @param type|null $user
-     * @param type|null $withlinks
-     * @return type|string
+     * @param null $user
+     * @param null $withlinks
+     * @return string
      */
     public function user_menu($user = null, $withlinks = null) {
         global $USER, $CFG;
@@ -496,19 +496,4 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $usermenuclasses
         );
     }
-
-    /**
-     * Render the login page template.
-     * @param \core_auth\output\login $form
-     * @return type|string
-     */
-    /* public function render_login(\core_auth\output\login $form) {
-        global $CFG, $SITE;
-        $context = $form->export_for_template($this);
-        // Override because rendering is not supported in template yet.
-        $context->cookieshelpiconformatted = $this->help_icon('cookiesenabled');
-        $context->errorformatted = $this->error_text($context->error);
-        $maincontent = $this->render_from_template('theme_enlightlite/login_form', $context);
-        return  $maincontent;
-    } */
 } // Here the course renderer fucntion closed.

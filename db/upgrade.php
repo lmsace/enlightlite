@@ -23,13 +23,12 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
 
 /**
  * Theme_enlightlite upgradation function.
  *
- * @param type|string $oldversion
- * @return type|string
+ * @param string $oldversion
+ * @return string
  */
 function xmldb_theme_enlightlite_upgrade($oldversion) {
     $loggedin = get_config('moodle', 'frontpageloggedin');

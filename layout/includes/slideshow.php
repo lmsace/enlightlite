@@ -30,7 +30,7 @@ $slidecontent = "";
 
 /**
  * Return's the general configuration values of slideshow.
- * @return type|array
+ * @return array
  */
 function slideshow_general_config() {
 
@@ -51,8 +51,8 @@ function slideshow_general_config() {
 
 /**
  * Returns the maincontent of the slideshow.
- * @param type|array $general
- * @return type|string
+ * @param array $general
+ * @return string
  */
 function slideshow_body($general) {
     $data = array();
@@ -84,7 +84,6 @@ function slideshow_slide_settings($general = array(), $s1 = "") {
         $slide['contentPosition'] = theme_enlightlite_get_setting('slide'. $s1 .'contentPosition');
         $urltarget1 = theme_enlightlite_get_setting('slide'. $s1 .'urltarget1');
         $contwidth = theme_enlightlite_get_setting('slide'.$s1.'contFullwidth');
-
         $slidedesc = theme_enlightlite_get_setting('slide' . $s1 . 'desc', 'format_html');
         $slideurltext1 = theme_enlightlite_get_setting('slide' . $s1 . 'urltext1');
         $slidecaption = theme_enlightlite_get_setting('slide' . $s1 . 'caption', true);

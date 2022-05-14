@@ -9,6 +9,7 @@ define(['jquery', 'theme_enlightlite/jquery.sudoSlider'], function($, sudoslider
     };
 
     var Carousel = function(selector, options) {
+        console.log(options);
         var results = $.extend(defaults, options);
         this.initializeslider(selector, results);
     };
