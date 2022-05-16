@@ -18,7 +18,7 @@
     --color_rangoon_green_approx: #1e1e1e;
     --color_mine_shaft_approx: #333;
     --color_tuna_approx: #373a3c;
-    --color_tutara_approx:  #535353;
+    --color_tutara_approx: #535353;
     --color_gravel_approx: #484848;
     --color_chicago_approx: #5c5c5c;
     --color_ironside_gray_approx: #676767;
@@ -5275,8 +5275,8 @@ img.userpicture {
     display: block !important;
 }
 .block-region .block.block_myoverview .card-body .card-text .block-myoverview > hr + div > div {
-    margin-bottom: 10px!important;
-    display: flex!important;
+    margin-bottom: 10px !important;
+    display: flex !important;
 }
 .block .card-title {
     display: block;
