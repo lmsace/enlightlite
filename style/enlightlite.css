@@ -1837,6 +1837,9 @@ body.limitedwidth #page.drawers .main-inner,
 .secondary-navigation .navigation {
     border: 0;
 }
+.dir-rtl .simplesearchform .simplesearchform .input-group .input-group-append .search-icon {
+    margin-right: 0;
+}
 .nav .caret {
     display: none;
 }
@@ -2195,10 +2198,6 @@ body.limitedwidth #page.drawers .main-inner,
 .dir-rtl input[type="checkbox"] + label {
     padding-right: 0.2em;
     padding-left: 0;
-}
-.dir-rtl #coursesearch input[type="submit"] {
-    right: auto;
-    left: -120px;
 }
 .dir-rtl .comment-link img {
     margin-left: 3px;
@@ -5248,6 +5247,10 @@ img.userpicture {
     padding: 20px 0 0;
     padding-top: 0;
 }
+.block-region .block .card-body .card-text .badges li {
+    width: 100px;
+    margin-right: 10px;
+}
 .block-region .block .card-body .card-text .generalbox {
     padding: 0 !important;
 }
@@ -5470,7 +5473,10 @@ img.userpicture {
 .page-mycourses .block-region .block.block_myoverview .card-body {
     border: 0;
 }
-
+.dir-rtl .block-region .block .card-body .card-text .badges li {
+    margin-left: 10px;
+    margin-right: 0;
+}
 
 /*.course_category_tree .category > .info > .categoryname > a:before {
     content: "";
