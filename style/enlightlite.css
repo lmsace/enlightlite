@@ -5733,7 +5733,6 @@ body.pagelayout-frontpage .load-content {
 .message-app .body-container .custom-control.custom-switch .custom-control-input:focus ~ .custom-control-label::before,
 .message-app .body-container .custom-control.custom-radio .custom-control-input:checked + .custom-control-label:before,
 .message-app .body-container .custom-control.custom-switch .custom-control-input:checked + .custom-control-label:before {
-    background-color: var(--color_primary);
     border-color: var(--color_primary);
 }
 .message-app .body-container .custom-control.custom-radio .custom-control-input:active + .custom-control-label:before,
@@ -5747,13 +5746,6 @@ body.pagelayout-frontpage .load-content {
 .message-app .body-container .custom-control.custom-radio .custom-control-input:checked:focus ~ .custom-control-label:before {
     background-color: var(--color_primary);
     box-shadow: 0 0 0 1px var(--white), 0 0 0 0.2rem var(--color_picton_25_approx);
-}
-.message-app .body-container .custom-control.custom-radio
-.custom-control-input:not(:disabled):active ~ .custom-control-label:before,
-.message-app .body-container .custom-control.custom-switch
-.custom-control-input:not(:disabled):active ~ .custom-control-label:before {
-    border-color: var(--color_primary);
-    background-color: var(--color_primary);
 }
 .message-app .body-container .switch input:checked + label:before {
     background-color: var(--color_primary);
