@@ -10,6 +10,9 @@ define(['jquery', 'jqueryui', 'theme_enlightlite/slick'], function($, $ui, slick
         } else {
             rtl = false;
         }
+        if ($('body').hasClass('dir-rtl')) {
+            $('.slidesContainer').css('float', 'left');
+        }
         var prow = $(".course-slider").attr("data-crow");
         prow = parseInt(prow);
         if (prow < 2) {
