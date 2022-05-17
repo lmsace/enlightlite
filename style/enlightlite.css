@@ -1832,6 +1832,7 @@ body.limitedwidth #page.drawers .main-inner,
 .header-maxwidth,
 .secondary-navigation {
     max-width: none;
+    padding: 15px;
     margin: 0;
 }
 .secondary-navigation .navigation {
@@ -3943,6 +3944,13 @@ body.limitedwidth #page.drawers .main-inner,
 }
 #page-site-index #site-footer {
     padding: 0;
+}
+button.btn-footer-popover,
+button.btn-footer-popover:hover,
+button.btn-footer-popover:focus,
+button.btn-footer-popover:active {
+    color: var(--white);
+    background: var(--color_primary) !important;
 }
 .dir-rtl #site-footer .footer-address-block .footer-address p {
     padding-left: 0;
