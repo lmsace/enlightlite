@@ -450,7 +450,7 @@ td.submit input {
     background: var(--color_primary);
 }
 .dropdown-submenu:hover > a,
-.dropdown-submenu:focus > a, {
+.dropdown-submenu:focus > a {
     color: var(--color_primary);
     border-color: var(--color_primary);
 }
@@ -1808,7 +1808,7 @@ button.close:focus,
 .pagelayout-frontpage #page.drawers div[role="main"] br {
     display: none;
 }
-.custom-switch .custom-control-label:before, {
+.custom-switch .custom-control-label:before {
     border-color: var(--white);
     background: var(--white);
 }
@@ -5411,7 +5411,7 @@ img.userpicture {
 .block_online_users .content .list li.listentry .user .userpicture {
     width: auto;
 }
-.block-timeline .dropdown-menu .dropdown-item.active, {
+.block-timeline .dropdown-menu .dropdown-item.active {
     background: var(--color_primary);
 }
 .block-region .block .card-body .block-myoverview .card-title {
