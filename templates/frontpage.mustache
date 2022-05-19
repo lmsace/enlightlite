@@ -90,13 +90,13 @@
             {{$closebuttontext}}{{#str}}closeblockdrawer, core{{/str}}{{/closebuttontext}}
         {{/ theme_boost/drawer}}
     {{/hasblocks}}
-    {{#slideconfig}}
-            {{> theme_enlightlite/homeslider}}
-    {{/slideconfig}}
-    {{#aboutus}}
-                {{{aboutus}}}
-    {{/aboutus}}
     <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers {{#courseindexopen}}show-drawer-left{{/courseindexopen}} {{#blockdraweropen}}show-drawer-right{{/blockdraweropen}} drag-container">
+        {{#slideconfig}}
+        {{> theme_enlightlite/homeslider}}
+        {{/slideconfig}}
+        {{#aboutus}}
+            {{{aboutus}}}
+        {{/aboutus}}
         <div id="topofscroll" class="main-inner">
             <div class="drawer-toggles d-flex">
                 {{#courseindex}}
