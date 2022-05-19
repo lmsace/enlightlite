@@ -138,15 +138,15 @@ class core_renderer extends \theme_boost\output\core_renderer {
      * @return type|string
      */
     public function course_menu() {
-        $tcmenu = $this->top_course_menu();
+        global $PAGE;
         $cmenushow = theme_enlightlite_get_setting('cmenushow');
         $ccontent = '';
-        if ($cmenushow) {
+        if ($cmenushow && $PAGE->pagelayout != 'login') {
 
             $ccontent = '<li class="dropdown d-lg-none d-md-block course-link">';
             $ccontent .= '<a class="nav-item nav-link" href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">';
-
             $ccontent .= get_string('courses').'<i class="fa fa-chevron-down"></i><span class="caretup"></span></a>';
+            $tcmenu = $this->top_course_menu();
             $ccontent .= $tcmenu['topmmenu'];
             $ccontent .= '</li><li class="d-none d-lg-block course-link" id="cr_link">';
             $ccontent .= '<a class="nav-item nav-link" href="'.new moodle_url('/course/index.php').'" >'.get_string('courses');
@@ -163,7 +163,12 @@ class core_renderer extends \theme_boost\output\core_renderer {
      * @return type|string
      */
     public function top_course_menu() {
-        global $CFG , $DB;
+        global $CFG , $DB, $PAGE;
+        $topcmenu = "";
+        $topmmenu = "";
+        if ($PAGE->pagelayout == 'login') {
+            return compact("topcmenu", "topmmenu");
+        }
         $list = \core_course_category::make_categories_list();
         $mclist = array();
 

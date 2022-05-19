@@ -28,6 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 require_once($CFG->dirroot."/theme/enlightlite/classes/header_block.php");
 require_once($CFG->dirroot."/theme/enlightlite/classes/footer_block.php");
 $templatecontext = array_merge($headercontext, $footercontext);
+$bodyattributes = $OUTPUT->body_attributes();
 $templatecontext += [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
