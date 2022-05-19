@@ -140,21 +140,15 @@ class core_renderer extends \theme_boost\output\core_renderer {
     public function course_menu() {
         global $PAGE;
         $cmenushow = theme_enlightlite_get_setting('cmenushow');
+        $tcmenu = $this->top_course_menu();
         $ccontent = '';
-        if ($cmenushow && $PAGE->pagelayout != 'login') {
-
-            $ccontent = '<li class="dropdown d-lg-none d-md-block course-link">';
-            $ccontent .= '<a class="nav-item nav-link" href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">';
-            $ccontent .= get_string('courses').'<i class="fa fa-chevron-down"></i><span class="caretup"></span></a>';
-            $tcmenu = $this->top_course_menu();
-            $ccontent .= $tcmenu['topmmenu'];
-            $ccontent .= '</li><li class="d-none d-lg-block course-link" id="cr_link">';
-            $ccontent .= '<a class="nav-item nav-link" href="'.new moodle_url('/course/index.php').'" >'.get_string('courses');
-            $ccontent .= '<i class="fa fa-chevron-down"></i><span class="caretup"></span></a>'.$tcmenu['topcmenu'].'</li>';
-        } else {
-            $ccontent = '';
-        }
-
+        $ccontent = '<li class="dropdown d-lg-none d-md-block course-link">';
+        $ccontent .= '<a class="nav-item nav-link" href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">';
+        $ccontent .= get_string('courses').'<i class="fa fa-chevron-down"></i><span class="caretup"></span></a>';
+        $ccontent .= $tcmenu['topmmenu'];
+        $ccontent .= '</li><li class="d-none d-lg-block course-link" id="cr_link">';
+        $ccontent .= '<a class="nav-item nav-link" href="'.new moodle_url('/course/index.php').'" >'.get_string('courses');
+        $ccontent .= '<i class="fa fa-chevron-down"></i><span class="caretup"></span></a>'.$tcmenu['topcmenu'].'</li>';
         return $ccontent;
     }
 
@@ -166,9 +160,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         global $CFG , $DB, $PAGE;
         $topcmenu = "";
         $topmmenu = "";
-        if ($PAGE->pagelayout == 'login') {
-            return compact("topcmenu", "topmmenu");
-        }
         $list = \core_course_category::make_categories_list();
         $mclist = array();
 
@@ -188,51 +179,56 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $mclist1 = array_slice($mclist, 0, 4, true);
         $rcourseids = array();
         foreach ($mclist1 as $catid) {
-            $coursecat = \core_course_category::get($catid);
-            $cname = $coursecat->get_formatted_name();
-            $menuheader = '<div class="cols"><h6>'.$cname.'</h6><ul>'."\n";
-            $menufooter = '</ul></div>'."\n";
-            $href = $CFG->wwwroot.'/course/index.php?categoryid='.$catid;
-            $mmenuheader = '<li class="dropdown-submenu"><a href="'.$href.'" class="">'.$cname.'</a><ul class="dropdown-menu">';
-            $mmenufooter = '</ul></li>';
-            $menuitems = '';
-            $options = array();
-            $options['recursive'] = true;
-            $options['offset'] = 0;
-            $options['limit'] = 6;
-            $options['sort'] = array('sortorder' => 'ASC');
-            if ($ccc = $coursecat->get_courses($options)) {
-                foreach ($ccc as $cc) {
-                    if ($cc->visible == "0" || $cc->id == "1") {
-                        continue;
+            $categorylist = $DB->get_record('course_categories', array('id' => $catid));
+            if (\core_course_category::can_view_category($categorylist)) {
+                $coursecat = \core_course_category::get($catid);
+                $cname = $coursecat->get_formatted_name();
+                $menuheader = '<div class="cols"><h6>'.$cname.'</h6><ul>'."\n";
+                $menufooter = '</ul></div>'."\n";
+                $href = $CFG->wwwroot.'/course/index.php?categoryid='.$catid;
+                $mmenuheader = '<li class="dropdown-submenu"><a href="'.$href.'" class="">'.$cname.'</a><ul class="dropdown-menu">';
+                $mmenufooter = '</ul></li>';
+                $menuitems = '';
+                $options = array();
+                $options['recursive'] = true;
+                $options['offset'] = 0;
+                $options['limit'] = 6;
+                $options['sort'] = array('sortorder' => 'ASC');
+                if ($ccc = $coursecat->get_courses($options)) {
+                    foreach ($ccc as $cc) {
+                        if ($cc->visible == "0" || $cc->id == "1") {
+                            continue;
+                        }
+                        $courseurl = new moodle_url("/course/view.php", array("id" => $cc->id));
+                        $menuitems .= '<li><a href="'.$courseurl.'">'.$cc->get_formatted_name().'</a></li>'."\n";
                     }
-                    $courseurl = new moodle_url("/course/view.php", array("id" => $cc->id));
-                    $menuitems .= '<li><a href="'.$courseurl.'">'.$cc->get_formatted_name().'</a></li>'."\n";
-                }
-                if (!empty($menuitems)) {
-                    $rcourseids[$catid] = array("desk" => $menuheader.$menuitems.$menufooter,
-                         "mobile" => $mmenuheader.$menuitems.$mmenufooter
-                    );
+                    if (!empty($menuitems)) {
+                        $rcourseids[$catid] = array("desk" => $menuheader.$menuitems.$menufooter,
+                            "mobile" => $mmenuheader.$menuitems.$mmenufooter
+                        );
+                    }
                 }
             }
         }
-        $mcourseids = array_slice($rcourseids, 0, 4);
-        $strcourse = $mstrcourse = '';
-        foreach ($mcourseids as $ctid => $marr) {
-            $strcourse .= $marr["desk"]."\n";
-            $mstrcourse .= $marr["mobile"]."\n";
-        }
+        if (!empty($rcourseids)) {
+            $mcourseids = array_slice($rcourseids, 0, 4);
+            $strcourse = $mstrcourse = '';
+            foreach ($mcourseids as $ctid => $marr) {
+                $strcourse .= $marr["desk"]."\n";
+                $mstrcourse .= $marr["mobile"]."\n";
+            }
 
-        $courseaurl = new moodle_url('/course/index.php');
-        if (!empty($strcourse)) {
-            $topcmenu = '<div class="custom-dropdown-menu" id="cr_menu" style="display:none;">';
-            $topcmenu .= '<div class="cols-wrap">'.$strcourse.'<div class="clearfix"></div></div></div>';
-        } else {
-            $topcmenu = "";
+            $courseaurl = new moodle_url('/course/index.php');
+            if (!empty($strcourse)) {
+                $topcmenu = '<div class="custom-dropdown-menu" id="cr_menu" style="display:none;">';
+                $topcmenu .= '<div class="cols-wrap">'.$strcourse.'<div class="clearfix"></div></div></div>';
+            } else {
+                $topcmenu = "";
+            }
+            $topmmenu = '<ul class="dropdown-menu">'.$mstrcourse.'
+            <li><a href="'.$courseaurl.'">
+            '.get_string('viewall', 'theme_enlightlite').'</a></li></ul>';
         }
-        $topmmenu = '<ul class="dropdown-menu">'.$mstrcourse.'
-        <li><a href="'.$courseaurl.'">
-        '.get_string('viewall', 'theme_enlightlite').'</a></li></ul>';
         return compact('topcmenu', 'topmmenu');
     }
 
