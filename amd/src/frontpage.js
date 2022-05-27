@@ -1,4 +1,4 @@
-define(['jquery', 'jqueryui', 'theme_enlightlite/slick'], function($, $ui, slick) {
+define(['jquery', 'theme_enlightlite/slick'], function($, slick) {
     var EnlightliteFront = function() {
         this.frontPageAction();
         this.frontPageSliders();
