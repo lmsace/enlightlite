@@ -543,6 +543,7 @@ a:focus {
 }
 .btn-link,
 .btn[role="button"] {
+    color: var(--color_primary);
     background: none;
 }
 .searchform .btn-link {
