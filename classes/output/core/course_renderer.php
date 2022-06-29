@@ -326,7 +326,7 @@ class course_renderer extends \core_course_renderer {
         $coursehtml = $header.$coursecontainer.$footer;
         return $coursehtml;
 
-        if (!$totalcount && !$this->page->user_is_editing() && has_capability('moodle/course:create', context_system::instance())) {
+        if (!$totalcount && !$this->page->user_is_editing() && has_capability('moodle/course:create', \context_system::instance())) {
             // Print link to create a new course, for the 1st available category.
             echo $this->add_new_course_button();
         }
