@@ -62,8 +62,6 @@ class course_renderer extends \core_course_renderer {
         global $CFG;
         $content = html_writer::start_tag('div', array('class' => 'container-fluid'));
         $content .= html_writer::tag('h2', get_string('categories'));
-
-        global $CFG;
         $chelper = new coursecat_helper();
         $chelper->set_subcat_depth($CFG->maxcategorydepth)->set_show_courses(
         self::COURSECAT_SHOW_COURSES_COUNT)->set_categories_display_options(
