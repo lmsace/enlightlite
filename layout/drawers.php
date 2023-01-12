@@ -30,6 +30,7 @@ require_once($CFG->dirroot . '/course/lib.php');
 require_once($CFG->dirroot."/theme/enlightlite/classes/header_block.php");
 require_once($CFG->dirroot."/theme/enlightlite/classes/footer_block.php");
 
+$OUTPUT->doctype();
 // Add block button in editing mode.
 $addblockbutton = $OUTPUT->addblockbutton();
 

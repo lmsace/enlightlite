@@ -34,7 +34,7 @@ $plugin->maturity = MATURITY_STABLE;
 $plugin->requires  = 2022041900;
 
 // Plugin release version.
-$plugin->release = 'v4.0.4';
+$plugin->release = 'v4.1';
 
 // Full name of the plugin.
 $plugin->component = 'theme_enlightlite';
