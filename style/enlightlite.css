@@ -5804,6 +5804,7 @@ body.pagelayout-frontpage .load-content {
         max-width: none;
     }
 }
+
 @media (min-width: 992px) {
     .drawer.drawer-right {
         z-index: 1041;
