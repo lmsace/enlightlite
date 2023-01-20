@@ -197,13 +197,13 @@ input[type="color"],
 .atto_form textarea.fullwidth,
 .atto_form input.fullwidth {
     max-width: 252px;
-    min-height: 35px;
+    min-height: 40px;
     color: var(--color_chicago_approx);
     line-height: 28px;
     border: 1px solid var(--color_celeste_approx);
     border-radius: 0;
     background-color: var(--color_desert_storm_approx);
-    padding: 0 5px;
+    padding: 0 10px;
     box-shadow: none;
 }
 textarea:focus,
@@ -585,9 +585,9 @@ td.submit input[disabled] {
     border-color: var(--color_primary);
 }
 img {
-    border: 0 none;
-    height: auto;
     max-width: 100%;
+    height: auto;
+    border: 0 none;
     vertical-align: middle;
 }
 h1 {
@@ -611,9 +611,6 @@ h6 {
 a i.fw.icon:before {
     font-size: 16px;
     vertical-align: middle;
-}
-.fa {
-    font-size: 18px;
 }
 abbr[title] {
     border-bottom: 0;
@@ -744,7 +741,7 @@ input[type="reset"][disabled] {
     background: var(--color_silver_approx);
 }
 input[type="submit"]:hover {
-    color: var(--white);
+    color: var(--color_chicago_approx);
     background: var(--color_silver_approx);
 }
 input[type="submit"].btn-secondary:hover {
@@ -894,6 +891,14 @@ table tr a img.icon {
 .dropdown-submenu > a:after {
     border-left-color: var(--color_mine_shaft_approx);
     margin-top: 8px;
+}
+.dir-ltr .dropdown-menu[x-placement^="top"],
+.dir-ltr .dropdown-menu[x-placement^="right"],
+.dir-ltr .dropdown-menu[x-placement^="bottom"],
+.dir-ltr .dropdown-menu[x-placement^="left"] {
+    top: 100% !important;
+    right: 0;
+    transform: none !important;
 }
 .custom-select {
     line-height: normal;
@@ -1082,9 +1087,6 @@ div.backup-section + form {
 }
 #region-main-box #region-main .generaltable th.header a {
     color: var(--white);
-}
-#region-main-box #region-main .generaltable tr td.cell a i {
-    margin: 0;
 }
 #region-main-box #region-main .generaltable#plugins-control-panel th.pluginname a i.icon:before {
     color: var(--color_primary);
@@ -1416,6 +1418,9 @@ tr.discussion .btn i.icon {
     color: var(--white);
     background: var(--color_primary);
     box-shadow: none;
+}
+.form-autocomplete-selection span.badge img {
+    max-width: 20px;
 }
 #installform fieldset select {
     background-image: none;
@@ -1838,6 +1843,7 @@ body.limitedwidth #page.drawers .main-inner,
 }
 .secondary-navigation .navigation {
     border: 0;
+    padding: 0;
 }
 .dir-rtl .simplesearchform .simplesearchform .input-group .input-group-append .search-icon {
     margin-right: 0;
@@ -1860,6 +1866,13 @@ body.limitedwidth #page.drawers .main-inner,
     min-width: auto;
     min-height: auto;
     width: auto;
+}
+.dropdown-menu {
+    left: auto !important;
+    right: 0;
+}
+#page.drawers.show-drawer-right {
+    margin-right: 0;
 }
 
 @media (max-width: 575px) {
@@ -2031,10 +2044,6 @@ body.limitedwidth #page.drawers .main-inner,
     }
     #page .card .card-body .d-flex .d-flex {
         display: block !important;
-    }
-    .dropdown-menu {
-        left: auto !important;
-        right: 0;
     }
 }
 
@@ -2271,7 +2280,7 @@ body.limitedwidth #page.drawers .main-inner,
 #header .popover-region {
     height: 100%;
     float: left;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 #header .header-top .popover-region .content-item-container:hover {
     background-color: var(--color_primary);
@@ -2495,10 +2504,9 @@ body.limitedwidth #page.drawers .main-inner,
     background: none;
     display: block;
 }
-#header .navbar-nav button.btn:hover {
-    background: none;
-}
-#header .navbar-nav button.btn:active {
+#header .navbar-nav button.btn:not(.btn-icon):hover,
+#header .navbar-nav button.btn:not(.btn-icon):focus,
+#header .navbar-nav button.btn:not(.btn-icon):active {
     background: none;
 }
 #header .navbar-nav button.btn:not(.carousel-navigation-link) > span {
@@ -2570,9 +2578,6 @@ body.limitedwidth #page.drawers .main-inner,
     font-size: 16px;
     color: var(--white);
 }
-#header.navbar .popover-region-container {
-    top: calc(50px - (2rem / 2));
-}
 #header .header-top .popover-region-container .content-item-body p {
     color: var(--color_mine_shaft_approx);
 }
@@ -2584,6 +2589,7 @@ body.limitedwidth #page.drawers .main-inner,
 }
 #header .usermenu a.dropdown-toggle {
     padding: 0;
+    background: none;
 }
 #header .usermenu a.dropdown-toggle .userbutton .usertext {
     vertical-align: middle;
@@ -3016,7 +3022,6 @@ body.limitedwidth #page.drawers .main-inner,
     }
     #site-header .header-main .navbar-toggleable-md {
         float: right;
-        padding-bottom: 5px;
         display: flex;
     }
     #site-header .header-main .navbar-toggleable-md span.nav-item {
@@ -3080,14 +3085,8 @@ body.limitedwidth #page.drawers .main-inner,
     #site-header .header-top .navbar .nav > li + li:before {
         color: var(--color_ironside_gray_approx);
     }
-    #site-header .header-main a.nav-link {
-        float: left;
-    }
     #site-header .header-main a.nav-link i {
         display: none;
-    }
-    #site-header .header-main .course-link {
-        float: left;
     }
     #site-header .header-main .course-link a:after {
         content: '\f078';
@@ -3129,11 +3128,13 @@ body.limitedwidth #page.drawers .main-inner,
     }
     #site-header .header-main .course-link .custom-dropdown-menu .cols-wrap .cols ul {
         padding-left: 0;
+        margin-bottom: 0;
     }
     #site-header .header-main .course-link .custom-dropdown-menu .cols-wrap .cols ul li {
         color: var(--white);
         list-style: none;
         display: block;
+        margin-bottom: 5px;
     }
     #site-header .header-main .course-link .custom-dropdown-menu .cols-wrap .cols ul li a {
         color: var(--white);
@@ -3141,6 +3142,7 @@ body.limitedwidth #page.drawers .main-inner,
         line-height: 30px;
         padding: 0 6px;
         display: block;
+        border-radius: 5px;
     }
     #site-header .header-main .course-link .custom-dropdown-menu .cols-wrap .cols ul li a:before {
         content: '\f10c';
@@ -3946,6 +3948,9 @@ body.limitedwidth #page.drawers .main-inner,
 #page-site-index #site-footer {
     padding: 0;
 }
+#page-wrapper #page-footer .btn-footer-popover {
+    box-shadow: 2px 5px 5px var(--black_40);
+}
 button.btn-footer-popover,
 button.btn-footer-popover:hover,
 button.btn-footer-popover:focus,
@@ -4374,6 +4379,9 @@ body.limitedwidth.pagelayout-frontpage #page.drawers .main-inner {
 }
 .path-course-view #page-header .action-menu .menubar .dropdown-menu.show .dropdown-item:first-child a {
     color: var(--white);
+}
+#page-course-index-category .moremenu .nav-tabs .nav-item {
+    width: auto;
 }
 
 @media (min-width: 768px) {
@@ -4968,6 +4976,9 @@ img.userpicture {
     color: var(--color_primary);
     margin-bottom: 30px;
 }
+#frontpage-course-list .coursebox {
+    padding: 20px;
+}
 #frontpage-available-course-list h2:before {
     content: '\f02d';
     font-family: var(--font_0);
@@ -5293,6 +5304,9 @@ img.userpicture {
 .block .maincalendar .header {
     background: none;
 }
+.block .maincalendar .calendarmonth .header {
+    text-align: center;
+}
 .block .maincalendar .header .cal_courses_flt {
     margin-bottom: 10px;
 }
@@ -5321,8 +5335,11 @@ img.userpicture {
 .block .block-controls.header {
     background: none;
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 10px;
+    right: 0;
+}
+#block-region-content .block .block-controls.header {
+    right: 15px;
 }
 .block .block-controls.header .action-menu-item {
     margin-left: 5px;
@@ -5338,9 +5355,6 @@ img.userpicture {
 }
 .block .block-controls .dropdown-toggle {
     margin: 0 5px;
-}
-.block .block-controls .dropdown-toggle:after {
-    color: var(--white);
 }
 .block .block-controls .dropdown-item i.icon {
     color: var(--color_mine_shaft_approx);
@@ -5415,6 +5429,9 @@ img.userpicture {
 .block-timeline .dropdown-menu .dropdown-item.active {
     background: var(--color_primary);
 }
+.block_timeline .input-group.searchbar input.form-control {
+    margin-left: auto;
+}
 .block-region .block .card-body .block-myoverview .card-title {
     padding: 0;
     background: none;
@@ -5450,6 +5467,10 @@ img.userpicture {
 .block-region .block.card .block-recentlyaccesseditems .card-deck .card .card-body {
     padding: 0;
     border: 0;
+}
+#region-main .maincalendar .calendarwrapper td > div {
+    line-height: 11.5em;
+    text-align: center;
 }
 #region-main.has-blocks .dashboard-card-deck .dashboard-card .card-body .card-title {
     width: 100%;
@@ -5695,6 +5716,9 @@ body.pagelayout-frontpage .load-content {
 .drawer .message-app {
     outline: none;
 }
+.drawer#theme_boost-drawers-blocks:focus-within {
+    position: fixed;
+}
 .main-inner .drawer-left-toggle button,
 .main-inner .drawer-right-toggle button {
     background: var(--color_primary);
@@ -5778,6 +5802,11 @@ body.pagelayout-frontpage .load-content {
 @media (min-width: 1200px) {
     .pagelayout-course #page.drawers .main-inner {
         max-width: none;
+    }
+}
+@media (min-width: 992px) {
+    .drawer.drawer-right {
+        z-index: 1041;
     }
 }
 

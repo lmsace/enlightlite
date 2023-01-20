@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die;
 
 // The current component version (Date: YYYYMMDDXX).
-$plugin->version = 2022052704;
+$plugin->version = 2023012000;
 
 // This version's maturity level.
 $plugin->maturity = MATURITY_STABLE;
